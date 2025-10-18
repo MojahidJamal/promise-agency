@@ -116,7 +116,7 @@ export default function AboutPage() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl mb-8 shadow-2xl animate-float border-4 border-white/30">
+            <div className="inline-flex items-center justify-center w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl mb-8 shadow-2xl animate-float">
               <Heart className="w-12 h-12 text-white" />
             </div>
             
@@ -129,7 +129,7 @@ export default function AboutPage() {
               {t('pages.about_desc')}
             </p>
             
-            <div className="max-w-4xl mx-auto bg-white/15 backdrop-blur-md rounded-3xl p-8 md:p-10 border-2 border-white/30 shadow-2xl">
+            <div className="max-w-4xl mx-auto bg-white/15 backdrop-blur-md rounded-3xl p-8 md:p-10 shadow-2xl">
               <p className="text-xl md:text-2xl text-white font-medium leading-relaxed drop-shadow-md">
                 {t('pages.about_intro')}
               </p>
@@ -169,7 +169,7 @@ export default function AboutPage() {
               return (
                 <div
                   key={idx}
-                  className="group relative bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-primary/20 overflow-hidden hover:-translate-y-2"
+                  className="group relative bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden hover:-translate-y-2"
                 >
                   {/* Gradient Background on Hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -224,7 +224,7 @@ export default function AboutPage() {
               return (
                 <div
                   key={idx}
-                  className={`group relative bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-primary/30 overflow-hidden ${
+                  className={`group relative bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden ${
                     isEven ? 'md:translate-y-8' : 'md:translate-y-0'
                   }`}
                 >
@@ -272,7 +272,7 @@ export default function AboutPage() {
             </h2>
           </div>
           
-          <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-10 md:p-16 border-2 border-primary/20 shadow-xl">
+          <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-10 md:p-16 shadow-xl">
             <p className="text-2xl md:text-3xl text-gray-900 leading-relaxed text-center font-medium">
               {t('about.our_mission_desc')}
             </p>
@@ -299,7 +299,7 @@ export default function AboutPage() {
               return (
                 <div
                   key={idx}
-                  className="group relative bg-white rounded-3xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-primary/20 overflow-hidden hover:-translate-y-3"
+                  className="group relative bg-white rounded-3xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden hover:-translate-y-3"
                 >
                   {/* Background Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -334,13 +334,13 @@ export default function AboutPage() {
         </div>
         
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center justify-center w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full mb-8 shadow-2xl border-4 border-white/40">
+          <div className="inline-flex items-center justify-center w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full mb-8 shadow-2xl">
             <Zap className="w-12 h-12 text-white" />
           </div>
           <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-white drop-shadow-2xl">
             {t('about.why_choose_us')}
           </h2>
-          <div className="bg-white/15 backdrop-blur-lg rounded-3xl p-10 md:p-16 border-2 border-white/30 shadow-2xl">
+          <div className="bg-white/15 backdrop-blur-lg rounded-3xl p-10 md:p-16 shadow-2xl">
             <p className="text-2xl md:text-3xl text-white leading-relaxed drop-shadow-lg font-medium">
               {t('about.why_choose_us_desc')}
             </p>
@@ -392,7 +392,7 @@ export default function AboutPage() {
               const Icon = stat.icon;
               return (
                 <div key={idx} className="group">
-                  <div className="relative bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-primary/20 overflow-hidden hover:-translate-y-3">
+                  <div className="relative bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden hover:-translate-y-3">
                     {/* Gradient Background on Hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     

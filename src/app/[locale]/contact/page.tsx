@@ -61,7 +61,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Info */}
           <div className="space-y-8">
-            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-100">
+            <div className="bg-white rounded-2xl p-8 shadow-xl">
               <h3 className="text-2xl font-bold mb-6">
                 {t('footer.contact_info')}
               </h3>
@@ -135,7 +135,7 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-100">
+          <div className="bg-white rounded-2xl p-8 shadow-xl">
             <h3 className="text-2xl font-bold mb-6">{t('common.send_message')}</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>

@@ -96,7 +96,6 @@ export default function Hero() {
                 className={cn(
                   'flex items-center gap-3 px-8 py-4 rounded-2xl',
                   'bg-white/10 hover:bg-white/20 text-white font-bold text-lg',
-                  'border-2 border-white/30 hover:border-white/50',
                   'transition-all duration-300 backdrop-blur-sm',
                   'hover:scale-105 transform',
                   'w-full sm:w-auto justify-center min-w-[200px]'
@@ -137,7 +136,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 + idx * 0.1, ease: 'easeOut' }}
-                className="text-center bg-white/10 backdrop-blur-sm rounded-3xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300"
+                className="text-center bg-white/10 backdrop-blur-sm rounded-3xl p-6 hover:bg-white/20 transition-all duration-300"
               >
                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300">
                   <item.icon className="w-8 h-8 text-white" />

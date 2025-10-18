@@ -13,7 +13,7 @@ export default function PrivacyPage() {
       bgColor="white"
       waveHero={true}
     >
-      <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-xl border-2 border-gray-100">
+      <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-xl">
         <div className="prose prose-lg max-w-none">
           {isArabic ? (
             <>

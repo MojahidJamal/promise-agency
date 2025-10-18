@@ -49,7 +49,7 @@ export default function GalleryPage() {
       </div>
 
       {/* Coming Soon Note */}
-      <div className="mt-12 text-center bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-100">
+      <div className="mt-12 text-center bg-white rounded-2xl p-8 shadow-xl">
         <p className="text-gray-600 text-lg">
           {isArabic
             ? 'المزيد من الصور قريباً! تابعونا على وسائل التواصل الاجتماعي لمشاهدة آخر الرحلات.'

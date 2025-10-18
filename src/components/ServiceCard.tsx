@@ -39,7 +39,6 @@ export default function ServiceCard({
       className={cn(
         'group relative bg-white rounded-3xl p-8 shadow-trust hover:shadow-trust-lg',
         'transition-all duration-300 hover:-translate-y-1',
-        'border border-gray-100 hover:border-primary/20',
         'font-arabic',
         className
       )}

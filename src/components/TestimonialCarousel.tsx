@@ -84,7 +84,7 @@ export default function TestimonialCarousel({
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: isRTL ? 50 : -50 }}
               transition={{ duration: 0.4, ease: 'easeOut' }}
-              className="bg-white rounded-3xl shadow-2xl p-6 pt-12 relative border border-gray-100/50 backdrop-blur-sm"
+              className="bg-white rounded-3xl shadow-2xl p-6 pt-12 relative backdrop-blur-sm"
             >
             {/* Stars */}
             <div className="flex justify-center gap-1 mb-4">
@@ -121,7 +121,7 @@ export default function TestimonialCarousel({
                   className={cn(
                     'absolute top-1/2 -translate-y-1/2 p-2.5 rounded-xl',
                     'bg-white hover:bg-primary hover:text-white',
-                    'transition-all duration-300 shadow-lg border border-gray-200',
+                    'transition-all duration-300 shadow-lg',
                     isRTL ? 'right-2' : 'left-2'
                   )}
                   aria-label="Previous testimonial"
@@ -133,7 +133,7 @@ export default function TestimonialCarousel({
                   className={cn(
                     'absolute top-1/2 -translate-y-1/2 p-2.5 rounded-xl',
                     'bg-white hover:bg-primary hover:text-white',
-                    'transition-all duration-300 shadow-lg border border-gray-200',
+                    'transition-all duration-300 shadow-lg',
                     isRTL ? 'left-2' : 'right-2'
                   )}
                   aria-label="Next testimonial"
@@ -216,11 +216,11 @@ export default function TestimonialCarousel({
                 {/* Card */}
                 <div className={cn(
                   "relative h-full rounded-3xl p-8 pt-10 transition-all duration-300",
-                  "border backdrop-blur-sm",
+                  "backdrop-blur-sm",
                   "group-hover:shadow-2xl group-hover:-translate-y-2",
                   isCenter 
-                    ? "bg-gradient-to-br from-white via-blue-50/30 to-white border-primary/20 shadow-xl" 
-                    : "bg-white border-gray-100/50 shadow-lg"
+                    ? "bg-gradient-to-br from-white via-blue-50/30 to-white shadow-xl" 
+                    : "bg-white shadow-lg"
                 )}>
                   
                   {/* Stars */}
@@ -294,7 +294,7 @@ export default function TestimonialCarousel({
               onClick={prev}
               className={cn(
                 'p-4 rounded-2xl bg-white hover:bg-primary hover:text-white',
-                'transition-all duration-300 shadow-lg border border-gray-200',
+                'transition-all duration-300 shadow-lg',
                 'hover:shadow-xl hover:scale-110'
               )}
               aria-label="Previous testimonials"
@@ -323,7 +323,7 @@ export default function TestimonialCarousel({
               onClick={next}
               className={cn(
                 'p-4 rounded-2xl bg-white hover:bg-primary hover:text-white',
-                'transition-all duration-300 shadow-lg border border-gray-200',
+                'transition-all duration-300 shadow-lg',
                 'hover:shadow-xl hover:scale-110'
               )}
               aria-label="Next testimonials"
