@@ -1,5 +1,59 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Section from '@/components/Section';
+import { Metadata } from 'next';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isArabic = locale === 'ar';
+
+  return {
+    title: isArabic
+      ? 'سياسة الخصوصية - Trust Band Travel | حماية بياناتك وخصوصيتك'
+      : 'Privacy Policy - Trust Band Travel | Protecting Your Data & Privacy',
+    description: isArabic
+      ? 'سياسة الخصوصية الخاصة بـ Trust Band Travel. نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. تعرف على كيفية جمع واستخدام وحماية معلوماتك عند استخدام خدماتنا السياحية.'
+      : 'Privacy Policy for Trust Band Travel. We respect your privacy and are committed to protecting your personal data. Learn how we collect, use, and protect your information when using our tourism services.',
+    keywords: isArabic
+      ? [
+          'سياسة الخصوصية',
+          'حماية البيانات',
+          'خصوصية العملاء',
+          'أمان المعلومات',
+          'سرية البيانات',
+          'حقوق العملاء',
+          'حماية المعلومات الشخصية',
+          'Trust Band خصوصية',
+          'سياسة الاستخدام',
+          'أمان الحجوزات'
+        ].join(', ')
+      : [
+          'privacy policy',
+          'data protection',
+          'customer privacy',
+          'information security',
+          'data confidentiality',
+          'customer rights',
+          'personal information protection',
+          'Trust Band privacy',
+          'terms of use',
+          'booking security'
+        ].join(', '),
+    openGraph: {
+      title: isArabic
+        ? 'سياسة الخصوصية - Trust Band Travel'
+        : 'Privacy Policy - Trust Band Travel',
+      description: isArabic
+        ? 'نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية'
+        : 'We respect your privacy and are committed to protecting your personal data',
+      type: 'website',
+      locale: isArabic ? 'ar_SA' : 'en_US',
+    },
+  };
+}
 
 export default function PrivacyPage() {
   const t = useTranslations();

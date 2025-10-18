@@ -7,6 +7,9 @@ import Section from '@/components/Section';
 import { cn } from '@/utils/cn';
 import content from '@/content/trustband.json';
 
+// Note: Metadata export is not supported in Client Components
+// SEO is handled by parent layout and dynamic content
+
 export default function FAQPage() {
   const t = useTranslations();
   const locale = useLocale();

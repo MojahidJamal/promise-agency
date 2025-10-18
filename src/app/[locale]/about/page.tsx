@@ -21,6 +21,76 @@ import {
 } from 'lucide-react';
 import Section from '@/components/Section';
 import { cn } from '@/utils/cn';
+import { Metadata } from 'next';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isArabic = locale === 'ar';
+
+  return {
+    title: isArabic
+      ? 'من نحن - Trust Band Travel | وكالة سفر موثوقة منذ سنوات'
+      : 'About Us - Trust Band Travel | Trusted Travel Agency for Years',
+    description: isArabic
+      ? 'تعرف على Trust Band Travel - وكالة سفر رائدة في مصر مع فرق متخصصة في حجز الطيران، التأشيرات، الفنادق، والباقات السياحية. نقدم خدمات احترافية بأسعار تنافسية مع دعم على مدار الساعة. أكثر من 500 عميل سعيد و1000 رحلة ناجحة.'
+      : 'Learn about Trust Band Travel - a leading travel agency in Egypt with specialized teams in flight booking, visas, hotels, and tour packages. We provide professional services at competitive prices with 24/7 support. More than 500 happy clients and 1000 successful trips.',
+    keywords: isArabic
+      ? [
+          'عن Trust Band',
+          'وكالة سفر موثوقة',
+          'فريق خدمة العملاء',
+          'حجز تذاكر طيران',
+          'خدمات التأشيرات',
+          'فرق متخصصة',
+          'احترافية عالية',
+          'أسعار تنافسية',
+          'دعم 24/7',
+          'قيم الشركة',
+          'مهمتنا',
+          'رؤيتنا',
+          'خبرة في السياحة',
+          'موافقات أمنية',
+          'عملاء سعداء',
+          'وكالة سياحة محترفة',
+          'ثقة ومصداقية',
+          'جودة الخدمة'
+        ].join(', ')
+      : [
+          'about Trust Band',
+          'trusted travel agency',
+          'customer service team',
+          'flight ticket booking',
+          'visa services',
+          'specialized teams',
+          'high professionalism',
+          'competitive prices',
+          '24/7 support',
+          'company values',
+          'our mission',
+          'our vision',
+          'tourism expertise',
+          'security approvals',
+          'happy clients',
+          'professional tourism agency',
+          'trust and credibility',
+          'service quality'
+        ].join(', '),
+    openGraph: {
+      title: isArabic
+        ? 'من نحن - Trust Band Travel | وكالة سفر موثوقة'
+        : 'About Us - Trust Band Travel | Trusted Travel Agency',
+      description: isArabic
+        ? 'وكالة سفر رائدة مع فرق متخصصة وخدمات احترافية بأسعار تنافسية'
+        : 'Leading travel agency with specialized teams and professional services at competitive prices',
+      type: 'website',
+      locale: isArabic ? 'ar_SA' : 'en_US',
+    },
+  };
+}
 
 export default function AboutPage() {
   const t = useTranslations();

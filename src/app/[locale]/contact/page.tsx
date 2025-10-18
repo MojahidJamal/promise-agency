@@ -19,6 +19,9 @@ import { getContactInquiryUrl } from '@/utils/whatsapp';
 import content from '@/content/trustband.json';
 import toast from 'react-hot-toast';
 
+// Note: Metadata export is not supported in Client Components
+// SEO is handled by parent layout and dynamic content
+
 export default function ContactPage() {
   const t = useTranslations();
   const locale = useLocale();

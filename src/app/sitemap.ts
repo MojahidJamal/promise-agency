@@ -1,9 +1,18 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://trustband.travel';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://trust-band-travel.vercel.app';
 
-  const routes = ['', '/packages', '/services', '/about', '/contact', '/faq'];
+  const routes = [
+    { path: '', priority: 1.0, changeFrequency: 'daily' as const },
+    { path: '/packages', priority: 0.9, changeFrequency: 'daily' as const },
+    { path: '/services', priority: 0.9, changeFrequency: 'weekly' as const },
+    { path: '/about', priority: 0.7, changeFrequency: 'monthly' as const },
+    { path: '/contact', priority: 0.8, changeFrequency: 'monthly' as const },
+    { path: '/faq', priority: 0.7, changeFrequency: 'weekly' as const },
+    { path: '/privacy', priority: 0.5, changeFrequency: 'monthly' as const },
+  ];
+  
   const locales = ['ar', 'en'];
 
   const sitemapEntries: MetadataRoute.Sitemap = [];
@@ -11,14 +20,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   locales.forEach((locale) => {
     routes.forEach((route) => {
       const url = locale === 'ar' 
-        ? `${baseUrl}${route}`
-        : `${baseUrl}/${locale}${route}`;
+        ? `${baseUrl}${route.path}`
+        : `${baseUrl}/${locale}${route.path}`;
       
       sitemapEntries.push({
         url,
         lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: route === '' ? 1.0 : 0.8,
+        changeFrequency: route.changeFrequency,
+        priority: route.priority,
+        alternates: {
+          languages: {
+            ar: locale === 'ar' ? url : `${baseUrl}${route.path}`,
+            en: locale === 'en' ? url : `${baseUrl}/en${route.path}`,
+          },
+        },
       });
     });
   });

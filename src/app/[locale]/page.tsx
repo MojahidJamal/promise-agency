@@ -7,6 +7,79 @@ import PackageCard from '@/components/PackageCard';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
 import content from '@/content/trustband.json';
 import { cn } from '@/utils/cn';
+import { Metadata } from 'next';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isArabic = locale === 'ar';
+
+  return {
+    title: isArabic
+      ? 'Trust Band Travel - رحلات تثق بها | وكالة سفر وسياحة في مصر'
+      : 'Trust Band Travel - Trips You Trust | Travel Agency in Egypt',
+    description: isArabic
+      ? 'وكالة سفر موثوقة في مصر تقدم أفضل باقات سياحية، حجوزات طيران، فنادق فاخرة، تأشيرات، عمرة، وخدمات سياحية متكاملة. أسعار تنافسية ودعم على مدار الساعة. احجز رحلتك الآن!'
+      : 'Trusted travel agency in Egypt offering the best tour packages, flight bookings, luxury hotels, visas, Umrah, and comprehensive tourism services. Competitive prices and 24/7 support. Book your trip now!',
+    keywords: isArabic
+      ? [
+          'وكالة سفر',
+          'سياحة مصر',
+          'حجز طيران',
+          'باقات سياحية',
+          'حجز فنادق',
+          'تأشيرات سفر',
+          'عمرة',
+          'رحلات سياحية',
+          'تذاكر طيران',
+          'سفر وسياحة',
+          'حجوزات سياحية',
+          'وكالة سياحة',
+          'عروض سفر',
+          'رحلات خارجية',
+          'سياحة دولية',
+          'Trust Band',
+          'ترست باند',
+          'موافقات أمنية',
+          'خدمات سياحية',
+          'دعم على مدار الساعة'
+        ].join(', ')
+      : [
+          'travel agency',
+          'Egypt tourism',
+          'flight booking',
+          'tour packages',
+          'hotel booking',
+          'travel visa',
+          'Umrah',
+          'tourist trips',
+          'airline tickets',
+          'travel and tourism',
+          'tourism booking',
+          'tourism agency',
+          'travel deals',
+          'international trips',
+          'international tourism',
+          'Trust Band Travel',
+          'security approvals',
+          'tourism services',
+          '24/7 support'
+        ].join(', '),
+    openGraph: {
+      title: isArabic
+        ? 'Trust Band Travel - رحلات تثق بها | وكالة سفر وسياحة'
+        : 'Trust Band Travel - Trips You Trust | Travel Agency',
+      description: isArabic
+        ? 'أفضل وكالة سفر في مصر - باقات سياحية، حجوزات طيران وفنادق، تأشيرات، عمرة'
+        : 'Best travel agency in Egypt - Tour packages, flight & hotel bookings, visas, Umrah',
+      type: 'website',
+      locale: isArabic ? 'ar_SA' : 'en_US',
+    },
+  };
+}
 
 export default function HomePage() {
   const t = useTranslations();

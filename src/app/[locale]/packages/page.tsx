@@ -7,6 +7,9 @@ import PackageCard from '@/components/PackageCard';
 import content from '@/content/trustband.json';
 import { cn } from '@/utils/cn';
 
+// Note: Metadata export is not supported in Client Components
+// SEO is handled by parent layout and dynamic content
+
 export default function PackagesPage() {
   const t = useTranslations();
   const locale = useLocale();
