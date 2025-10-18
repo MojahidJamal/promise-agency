@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import AnimatedCursor from '@/components/AnimatedCursor';
 import PageTransition from '@/components/PageTransition';
+import SmoothScroll from '@/components/SmoothScroll';
 import '../globals.css';
 
 const inter = Inter({
@@ -93,6 +94,7 @@ export default async function LocaleLayout({
     <html lang={finalLocale} dir={isRTL ? 'rtl' : 'ltr'} className={`${inter.variable} ${tajawal.variable}`}>
       <body className={isRTL ? 'font-arabic' : 'font-sans'}>
         <NextIntlClientProvider messages={messages}>
+          <SmoothScroll />
           <AnimatedCursor />
           <Navbar />
           <PageTransition>
