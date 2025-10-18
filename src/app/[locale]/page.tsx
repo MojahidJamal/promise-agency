@@ -17,6 +17,7 @@ export default function HomePage() {
     id: service.id,
     title: isArabic ? service.title_ar : service.title_en,
     description: isArabic ? service.desc_ar : service.desc_en,
+    highlight: isArabic ? service.highlight_ar : service.highlight_en,
   }));
 
   const featuredPackages = content.packages.slice(0, 3).map((pkg) => ({
@@ -34,16 +35,25 @@ export default function HomePage() {
 
       {/* Services Section */}
       <Section title={t('sections.services')} bgColor="gray">
+        <div className="mb-8 text-center max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 font-arabic leading-relaxed">
+            {isArabic 
+              ? 'نقدم لك خدمات متخصصة تلبي احتياجاتك بدقة واحترافية عالية'
+              : 'We offer specialized services that meet your needs with precision and professionalism'
+            }
+          </p>
+        </div>
         <div className={cn(
           'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6',
           isArabic && 'lg:grid-flow-col-dense'
         )}>
-          {services.map((service) => (
+          {services.map((service, index) => (
             <ServiceCard
               key={service.id}
               id={service.id}
               title={service.title}
               description={service.description}
+              highlight={service.highlight}
             />
           ))}
         </div>

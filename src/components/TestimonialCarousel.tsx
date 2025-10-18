@@ -63,7 +63,7 @@ export default function TestimonialCarousel({
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-200/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       </div>
 
       {/* Mobile View: Single Card Carousel */}
@@ -71,7 +71,7 @@ export default function TestimonialCarousel({
         <div className="relative min-h-[400px]">
           {/* Quote Icon */}
           <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
-            <div className="w-14 h-14 bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center shadow-xl">
+            <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-xl">
               <Quote className="w-7 h-7 text-white" />
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function TestimonialCarousel({
 
             {/* Author */}
             <div className="text-center">
-              <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-primary/20 to-blue-200/20 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 mx-auto mb-3 bg-primary/20 rounded-full flex items-center justify-center">
                 <span className="text-xl font-bold text-primary">
                   {(locale === 'ar' ? testimonials[current].name : (testimonials[current].name_en || testimonials[current].name)).charAt(0)}
                 </span>
@@ -203,12 +203,7 @@ export default function TestimonialCarousel({
                   isRTL ? "right-6" : "left-6",
                   "group-hover:scale-110 group-hover:-translate-y-1"
                 )}>
-                  <div className={cn(
-                    "w-12 h-12 rounded-2xl flex items-center justify-center shadow-xl",
-                    isCenter 
-                      ? "bg-gradient-to-br from-primary via-blue-500 to-blue-600" 
-                      : "bg-gradient-to-br from-primary to-blue-500"
-                  )}>
+                  <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center shadow-xl">
                     <Quote className="w-6 h-6 text-white" />
                   </div>
                 </div>
@@ -219,7 +214,7 @@ export default function TestimonialCarousel({
                   "backdrop-blur-sm",
                   "group-hover:shadow-2xl group-hover:-translate-y-2",
                   isCenter 
-                    ? "bg-gradient-to-br from-white via-blue-50/30 to-white shadow-xl" 
+                    ? "bg-white shadow-xl border-2 border-primary/20" 
                     : "bg-white shadow-lg"
                 )}>
                   
@@ -247,7 +242,7 @@ export default function TestimonialCarousel({
                   </blockquote>
 
                   {/* Decorative Line */}
-                  <div className="w-16 h-1 bg-gradient-to-r from-primary/30 via-primary to-primary/30 rounded-full mx-auto mb-6" />
+                  <div className="w-16 h-1 bg-primary rounded-full mx-auto mb-6" />
 
                   {/* Author */}
                   <div className="text-center">
@@ -255,8 +250,8 @@ export default function TestimonialCarousel({
                       "w-14 h-14 mx-auto mb-3 rounded-full flex items-center justify-center",
                       "transition-all duration-300 group-hover:scale-110",
                       isCenter
-                        ? "bg-gradient-to-br from-primary/20 via-blue-100/50 to-blue-200/30"
-                        : "bg-gradient-to-br from-primary/15 to-blue-100/30"
+                        ? "bg-primary/20"
+                        : "bg-primary/15"
                     )}>
                       <span className="text-2xl font-bold text-primary">
                         {(locale === 'ar' ? testimonial.name : (testimonial.name_en || testimonial.name)).charAt(0)}

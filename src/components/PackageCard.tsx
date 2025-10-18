@@ -85,23 +85,29 @@ export default function PackageCard({
       </div>
 
       {/* Content */}
-      <div className="p-6">
+      <div className={cn('p-6', isRTL && 'text-right')}>
         {/* Title */}
         <div className={cn('flex items-start gap-3 mb-4', isRTL && 'flex-row-reverse')}>
           <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
             <MapPin className="w-4 h-4 text-primary" />
           </div>
-          <h3 className="text-xl font-bold text-gray-700 group-hover:text-primary transition-colors leading-tight">
+          <h3 className={cn(
+            'text-xl font-bold text-gray-700 group-hover:text-primary transition-colors leading-tight',
+            isRTL && 'text-right'
+          )}>
             {title}
           </h3>
         </div>
 
         {/* Highlights */}
-        <ul className="space-y-3 mb-6">
+        <ul className={cn('space-y-3 mb-6', isRTL && 'text-right')}>
           {highlights.map((highlight, idx) => (
             <li key={idx} className={cn('flex items-start gap-3', isRTL && 'flex-row-reverse')}>
               <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-              <span className="text-gray-700 text-sm leading-relaxed">{highlight}</span>
+              <span className={cn(
+                'text-gray-700 text-sm leading-relaxed',
+                isRTL && 'text-right'
+              )}>{highlight}</span>
             </li>
           ))}
         </ul>

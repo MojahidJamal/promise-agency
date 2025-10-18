@@ -13,6 +13,7 @@ export default function ServicesPage() {
     id: service.id,
     title: isArabic ? service.title_ar : service.title_en,
     description: isArabic ? service.desc_ar : service.desc_en,
+    highlight: isArabic ? service.highlight_ar : service.highlight_en,
   }));
 
   return (
@@ -22,16 +23,22 @@ export default function ServicesPage() {
       bgColor="white"
       waveHero={true}
     >
-      <div className={cn(
-        'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8',
-        isArabic && 'lg:grid-flow-col-dense'
-      )}>
+      <div className="mb-12 text-center max-w-4xl mx-auto">
+        <p className="text-lg text-gray-600 font-arabic leading-relaxed">
+          {isArabic 
+            ? 'في ترست باند، نقدم خدمات شاملة ومتكاملة مصممة خصيصاً لتسهيل كل إجراءاتك وتوفير الوقت والجهد عليك'
+            : 'At Trust Band, we provide comprehensive services designed specifically to facilitate all your procedures and save your time and effort'
+          }
+        </p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         {services.map((service) => (
           <ServiceCard
             key={service.id}
             id={service.id}
             title={service.title}
             description={service.description}
+            highlight={service.highlight}
           />
         ))}
       </div>

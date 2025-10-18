@@ -37,3 +37,7 @@ export function getContactInquiryUrl(
   return buildWhatsAppUrl(text);
 }
 
+export function getWhatsAppServiceUrl(message: string): string {
+  return buildWhatsAppUrl(message);
+}
+

@@ -17,39 +17,40 @@
   },
   "services": [
     {
-      "id": "tickets",
-      "title_ar": "حجوزات الطيران",
-      "title_en": "Flight Tickets",
-      "desc_ar": "أفضل الأسعار والوجهات",
-      "desc_en": "Best fares and routes"
+      "id": "exit-return-visa",
+      "title_ar": "تأشيرة الخروج والعودة",
+      "title_en": "Exit & Return Visa",
+      "desc_ar": "رجعتك لمصر علينا.. سافر وارجع بدون موافقة أو تأشيرة. خدمة سهلة ومضمونة تخليك تسافر وانت مرتاح",
+      "desc_en": "Your return to Egypt is on us. Travel and come back without approval or visa. Easy and guaranteed service for peace of mind",
+      "highlight_ar": "اطمّن.. رجعتك لمصر علينا",
+      "highlight_en": "Rest assured.. your return to Egypt is on us"
     },
     {
-      "id": "hotels",
-      "title_ar": "حجوزات الفنادق",
-      "title_en": "Hotel Bookings",
-      "desc_ar": "فنادق مختارة بعناية",
-      "desc_en": "Carefully selected stays"
+      "id": "family-visit-saudi",
+      "title_ar": "الزيارة العائلية للسعودية",
+      "title_en": "Family Visit to Saudi Arabia",
+      "desc_ar": "مشتاق لأهلك؟ عايز تشوف أمك، أبوك، أو عيالك؟ مع خدمة تخليص إجراءات الزيارة العائلية، حنساعدك تجيب أحبابك وتعيش معاهم لحظات ما بتتنسى",
+      "desc_en": "Missing your family? Want to see your parents or children? With our family visit service, we'll help you bring your loved ones for unforgettable moments",
+      "highlight_ar": "ما تخلي الشوق يطول",
+      "highlight_en": "Don't let longing last"
     },
     {
-      "id": "packages",
-      "title_ar": "باقات سياحية",
-      "title_en": "Tour Packages",
-      "desc_ar": "عروض مناسبة للعائلات والأفراد",
-      "desc_en": "Great for families and solo travelers"
+      "id": "security-clearance",
+      "title_ar": "الموافقة الأمنية",
+      "title_en": "Security Clearance",
+      "desc_ar": "لو كنت في السودان أو أي مكان في العالم، وخططك جاهزة للسفر لمصر، خلي الإجراءات علينا وسهلها على نفسك. بنوفر لك كل الموافقات الأمنية (سريعة - بطيئة)",
+      "desc_en": "If you're in Sudan or anywhere in the world, planning to travel to Egypt, leave the procedures to us. We provide all security clearances (fast - regular)",
+      "highlight_ar": "خلي الإجراءات علينا",
+      "highlight_en": "Leave the procedures to us"
     },
     {
-      "id": "visa",
-      "title_ar": "خدمات التأشيرات",
-      "title_en": "Visa Services",
-      "desc_ar": "متابعة مهنية وسريعة",
-      "desc_en": "Fast, professional handling"
-    },
-    {
-      "id": "umrah",
-      "title_ar": "عمرة",
-      "title_en": "Umrah",
-      "desc_ar": "برامج عمرة مرنة ومميزة",
-      "desc_en": "Flexible, well-planned Umrah trips"
+      "id": "international-license",
+      "title_ar": "الرخصة الدولية",
+      "title_en": "International Driving License",
+      "desc_ar": "احصل على رخصة القيادة الدولية لقيادة آمنة في أي مكان بالعالم. خدمة سريعة وموثوقة",
+      "desc_en": "Get your international driving license for safe driving anywhere in the world. Fast and reliable service",
+      "highlight_ar": "قيادة آمنة في أي مكان",
+      "highlight_en": "Safe driving anywhere"
     }
   ],
   "packages": [
