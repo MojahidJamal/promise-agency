@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useLocale } from 'next-intl';
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/utils/cn';
 
 interface Testimonial {
@@ -67,7 +68,7 @@ export default function TestimonialCarousel({
 
       {/* Mobile View: Single Card Carousel */}
       <div className="block md:hidden relative max-w-lg mx-auto px-4">
-        <div className="relative">
+        <div className="relative min-h-[400px]">
           {/* Quote Icon */}
           <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
             <div className="w-14 h-14 bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center shadow-xl">
@@ -76,7 +77,15 @@ export default function TestimonialCarousel({
           </div>
 
           {/* Card */}
-          <div className="bg-white rounded-3xl shadow-2xl p-6 pt-12 relative border border-gray-100/50 backdrop-blur-sm">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current}
+              initial={{ opacity: 0, x: isRTL ? -50 : 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: isRTL ? 50 : -50 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+              className="bg-white rounded-3xl shadow-2xl p-6 pt-12 relative border border-gray-100/50 backdrop-blur-sm"
+            >
             {/* Stars */}
             <div className="flex justify-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
@@ -133,7 +142,8 @@ export default function TestimonialCarousel({
                 </button>
               </>
             )}
-          </div>
+          </motion.div>
+          </AnimatePresence>
 
           {/* Dots */}
           {testimonials.length > 1 && (
@@ -164,21 +174,29 @@ export default function TestimonialCarousel({
           testimonials.length === 2 ? "md:grid-cols-2 max-w-5xl mx-auto" :
           "md:grid-cols-2 lg:grid-cols-3"
         )}>
-          {visibleIndices.map((idx, position) => {
-            const testimonial = testimonials[idx];
-            const isCenter = position === 1 && testimonials.length >= 3;
-            
-            return (
-              <div
-                key={idx}
-                className={cn(
-                  "relative group transition-all duration-700 ease-out",
-                  isCenter && "lg:scale-105 lg:-translate-y-4"
-                )}
-                style={{
-                  animation: `fadeInUp 0.6s ease-out ${position * 0.1}s both`
-                }}
-              >
+          <AnimatePresence mode="popLayout">
+            {visibleIndices.map((idx, position) => {
+              const testimonial = testimonials[idx];
+              const isCenter = position === 1 && testimonials.length >= 3;
+              
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ 
+                    opacity: 1, 
+                    y: 0,
+                    scale: isCenter ? 1.05 : 1,
+                    translateY: isCenter ? -16 : 0
+                  }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: position * 0.1,
+                    ease: 'easeOut' 
+                  }}
+                  className="relative group"
+                >
                 {/* Decorative Quote Mark */}
                 <div className={cn(
                   "absolute -top-4 z-10 transition-all duration-300",
@@ -263,9 +281,10 @@ export default function TestimonialCarousel({
                     <Quote className="w-full h-full" />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
+          </AnimatePresence>
         </div>
 
         {/* Navigation Controls */}
@@ -333,20 +352,6 @@ export default function TestimonialCarousel({
           </div>
         )}
       </div>
-
-      {/* CSS Animation */}
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 }

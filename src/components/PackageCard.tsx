@@ -1,6 +1,9 @@
+'use client';
+
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { MessageCircle, CheckCircle, Star, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { cn } from '@/utils/cn';
 import { getPackageInquiryUrl } from '@/utils/whatsapp';
 
@@ -28,7 +31,11 @@ export default function PackageCard({
   const isRTL = locale === 'ar';
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      viewport={{ once: true }}
       className={cn(
         'group bg-white rounded-3xl overflow-hidden shadow-trust hover:shadow-trust-lg',
         'transition-all duration-300 hover:-translate-y-1',
@@ -116,7 +123,7 @@ export default function PackageCard({
           <span>{t('common.book_now')}</span>
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

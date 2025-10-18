@@ -1,6 +1,9 @@
+'use client';
+
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { MapPin, Clock, Mail, Phone, Plane } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { cn } from '@/utils/cn';
 import content from '@/content/trustband.json';
 import SocialBar from './SocialBar';
@@ -21,7 +24,14 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="text-white relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #111827 0%, #000000 100%)' }}>
+    <motion.footer
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
+      viewport={{ once: true }}
+      className="text-white relative overflow-hidden"
+      style={{ background: 'linear-gradient(135deg, #111827 0%, #000000 100%)' }}
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -169,7 +179,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
 

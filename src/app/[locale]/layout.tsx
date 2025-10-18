@@ -7,6 +7,8 @@ import { locales } from '@/lib/i18n-config';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+import AnimatedCursor from '@/components/AnimatedCursor';
+import PageTransition from '@/components/PageTransition';
 import '../globals.css';
 
 const inter = Inter({
@@ -91,8 +93,11 @@ export default async function LocaleLayout({
     <html lang={finalLocale} dir={isRTL ? 'rtl' : 'ltr'} className={`${inter.variable} ${tajawal.variable}`}>
       <body className={isRTL ? 'font-arabic' : 'font-sans'}>
         <NextIntlClientProvider messages={messages}>
+          <AnimatedCursor />
           <Navbar />
-          <main>{children}</main>
+          <PageTransition>
+            <main>{children}</main>
+          </PageTransition>
           <Footer />
           <WhatsAppFloat />
           <Toaster

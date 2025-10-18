@@ -1,5 +1,8 @@
+'use client';
+
 import { useLocale } from 'next-intl';
 import { Plane, Hotel, Package, FileText, Star, LucideIcon, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { cn } from '@/utils/cn';
 
 interface ServiceCardProps {
@@ -28,7 +31,11 @@ export default function ServiceCard({
   const Icon = serviceIcons[id] || Package;
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      viewport={{ once: true }}
       className={cn(
         'group relative bg-white rounded-3xl p-8 shadow-trust hover:shadow-trust-lg',
         'transition-all duration-300 hover:-translate-y-1',
@@ -69,7 +76,7 @@ export default function ServiceCard({
 
       {/* Decorative Border */}
       <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-primary/10 transition-colors duration-300"></div>
-    </div>
+    </motion.div>
   );
 }
 
