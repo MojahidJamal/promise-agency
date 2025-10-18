@@ -9,6 +9,7 @@ export default function AnimatedCursor() {
   const cursorY = useMotionValue(-100);
   const [isHovering, setIsHovering] = useState(false);
   const [isOnPrimary, setIsOnPrimary] = useState(false);
+  const [isOnFooter, setIsOnFooter] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
   const springConfig = { damping: 25, stiffness: 300, mass: 0.5 };
@@ -41,8 +42,15 @@ export default function AnimatedCursor() {
         target.classList.contains('gradient-bg') ||
         target.closest('.gradient-bg');
       
+      // Check if element is in footer
+      const isInFooter = 
+        target.closest('footer') ||
+        target.closest('[data-footer]') ||
+        target.tagName === 'FOOTER';
+      
       setIsHovering(!!isInteractive);
       setIsOnPrimary(!!hasPrimaryBackground);
+      setIsOnFooter(!!isInFooter);
     };
 
     window.addEventListener('mousemove', moveCursor);
@@ -87,7 +95,10 @@ export default function AnimatedCursor() {
           }}
         >
           <div
-            className="w-5 h-5 rounded-full bg-black"
+            className={cn(
+              'w-5 h-5 rounded-full',
+              isOnFooter ? 'bg-white' : 'bg-black'
+            )}
           />
         </motion.div>
       </motion.div>
@@ -112,7 +123,10 @@ export default function AnimatedCursor() {
           }}
         >
           <div
-            className="w-12 h-12 rounded-full border-2 border-black"
+            className={cn(
+              'w-12 h-12 rounded-full border-2',
+              isOnFooter ? 'border-white' : 'border-black'
+            )}
           />
         </motion.div>
       </motion.div>
