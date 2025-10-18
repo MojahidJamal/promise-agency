@@ -1,0 +1,14 @@
+Add your images here:
+
+Recommended images:
+- /images/istanbul1.jpg, istanbul2.jpg
+- /images/dubai1.jpg, dubai2.jpg
+- /images/cairo1.jpg, cairo2.jpg
+- /images/gallery/1.jpg through 8.jpg (or more)
+
+Image guidelines:
+- Use optimized JPG or WebP format
+- Recommended size: 1200x800px for package images
+- Keep file sizes under 500KB for best performance
+- Use descriptive alt text in Arabic and English
+

@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "packages": "الباقات",
+    "services": "الخدمات",
+    "destinations": "الوجهات",
+    "about": "من نحن",
+    "contact": "اتصل بنا",
+    "gallery": "الصور",
+    "faq": "الأسئلة الشائعة"
+  },
+  "hero": {
+    "title": "رحلات تثق بها",
+    "subtitle": "أفضل العروض وخدمة سريعة.",
+    "cta_whatsapp": "احجز عبر واتساب",
+    "cta_packages": "تصفح الباقات"
+  },
+  "sections": {
+    "services": "خدماتنا",
+    "featured_packages": "باقات مميزة",
+    "testimonials": "آراء العملاء",
+    "why_us": "لماذا نحن؟",
+    "gallery_title": "معرض الصور",
+    "faq_title": "الأسئلة الشائعة"
+  },
+  "common": {
+    "from": "من",
+    "book_now": "احجز الآن",
+    "learn_more": "اعرف المزيد",
+    "contact_us": "تواصل معنا",
+    "send_message": "إرسال رسالة",
+    "currency": "دولار"
+  },
+  "footer": {
+    "about_us": "عن Trust Band Travel",
+    "about_desc": "وكالة سفر موثوقة تقدم أفضل العروض والخدمات السياحية.",
+    "quick_links": "روابط سريعة",
+    "contact_info": "معلومات الاتصال",
+    "follow_us": "تابعنا",
+    "working_hours": "ساعات العمل",
+    "email": "البريد الإلكتروني",
+    "address": "العنوان",
+    "rights": "جميع الحقوق محفوظة"
+  },
+  "pages": {
+    "packages_title": "باقاتنا السياحية",
+    "packages_desc": "اختر من بين مجموعة واسعة من الباقات السياحية المصممة لتناسب احتياجاتك.",
+    "services_title": "خدماتنا",
+    "services_desc": "نقدم مجموعة شاملة من الخدمات السياحية لراحتك.",
+    "about_title": "من نحن",
+    "about_desc": "Trust Band Travel هي وكالة سفر رائدة تقدم خدمات سياحية متميزة منذ سنوات.",
+    "contact_title": "تواصل معنا",
+    "contact_desc": "نسعد بالرد على استفساراتك ومساعدتك في حجز رحلتك القادمة.",
+    "gallery_desc": "استعرض صور رحلاتنا السابقة واحصل على إلهام لرحلتك القادمة.",
+    "faq_desc": "إجابات على الأسئلة الأكثر شيوعاً حول خدماتنا.",
+    "privacy_title": "سياسة الخصوصية",
+    "privacy_desc": "نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية."
+  },
+  "contact_form": {
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "message": "الرسالة",
+    "submit": "إرسال"
+  },
+  "features": {
+    "secure_booking": "حجز آمن",
+    "secure_booking_desc": "نظام حجز آمن وموثوق",
+    "support_24_7": "دعم 24/7",
+    "support_24_7_desc": "فريقنا متاح على مدار الساعة",
+    "best_prices": "أفضل الأسعار",
+    "best_prices_desc": "أسعار تنافسية وعروض مميزة",
+    "expert_guides": "مرشدون خبراء",
+    "expert_guides_desc": "مرشدون سياحيون محترفون"
+  },
+  "whatsapp": {
+    "floating_button": "تواصل عبر واتساب",
+    "package_inquiry": "مرحباً، أريد الاستفسار عن باقة"
+  }
+}
+

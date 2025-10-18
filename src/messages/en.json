@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Home",
+    "packages": "Packages",
+    "services": "Services",
+    "destinations": "Destinations",
+    "about": "About",
+    "contact": "Contact",
+    "gallery": "Gallery",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "title": "Trips you trust",
+    "subtitle": "Best deals with fast service.",
+    "cta_whatsapp": "Book on WhatsApp",
+    "cta_packages": "Browse Packages"
+  },
+  "sections": {
+    "services": "Our Services",
+    "featured_packages": "Featured Packages",
+    "testimonials": "Testimonials",
+    "why_us": "Why Choose Us?",
+    "gallery_title": "Gallery",
+    "faq_title": "Frequently Asked Questions"
+  },
+  "common": {
+    "from": "From",
+    "book_now": "Book Now",
+    "learn_more": "Learn More",
+    "contact_us": "Contact Us",
+    "send_message": "Send Message",
+    "currency": "USD"
+  },
+  "footer": {
+    "about_us": "About Trust Band Travel",
+    "about_desc": "A trusted travel agency offering the best deals and tourism services.",
+    "quick_links": "Quick Links",
+    "contact_info": "Contact Info",
+    "follow_us": "Follow Us",
+    "working_hours": "Working Hours",
+    "email": "Email",
+    "address": "Address",
+    "rights": "All rights reserved"
+  },
+  "pages": {
+    "packages_title": "Our Tour Packages",
+    "packages_desc": "Choose from a wide range of tour packages designed to suit your needs.",
+    "services_title": "Our Services",
+    "services_desc": "We offer a comprehensive range of tourism services for your convenience.",
+    "about_title": "About Us",
+    "about_desc": "Trust Band Travel is a leading travel agency providing excellent tourism services for years.",
+    "contact_title": "Contact Us",
+    "contact_desc": "We're happy to answer your questions and help you book your next trip.",
+    "gallery_desc": "Browse photos from our previous trips and get inspired for your next journey.",
+    "faq_desc": "Answers to the most common questions about our services.",
+    "privacy_title": "Privacy Policy",
+    "privacy_desc": "We respect your privacy and are committed to protecting your personal data."
+  },
+  "contact_form": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "message": "Message",
+    "submit": "Submit"
+  },
+  "features": {
+    "secure_booking": "Secure Booking",
+    "secure_booking_desc": "Safe and reliable booking system",
+    "support_24_7": "24/7 Support",
+    "support_24_7_desc": "Our team is available around the clock",
+    "best_prices": "Best Prices",
+    "best_prices_desc": "Competitive prices and special offers",
+    "expert_guides": "Expert Guides",
+    "expert_guides_desc": "Professional tour guides"
+  },
+  "whatsapp": {
+    "floating_button": "Chat on WhatsApp",
+    "package_inquiry": "Hello, I'd like to inquire about the package"
+  }
+}
+

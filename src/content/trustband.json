@@ -1,0 +1,137 @@
+{
+  "brand": {
+    "name": "Trust Band Travel",
+    "primaryColor": "#0d99e4",
+    "tagline_ar": "رحلات تثق بها. ذكريات لا تُنسى.",
+    "tagline_en": "Trips you trust. Memories you'll never forget.",
+    "phone": "",
+    "email": "info@trustband.travel",
+    "whatsapp": "https://wa.me/message/KFESNW3GRJH5D1",
+    "instagram": "https://www.instagram.com/trust.band_travel/",
+    "facebook": "https://www.facebook.com/676041272267639",
+    "tiktok": "https://www.tiktok.com/@trust_band_agency",
+    "address_ar": "—",
+    "address_en": "—",
+    "working_hours_ar": "يومياً 9 صباحاً - 9 مساءً",
+    "working_hours_en": "Daily 9 AM – 9 PM"
+  },
+  "services": [
+    {
+      "id": "tickets",
+      "title_ar": "حجوزات الطيران",
+      "title_en": "Flight Tickets",
+      "desc_ar": "أفضل الأسعار والوجهات.",
+      "desc_en": "Best fares and routes."
+    },
+    {
+      "id": "hotels",
+      "title_ar": "حجوزات الفنادق",
+      "title_en": "Hotel Bookings",
+      "desc_ar": "فنادق مختارة بعناية.",
+      "desc_en": "Carefully selected stays."
+    },
+    {
+      "id": "packages",
+      "title_ar": "باقات سياحية",
+      "title_en": "Tour Packages",
+      "desc_ar": "عروض مناسبة للعائلات والأفراد.",
+      "desc_en": "Great for families and solo travelers."
+    },
+    {
+      "id": "visa",
+      "title_ar": "خدمات التأشيرات",
+      "title_en": "Visa Services",
+      "desc_ar": "متابعة مهنية وسريعة.",
+      "desc_en": "Fast, professional handling."
+    },
+    {
+      "id": "umrah",
+      "title_ar": "عمرة",
+      "title_en": "Umrah",
+      "desc_ar": "برامج عمرة مرنة ومميزة.",
+      "desc_en": "Flexible, well-planned Umrah trips."
+    }
+  ],
+  "packages": [
+    {
+      "slug": "istanbul-4n5d",
+      "title_ar": "إسطنبول 5 أيام / 4 ليالٍ",
+      "title_en": "Istanbul 5D/4N",
+      "price_from": 899,
+      "currency": "USD",
+      "highlights_ar": ["فندق 4 نجوم", "جولة البوسفور", "نقل المطار"],
+      "highlights_en": ["4★ hotel", "Bosphorus tour", "Airport transfers"],
+      "whatsapp_cta": true,
+      "gallery": ["/images/istanbul1.jpg", "/images/istanbul2.jpg"]
+    },
+    {
+      "slug": "dubai-3n4d",
+      "title_ar": "دبي 4 أيام / 3 ليالٍ",
+      "title_en": "Dubai 4D/3N",
+      "price_from": 1299,
+      "currency": "USD",
+      "highlights_ar": ["فندق 5 نجوم", "جولة المدينة", "سفاري صحراوية"],
+      "highlights_en": ["5★ hotel", "City tour", "Desert safari"],
+      "whatsapp_cta": true,
+      "gallery": ["/images/dubai1.jpg", "/images/dubai2.jpg"]
+    },
+    {
+      "slug": "cairo-5n6d",
+      "title_ar": "القاهرة 6 أيام / 5 ليالٍ",
+      "title_en": "Cairo 6D/5N",
+      "price_from": 699,
+      "currency": "USD",
+      "highlights_ar": ["فندق 4 نجوم", "الأهرامات", "جولة النيل"],
+      "highlights_en": ["4★ hotel", "Pyramids tour", "Nile cruise"],
+      "whatsapp_cta": true,
+      "gallery": ["/images/cairo1.jpg", "/images/cairo2.jpg"]
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "علاء",
+      "name_en": "Alaa",
+      "quote_ar": "تجربة ممتازة وخدمة سريعة.",
+      "quote_en": "Excellent experience and quick service."
+    },
+    {
+      "name": "فاطمة",
+      "name_en": "Fatima",
+      "quote_ar": "أفضل وكالة سفر تعاملت معها. احترافية عالية.",
+      "quote_en": "Best travel agency I've dealt with. Highly professional."
+    },
+    {
+      "name": "محمد",
+      "name_en": "Mohammed",
+      "quote_ar": "رحلة العمرة كانت منظمة بشكل رائع. شكراً لكم.",
+      "quote_en": "The Umrah trip was wonderfully organized. Thank you."
+    }
+  ],
+  "faq": [
+    {
+      "q_ar": "كيف أحجز باقة؟",
+      "a_ar": "تواصل عبر واتساب وسنؤكد التفاصيل فوراً.",
+      "q_en": "How do I book a package?",
+      "a_en": "Message us on WhatsApp and we'll confirm details."
+    },
+    {
+      "q_ar": "هل الأسعار تشمل التأشيرة؟",
+      "a_ar": "بعض الباقات تشمل التأشيرة. يرجى السؤال عن الباقة المحددة.",
+      "q_en": "Do prices include visa?",
+      "a_en": "Some packages include visa. Please ask about your specific package."
+    },
+    {
+      "q_ar": "ما هي طرق الدفع المتاحة؟",
+      "a_ar": "نقبل التحويل البنكي والدفع النقدي.",
+      "q_en": "What payment methods do you accept?",
+      "a_en": "We accept bank transfer and cash payment."
+    },
+    {
+      "q_ar": "هل يمكنني إلغاء الحجز؟",
+      "a_ar": "يمكن الإلغاء حسب سياسة الإلغاء المحددة في العقد.",
+      "q_en": "Can I cancel my booking?",
+      "a_en": "Cancellation is possible according to the policy specified in the contract."
+    }
+  ]
+}
+
