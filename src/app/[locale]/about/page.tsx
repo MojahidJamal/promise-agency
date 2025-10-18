@@ -165,41 +165,20 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {highlights.map((highlight, idx) => {
               const Icon = highlight.icon;
-              const gradients = [
-                { 
-                  from: 'from-blue-500', 
-                  to: 'to-cyan-400',
-                  bg: 'bg-gradient-to-br from-blue-500 to-cyan-400',
-                  shadow: 'shadow-blue-500/50'
-                },
-                { 
-                  from: 'from-green-500', 
-                  to: 'to-emerald-400',
-                  bg: 'bg-gradient-to-br from-green-500 to-emerald-400',
-                  shadow: 'shadow-green-500/50'
-                },
-                { 
-                  from: 'from-purple-500', 
-                  to: 'to-pink-400',
-                  bg: 'bg-gradient-to-br from-purple-500 to-pink-400',
-                  shadow: 'shadow-purple-500/50'
-                }
-              ];
-              const gradient = gradients[idx];
               
               return (
                 <div
                   key={idx}
-                  className="group relative bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-transparent overflow-hidden hover:-translate-y-2"
+                  className="group relative bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-primary/20 overflow-hidden hover:-translate-y-2"
                 >
                   {/* Gradient Background on Hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${gradient.from} ${gradient.to} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   {/* Decorative Corner */}
-                  <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${gradient.from} ${gradient.to} opacity-5 rounded-bl-full`}></div>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full"></div>
                   
                   <div className="relative z-10">
-                    <div className={`inline-flex items-center justify-center w-20 h-20 ${gradient.bg} rounded-2xl mb-8 shadow-2xl ${gradient.shadow} group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+                    <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-2xl mb-8 shadow-2xl shadow-primary/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                       <Icon className="w-10 h-10 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-primary transition-colors duration-300">
@@ -211,7 +190,7 @@ export default function AboutPage() {
                   </div>
                   
                   {/* Hover Accent Line */}
-                  <div className={`absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r ${gradient.from} ${gradient.to} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-3xl`}></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-2 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-3xl"></div>
                 </div>
               );
             })}
@@ -250,13 +229,13 @@ export default function AboutPage() {
                   }`}
                 >
                   {/* Gradient Background */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${team.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   {/* Decorative Elements */}
                   <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors duration-500"></div>
                   
                   <div className="relative z-10">
-                    <div className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br ${team.color} rounded-2xl mb-6 shadow-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}>
+                    <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-2xl mb-6 shadow-2xl shadow-primary/30 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
                       <Icon className="w-10 h-10 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold mb-5 text-gray-900 group-hover:text-primary transition-colors duration-300">
@@ -268,7 +247,7 @@ export default function AboutPage() {
                     
                     {/* Animated Check Mark */}
                     <div className="mt-6 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <CheckCircle2 className="w-5 h-5 text-green-500" />
+                      <CheckCircle2 className="w-5 h-5 text-primary" />
                       <span className="text-sm font-semibold text-gray-600">
                         {isArabic ? 'فريق متخصص' : 'Specialized Team'}
                       </span>
@@ -282,30 +261,24 @@ export default function AboutPage() {
       </div>
 
       {/* Mission - Bold Statement */}
-      <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black py-20 md:py-32 overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
-        </div>
-        
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Section bgColor="white">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-primary to-primary/80 rounded-full mb-8 shadow-2xl shadow-primary/50 animate-glow">
+            <div className="inline-flex items-center justify-center w-24 h-24 bg-primary rounded-full mb-8 shadow-2xl shadow-primary/30">
               <Target className="w-12 h-12 text-white" />
             </div>
-            <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-white drop-shadow-2xl">
+            <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-gray-900">
               {t('about.our_mission')}
             </h2>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-10 md:p-16 border-2 border-white/20 shadow-2xl">
-            <p className="text-2xl md:text-3xl text-white leading-relaxed text-center font-medium drop-shadow-lg">
+          <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-10 md:p-16 border-2 border-primary/20 shadow-xl">
+            <p className="text-2xl md:text-3xl text-gray-900 leading-relaxed text-center font-medium">
               {t('about.our_mission_desc')}
             </p>
           </div>
         </div>
-      </div>
+      </Section>
 
       {/* Values - Creative Grid */}
       <Section bgColor="white">
@@ -322,24 +295,17 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, idx) => {
               const Icon = value.icon;
-              const gradients = [
-                { bg: 'from-blue-500 to-blue-600', light: 'from-blue-50 to-blue-100' },
-                { bg: 'from-green-500 to-green-600', light: 'from-green-50 to-green-100' },
-                { bg: 'from-purple-500 to-purple-600', light: 'from-purple-50 to-purple-100' },
-                { bg: 'from-orange-500 to-orange-600', light: 'from-orange-50 to-orange-100' }
-              ];
-              const gradient = gradients[idx];
               
               return (
                 <div
                   key={idx}
-                  className="group relative bg-white rounded-3xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-transparent overflow-hidden hover:-translate-y-3"
+                  className="group relative bg-white rounded-3xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-primary/20 overflow-hidden hover:-translate-y-3"
                 >
                   {/* Background Gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${gradient.light} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   <div className="relative z-10">
-                    <div className={`w-24 h-24 mx-auto mb-6 bg-gradient-to-br ${gradient.bg} rounded-3xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-2xl`}>
+                    <div className="w-24 h-24 mx-auto mb-6 bg-primary rounded-3xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-2xl shadow-primary/30">
                       <Icon className="w-12 h-12 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-primary transition-colors duration-300">
@@ -357,7 +323,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Why Choose Us - Striking Banner */}
-      <div className="relative bg-gradient-to-r from-primary via-[#0a7ab8] to-primary py-20 md:py-32 overflow-hidden">
+      <div className="relative bg-primary py-20 md:py-32 overflow-hidden">
         {/* Animated Background Patterns */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full opacity-10">
@@ -368,7 +334,7 @@ export default function AboutPage() {
         </div>
         
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center justify-center w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full mb-8 shadow-2xl animate-glow border-4 border-white/40">
+          <div className="inline-flex items-center justify-center w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full mb-8 shadow-2xl border-4 border-white/40">
             <Zap className="w-12 h-12 text-white" />
           </div>
           <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-white drop-shadow-2xl">
@@ -405,46 +371,42 @@ export default function AboutPage() {
               { 
                 number: '500+', 
                 label: t('about.stats.happy_clients'), 
-                icon: Users,
-                gradient: 'from-blue-500 to-cyan-400'
+                icon: Users
               },
               { 
                 number: '50+', 
                 label: t('about.stats.destinations'), 
-                icon: Compass,
-                gradient: 'from-green-500 to-emerald-400'
+                icon: Compass
               },
               { 
                 number: '1000+', 
                 label: t('about.stats.trips'), 
-                icon: Globe,
-                gradient: 'from-purple-500 to-pink-400'
+                icon: Globe
               },
               { 
                 number: '24/7', 
                 label: t('about.stats.support'), 
-                icon: Headphones,
-                gradient: 'from-orange-500 to-red-400'
+                icon: Headphones
               },
             ].map((stat, idx) => {
               const Icon = stat.icon;
               return (
                 <div key={idx} className="group">
-                  <div className="relative bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-transparent overflow-hidden hover:-translate-y-3">
+                  <div className="relative bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-primary/20 overflow-hidden hover:-translate-y-3">
                     {/* Gradient Background on Hover */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {/* Decorative Corner Accent */}
-                    <div className={`absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br ${stat.gradient} opacity-20 rounded-full blur-2xl group-hover:opacity-40 transition-opacity duration-500`}></div>
+                    <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-colors duration-500"></div>
                     
                     <div className="relative z-10 text-center">
                       {/* Icon */}
-                      <div className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br ${stat.gradient} rounded-2xl mb-6 shadow-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}>
+                      <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-2xl mb-6 shadow-2xl shadow-primary/30 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
                         <Icon className="w-10 h-10 text-white" />
                       </div>
                       
                       {/* Number */}
-                      <div className={`text-5xl md:text-6xl font-extrabold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-500`}>
+                      <div className="text-5xl md:text-6xl font-extrabold text-primary mb-4 group-hover:scale-110 transition-transform duration-500">
                         {stat.number}
                       </div>
                       
@@ -454,7 +416,7 @@ export default function AboutPage() {
                       </div>
                       
                       {/* Decorative Line */}
-                      <div className={`w-16 h-1.5 bg-gradient-to-r ${stat.gradient} rounded-full mx-auto mt-6 group-hover:w-24 transition-all duration-500`}></div>
+                      <div className="w-16 h-1.5 bg-primary rounded-full mx-auto mt-6 group-hover:w-24 transition-all duration-500"></div>
                     </div>
                   </div>
                 </div>
