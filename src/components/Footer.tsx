@@ -37,7 +37,7 @@ export default function Footer() {
         )}>
           {/* About */}
           <div className="lg:col-span-1">
-            <div className={cn('flex items-center gap-3 mb-6', isRTL && 'flex-row-reverse')}>
+            <div className={cn('flex items-center gap-3 mb-6', isRTL ? 'flex-row-reverse' : 'flex-row')}>
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center">
                 <Plane className="w-7 h-7 text-white" />
               </div>
@@ -71,7 +71,7 @@ export default function Footer() {
                     href={link.href}
                     className={cn(
                       'hover:text-primary transition-colors font-arabic flex items-center gap-2 group',
-                      isRTL && 'flex-row-reverse'
+                      isRTL ? 'flex-row-reverse' : 'flex-row'
                     )}
                     style={{ color: '#d1d5db' }}
                   >
@@ -87,7 +87,7 @@ export default function Footer() {
           <div className={cn('', isRTL && 'text-right')}>
             <h4 className="text-lg font-bold mb-6 font-arabic" style={{ color: '#ffffff' }}>{t('footer.contact_info')}</h4>
             <ul className="space-y-4">
-              <li className={cn('flex items-start gap-3', isRTL && 'flex-row-reverse')}>
+              <li className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
                 <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Mail className="w-4 h-4 text-primary" />
                 </div>
@@ -102,7 +102,7 @@ export default function Footer() {
                 </div>
               </li>
               {content.brand.phone && (
-                <li className={cn('flex items-start gap-3', isRTL && 'flex-row-reverse')}>
+                <li className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
                   <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Phone className="w-4 h-4 text-primary" />
                   </div>
@@ -116,7 +116,7 @@ export default function Footer() {
                   </div>
                 </li>
               )}
-              <li className={cn('flex items-start gap-3', isRTL && 'flex-row-reverse')}>
+              <li className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
                 <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-4 h-4 text-primary" />
                 </div>
@@ -133,7 +133,7 @@ export default function Footer() {
           {/* Working Hours */}
           <div className={cn('', isRTL && 'text-right')}>
             <h4 className="text-lg font-bold mb-6 font-arabic" style={{ color: '#ffffff' }}>{t('footer.working_hours')}</h4>
-            <div className={cn('flex items-start gap-3', isRTL && 'flex-row-reverse')}>
+            <div className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
               <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Clock className="w-4 h-4 text-primary" />
               </div>
@@ -157,7 +157,7 @@ export default function Footer() {
             <p className="font-arabic" style={{ color: '#d1d5db' }}>
               © {new Date().getFullYear()} Trust Band Travel. {t('footer.rights')}.
             </p>
-            <div className={cn('flex items-center gap-4 text-sm', isRTL && 'flex-row-reverse')} style={{ color: '#d1d5db' }}>
+            <div className={cn('flex items-center gap-4 text-sm', isRTL ? 'flex-row-reverse' : 'flex-row')} style={{ color: '#d1d5db' }}>
               <Link href={`/${locale}/privacy`} className="hover:text-primary transition-colors font-arabic">
                 {isRTL ? 'سياسة الخصوصية' : 'Privacy Policy'}
               </Link>

@@ -30,18 +30,21 @@ export default function Navbar() {
       <div className="container mx-auto">
         <div className="flex items-center justify-between h-16 px-4">
           {/* Logo */}
-          <Link href={`/${locale === 'ar' ? '' : locale}`} className="flex items-center gap-3">
+          <Link href={`/${locale === 'ar' ? '' : locale}`} className={cn(
+            "flex items-center gap-3",
+            isRTL && "flex-row-reverse"
+          )}>
             <div className="relative w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-primary to-primary/80">
               <div className="absolute inset-0 flex items-center justify-center">
                 <Plane className="w-6 h-6 text-white" />
               </div>
             </div>
             <div className="hidden sm:block">
-              <span className="text-lg font-bold text-gray-700 font-arabic">
+              <div className="text-lg font-bold text-gray-700 font-arabic leading-tight">
                 Trust Band{' '}
                 <span className="text-primary">Travel</span>
-              </span>
-              <div className="text-xs text-gray-500 font-arabic">
+              </div>
+              <div className="text-xs text-gray-500 font-arabic leading-tight">
                 {isRTL ? 'ترست باند للسفر' : 'Trust Band Travel'}
               </div>
             </div>
