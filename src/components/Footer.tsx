@@ -164,10 +164,16 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-6 font-arabic" style={{ color: '#ffffff' }}>{t('footer.contact_info')}</h4>
             <ul className="space-y-4">
               <li className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
-                <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className={cn(
+                  'w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0',
+                  isRTL ? 'order-2' : 'order-1'
+                )}>
                   <Mail className="w-4 h-4 text-primary" />
                 </div>
-                <div className={cn('flex-1', isRTL ? 'text-right' : 'text-left')}>
+                <div className={cn(
+                  'flex-1',
+                  isRTL ? 'text-right order-1' : 'text-left order-2'
+                )}>
                   <div className="text-xs text-gray-300 mb-1 font-arabic">{t('footer.email')}</div>
                   <a
                     href={`mailto:${content.brand.email}`}
@@ -182,10 +188,16 @@ export default function Footer() {
               </li>
               {content.brand.phone && (
                 <li className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
-                  <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className={cn(
+                    'w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0',
+                    isRTL ? 'order-2' : 'order-1'
+                  )}>
                     <Phone className="w-4 h-4 text-primary" />
                   </div>
-                  <div className={cn('flex-1', isRTL ? 'text-right' : 'text-left')}>
+                  <div className={cn(
+                    'flex-1',
+                    isRTL ? 'text-right order-1' : 'text-left order-2'
+                  )}>
                     <div className="text-xs text-gray-300 mb-1 font-arabic">
                       {isRTL ? 'الهاتف' : 'Phone'}
                     </div>
@@ -202,10 +214,16 @@ export default function Footer() {
                 </li>
               )}
               <li className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
-                <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className={cn(
+                  'w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0',
+                  isRTL ? 'order-2' : 'order-1'
+                )}>
                   <MapPin className="w-4 h-4 text-primary" />
                 </div>
-                <div className={cn('flex-1', isRTL ? 'text-right' : 'text-left')}>
+                <div className={cn(
+                  'flex-1',
+                  isRTL ? 'text-right order-1' : 'text-left order-2'
+                )}>
                   <div className="text-xs text-gray-300 mb-1 font-arabic">{t('footer.address')}</div>
                   <div className={cn(
                     "text-white font-arabic",
@@ -222,10 +240,16 @@ export default function Footer() {
           <div className={cn('', isRTL && 'text-right')}>
             <h4 className="text-lg font-bold mb-6 font-arabic" style={{ color: '#ffffff' }}>{t('footer.working_hours')}</h4>
             <div className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
-              <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className={cn(
+                'w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0',
+                isRTL ? 'order-2' : 'order-1'
+              )}>
                 <Clock className="w-4 h-4 text-primary" />
               </div>
-              <div className={cn('flex-1', isRTL ? 'text-right' : 'text-left')}>
+              <div className={cn(
+                'flex-1',
+                isRTL ? 'text-right order-1' : 'text-left order-2'
+              )}>
                 <div className={cn(
                   "text-white font-arabic leading-relaxed",
                   isRTL ? "text-right" : "text-left"
