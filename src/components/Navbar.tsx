@@ -30,11 +30,17 @@ export default function Navbar() {
 
   // Function to check if a link is active
   const isActiveLink = (href: string) => {
-    if (href === `/${locale === 'ar' ? '' : locale}`) {
-      // For home page, check if pathname is exactly the locale or root
-      return pathname === `/${locale}` || pathname === '/' || pathname === `/${locale}/`;
+    // Remove locale prefix from pathname for comparison
+    const pathWithoutLocale = pathname.replace(`/${locale}`, '') || '/';
+    const hrefWithoutLocale = href.replace(`/${locale}`, '') || '/';
+    
+    // For home page
+    if (hrefWithoutLocale === '/') {
+      return pathWithoutLocale === '/' || pathWithoutLocale === '';
     }
-    return pathname === href || pathname.startsWith(href + '/');
+    
+    // For other pages, check exact match or if pathname starts with the href
+    return pathWithoutLocale === hrefWithoutLocale || pathWithoutLocale.startsWith(hrefWithoutLocale + '/');
   };
 
   return (
@@ -69,14 +75,14 @@ export default function Navbar() {
                     'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative',
                     'font-arabic',
                     isActive
-                      ? 'text-primary bg-primary/10 font-semibold'
+                      ? 'text-primary bg-primary/10 font-semibold shadow-sm border border-primary/20'
                       : 'text-gray-700 hover:text-primary hover:bg-primary/5'
                   )}
                 >
                   {link.label}
                   {isActive && (
                     <motion.div
-                      className="absolute bottom-0 left-1/2 w-1 h-1 bg-primary rounded-full -translate-x-1/2"
+                      className="absolute bottom-0 left-1/2 w-2 h-0.5 bg-primary rounded-full -translate-x-1/2"
                       layoutId="activeIndicator"
                       transition={{ duration: 0.2, ease: 'easeOut' }}
                     />
@@ -136,7 +142,7 @@ export default function Navbar() {
                       className={cn(
                         'px-4 py-3 rounded-lg transition-colors font-medium font-arabic relative',
                         isActive
-                          ? 'text-primary bg-primary/10 font-semibold'
+                          ? 'text-primary bg-primary/10 font-semibold shadow-sm border border-primary/20'
                           : 'text-gray-700 hover:text-primary hover:bg-primary/5'
                       )}
                     >
@@ -144,7 +150,7 @@ export default function Navbar() {
                       {isActive && (
                         <motion.div
                           className={cn(
-                            'absolute top-1/2 w-1 h-6 bg-primary rounded-full -translate-y-1/2',
+                            'absolute top-1/2 w-1 h-8 bg-primary rounded-full -translate-y-1/2',
                             isRTL ? 'left-2' : 'right-2'
                           )}
                           layoutId="mobileActiveIndicator"
