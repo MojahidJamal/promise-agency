@@ -31,7 +31,9 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }) {
-  const isArabic = locale === 'ar';
+  // Ensure Arabic is default
+  const finalLocale = locale || 'ar';
+  const isArabic = finalLocale === 'ar';
   
   return {
     title: isArabic
@@ -73,15 +75,18 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  if (!locales.includes(locale as any)) {
+  // Ensure Arabic is default
+  const finalLocale = locale || 'ar';
+  
+  if (!locales.includes(finalLocale as any)) {
     notFound();
   }
 
   const messages = await getMessages();
-  const isRTL = locale === 'ar';
+  const isRTL = finalLocale === 'ar';
 
   return (
-    <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'} className={`${inter.variable} ${tajawal.variable}`}>
+    <html lang={finalLocale} dir={isRTL ? 'rtl' : 'ltr'} className={`${inter.variable} ${tajawal.variable}`}>
       <body className={isRTL ? 'font-arabic' : 'font-sans'}>
         <NextIntlClientProvider messages={messages}>
           <Navbar />

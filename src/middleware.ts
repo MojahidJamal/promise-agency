@@ -5,9 +5,15 @@ export default createMiddleware({
   locales,
   defaultLocale,
   localePrefix: 'as-needed',
+  localeDetection: false, // Disable automatic locale detection
 });
 
 export const config = {
-  matcher: ['/', '/(ar|en)/:path*', '/((?!_next|_vercel|.*\\..*).*)'],
+  matcher: [
+    // Match all pathnames except for
+    // - … if they start with `/api`, `/_next` or `/_vercel`
+    // - … the ones containing a dot (e.g. `favicon.ico`)
+    '/((?!api|_next|_vercel|.*\\..*).*)'
+  ],
 };
 

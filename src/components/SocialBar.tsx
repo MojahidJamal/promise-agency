@@ -28,7 +28,7 @@ export default function SocialBar() {
   ];
 
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex items-center gap-3">
       {socials.map((social) => {
         const Icon = social.icon;
         return (
@@ -39,9 +39,8 @@ export default function SocialBar() {
             rel="noopener noreferrer"
             className={cn(
               'w-12 h-12 rounded-full bg-white/10 flex items-center justify-center',
-              'transition-all duration-300 hover:scale-110',
-              social.color,
-              'text-white'
+              'transition-all duration-300 hover:scale-110 hover:bg-white/20',
+              'text-white border border-white/20'
             )}
             aria-label={social.name}
           >

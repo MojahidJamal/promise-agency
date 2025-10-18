@@ -4,13 +4,45 @@
 
 @layer base {
   body {
-    @apply bg-white text-black antialiased;
+    background-color: white;
+    color: #374151;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Tajawal', 'Inter', system-ui, sans-serif;
+  }
+  
+  /* RTL Support */
+  [dir="rtl"] {
+    font-family: 'Tajawal', system-ui, sans-serif;
+  }
+  
+  [dir="ltr"] {
+    font-family: 'Inter', system-ui, sans-serif;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, #0d99e4 0%, #0a7ab8 100%);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #0d99e4 0%, #0a7ab8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .card-shadow {
+    box-shadow: 0 4px 20px rgba(13, 153, 228, 0.1);
+  }
+  
+  .card-shadow-hover {
+    box-shadow: 0 8px 30px rgba(13, 153, 228, 0.15);
   }
 }
 
@@ -21,19 +53,30 @@ html {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f3f4f6;
+  background-color: #f8fafc;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #0d99e4;
-  border-radius: 9999px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #0a7ab8;
+}
+
+/* Trust Band Brand Colors */
+:root {
+  --trust-blue: #0d99e4;
+  --trust-blue-dark: #0a7ab8;
+  --trust-blue-light: #e6f7ff;
+  --trust-gold: #ffd700;
+  --trust-white: #ffffff;
+  --trust-gray: #6b7280;
+  --trust-gray-light: #f3f4f6;
 }
 

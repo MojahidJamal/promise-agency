@@ -1,4 +1,5 @@
 import { useTranslations, useLocale } from 'next-intl';
+import { Shield, MessageCircle, DollarSign, Target } from 'lucide-react';
 import Hero from '@/components/Hero';
 import Section from '@/components/Section';
 import ServiceCard from '@/components/ServiceCard';
@@ -67,34 +68,36 @@ export default function HomePage() {
       </Section>
 
       {/* Why Choose Us */}
-      <Section title={t('sections.why_us')} bgColor="dark">
+      <Section title={t('sections.why_us')} bgColor="primary">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             {
-              icon: '🔒',
+              icon: Shield,
               title: t('features.secure_booking'),
               desc: t('features.secure_booking_desc'),
             },
             {
-              icon: '💬',
+              icon: MessageCircle,
               title: t('features.support_24_7'),
               desc: t('features.support_24_7_desc'),
             },
             {
-              icon: '💰',
+              icon: DollarSign,
               title: t('features.best_prices'),
               desc: t('features.best_prices_desc'),
             },
             {
-              icon: '🎯',
+              icon: Target,
               title: t('features.expert_guides'),
               desc: t('features.expert_guides_desc'),
             },
           ].map((feature, idx) => (
-            <div key={idx} className="text-center">
-              <div className="text-5xl mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-              <p className="text-white/70">{feature.desc}</p>
+            <div key={idx} className="text-center bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+              <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <feature.icon className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-white font-arabic">{feature.title}</h3>
+              <p className="text-white/80 font-arabic leading-relaxed">{feature.desc}</p>
             </div>
           ))}
         </div>

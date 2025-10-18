@@ -31,14 +31,16 @@ export default function LanguageSwitcher() {
     <button
       onClick={switchLocale}
       className={cn(
-        'flex items-center gap-2 px-3 py-2 rounded-lg',
-        'bg-white/10 hover:bg-white/20 transition-colors',
-        'text-sm font-medium'
+        'flex items-center gap-2 px-4 py-2 rounded-xl',
+        'bg-white/10 hover:bg-white/20 transition-all duration-300',
+        'text-sm font-medium border border-white/20 hover:border-white/30',
+        'backdrop-blur-sm hover:scale-105 transform',
+        'font-arabic'
       )}
       aria-label={locale === 'ar' ? 'Switch to English' : 'التبديل إلى العربية'}
     >
       <Globe className="w-4 h-4" />
-      <span>{locale === 'ar' ? 'EN' : 'عربي'}</span>
+      <span className="font-bold">{locale === 'ar' ? 'EN' : 'عربي'}</span>
     </button>
   );
 }

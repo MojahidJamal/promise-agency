@@ -1,12 +1,14 @@
 import { getRequestConfig } from 'next-intl/server';
-import { getRequestConfig as getRequestConfigType } from 'next-intl';
 
 export default getRequestConfig(async ({ requestLocale }) => {
   const locale = await requestLocale;
   
+  // Ensure Arabic is the default locale
+  const finalLocale = locale || 'ar';
+  
   return {
-    locale,
-    messages: (await import(`./messages/${locale}.json`)).default,
+    locale: finalLocale,
+    messages: (await import(`./messages/${finalLocale}.json`)).default,
   };
 });
 

@@ -51,18 +51,18 @@ export default function TestimonialCarousel({
       </div>
 
       {/* Card */}
-      <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 pt-16 relative">
+      <div className="bg-white rounded-3xl shadow-trust-lg p-8 md:p-12 pt-16 relative border border-gray-100">
         {/* Quote Text */}
-        <blockquote className="text-xl md:text-2xl text-gray-700 mb-8 text-center leading-relaxed">
+        <blockquote className="text-xl md:text-2xl text-gray-700 mb-8 text-center leading-relaxed font-arabic">
           &quot;{locale === 'ar' ? currentTestimonial.quote_ar : currentTestimonial.quote_en}&quot;
         </blockquote>
 
         {/* Author */}
         <div className="text-center">
-          <div className="font-bold text-lg text-black">
+          <div className="font-bold text-lg text-gray-800 font-arabic">
             {locale === 'ar' ? currentTestimonial.name : (currentTestimonial.name_en || currentTestimonial.name)}
           </div>
-          <div className="text-primary font-medium">
+          <div className="text-primary font-medium font-arabic">
             {locale === 'ar' ? 'عميل سعيد' : 'Happy Customer'}
           </div>
         </div>
@@ -73,9 +73,9 @@ export default function TestimonialCarousel({
             <button
               onClick={prev}
               className={cn(
-                'absolute top-1/2 -translate-y-1/2 p-3 rounded-full',
-                'bg-gray-100 hover:bg-primary hover:text-white',
-                'transition-all duration-300 shadow-md',
+                'absolute top-1/2 -translate-y-1/2 p-3 rounded-xl',
+                'bg-white hover:bg-primary hover:text-white',
+                'transition-all duration-300 shadow-trust border border-gray-200',
                 isRTL ? 'right-4' : 'left-4'
               )}
               aria-label="Previous testimonial"
@@ -85,9 +85,9 @@ export default function TestimonialCarousel({
             <button
               onClick={next}
               className={cn(
-                'absolute top-1/2 -translate-y-1/2 p-3 rounded-full',
-                'bg-gray-100 hover:bg-primary hover:text-white',
-                'transition-all duration-300 shadow-md',
+                'absolute top-1/2 -translate-y-1/2 p-3 rounded-xl',
+                'bg-white hover:bg-primary hover:text-white',
+                'transition-all duration-300 shadow-trust border border-gray-200',
                 isRTL ? 'left-4' : 'right-4'
               )}
               aria-label="Next testimonial"

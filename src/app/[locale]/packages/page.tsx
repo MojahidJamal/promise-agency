@@ -37,8 +37,8 @@ export default function PackagesPage() {
         bgColor="gray"
       >
         {/* Filter */}
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex gap-2 bg-white p-2 rounded-xl shadow-lg">
+        <div className="flex justify-center mb-16">
+          <div className="inline-flex gap-2 bg-white p-2 rounded-2xl shadow-trust border border-gray-100">
             {[
               { value: 'all', label: isArabic ? 'الكل' : 'All' },
               { value: 'low', label: isArabic ? 'أقل من 800$' : 'Under $800' },
@@ -48,10 +48,10 @@ export default function PackagesPage() {
               <button
                 key={option.value}
                 onClick={() => setPriceRange(option.value)}
-                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 font-arabic ${
                   priceRange === option.value
-                    ? 'bg-primary text-white shadow-md'
-                    : 'text-gray-600 hover:bg-gray-100'
+                    ? 'bg-primary text-white shadow-trust-lg'
+                    : 'text-gray-600 hover:bg-primary/5 hover:text-primary'
                 }`}
               >
                 {option.label}
@@ -76,12 +76,19 @@ export default function PackagesPage() {
         </div>
 
         {filteredPackages.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-xl text-gray-500">
-              {isArabic
-                ? 'لا توجد باقات متاحة في هذا النطاق السعري'
-                : 'No packages available in this price range'}
-            </p>
+          <div className="text-center py-16">
+            <div className="bg-white rounded-3xl p-12 shadow-trust border border-gray-100 max-w-md mx-auto">
+              <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <p className="text-xl text-gray-600 font-arabic">
+                {isArabic
+                  ? 'لا توجد باقات متاحة في هذا النطاق السعري'
+                  : 'No packages available in this price range'}
+              </p>
+            </div>
           </div>
         )}
       </Section>

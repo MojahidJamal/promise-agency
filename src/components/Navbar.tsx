@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle, Plane } from 'lucide-react';
 import { cn } from '@/utils/cn';
 import LanguageSwitcher from './LanguageSwitcher';
 import { buildWhatsAppUrl } from '@/utils/whatsapp';
@@ -26,33 +26,38 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/10">
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
       <div className="container mx-auto">
-        <div className="flex items-center justify-between h-20 px-4">
+        <div className="flex items-center justify-between h-16 px-4">
           {/* Logo */}
           <Link href={`/${locale === 'ar' ? '' : locale}`} className="flex items-center gap-3">
-            <div className="relative w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
-              <Image
-                src="/images/logo.jpg"
-                alt="Trust Band Travel"
-                fill
-                className="object-cover"
-                priority
-              />
+            <div className="relative w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-primary to-primary/80">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Plane className="w-6 h-6 text-white" />
+              </div>
             </div>
-            <span className="text-xl md:text-2xl font-bold text-white hidden sm:block">
-              Trust Band{' '}
-              <span className="text-primary">Travel</span>
-            </span>
+            <div className="hidden sm:block">
+              <span className="text-lg font-bold text-gray-700 font-arabic">
+                Trust Band{' '}
+                <span className="text-primary">Travel</span>
+              </span>
+              <div className="text-xs text-gray-500 font-arabic">
+                {isRTL ? 'ترست باند للسفر' : 'Trust Band Travel'}
+              </div>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-white/80 hover:text-white transition-colors font-medium"
+                className={cn(
+                  'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200',
+                  'text-gray-700 hover:text-primary hover:bg-primary/5',
+                  'font-arabic'
+                )}
               >
                 {link.label}
               </Link>
@@ -60,19 +65,20 @@ export default function Navbar() {
           </div>
 
           {/* CTA & Language Switcher */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3">
             <LanguageSwitcher />
             <a
               href={buildWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                'flex items-center gap-2 px-6 py-3 rounded-lg',
-                'bg-primary hover:bg-primary/90 text-white font-medium',
-                'transition-all duration-300 shadow-lg hover:shadow-primary/50'
+                'flex items-center gap-2 px-4 py-2 rounded-xl',
+                'bg-primary hover:bg-primary/90 text-white font-medium text-sm',
+                'transition-all duration-300 shadow-trust hover:shadow-trust-lg',
+                'font-arabic'
               )}
             >
-              <MessageCircle className="w-5 h-5" />
+              <MessageCircle className="w-4 h-4" />
               <span>{t('hero.cta_whatsapp')}</span>
             </a>
           </div>
@@ -80,7 +86,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-white"
+            className="lg:hidden p-2 text-gray-700 hover:text-primary transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -89,31 +95,34 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden border-t border-white/10 bg-black/95">
-            <div className="flex flex-col gap-4 p-4">
+          <div className="lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-md">
+            <div className="flex flex-col gap-2 p-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-white/80 hover:text-white transition-colors font-medium py-2"
+                  className={cn(
+                    'px-4 py-3 rounded-lg text-gray-700 hover:text-primary hover:bg-primary/5',
+                    'transition-colors font-medium font-arabic'
+                  )}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="flex flex-col gap-3 pt-4 border-t border-white/10">
+              <div className="flex flex-col gap-3 pt-4 border-t border-gray-200">
                 <LanguageSwitcher />
                 <a
                   href={buildWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
-                    'flex items-center justify-center gap-2 px-6 py-3 rounded-lg',
+                    'flex items-center justify-center gap-2 px-4 py-3 rounded-xl',
                     'bg-primary hover:bg-primary/90 text-white font-medium',
-                    'transition-all duration-300'
+                    'transition-all duration-300 font-arabic'
                   )}
                 >
-                  <MessageCircle className="w-5 h-5" />
+                  <MessageCircle className="w-4 h-4" />
                   <span>{t('hero.cta_whatsapp')}</span>
                 </a>
               </div>
