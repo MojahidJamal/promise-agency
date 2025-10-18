@@ -49,12 +49,53 @@
     "services_desc": "We offer a comprehensive range of tourism services for your convenience",
     "about_title": "About Us",
     "about_desc": "Trust Band Travel is a leading travel agency providing excellent tourism services for years",
+    "about_intro": "We rely on specialized work teams to meet our clients' needs with precision and professionalism",
+    "about_highlight": "At Trust Band, we are distinguished by providing services with a high level of professionalism, with full commitment to punctuality and offering highly competitive prices, which reflects the quality of our services that you will not find a match for in the market",
     "contact_title": "Contact Us",
     "contact_desc": "We're happy to answer your questions and help you book your next trip",
     "gallery_desc": "Browse photos from our previous trips and get inspired for your next journey",
     "faq_desc": "Answers to the most common questions about our services",
     "privacy_title": "Privacy Policy",
     "privacy_desc": "We respect your privacy and are committed to protecting your personal data"
+  },
+  "teams": {
+    "customer_service": {
+      "title": "Customer Service Team",
+      "description": "Always ready to provide support and resolve any inquiries quickly and efficiently"
+    },
+    "flight_booking": {
+      "title": "Flight Ticket Booking Team",
+      "description": "Ensures you the best options and the lowest prices for travel locally and internationally"
+    },
+    "supervision": {
+      "title": "Supervision and Management Team",
+      "description": "Works to ensure the provision of services with exceptional quality"
+    },
+    "visa_services": {
+      "title": "Visa Services Team",
+      "description": "Experts in facilitating visa procedures for most countries of the world"
+    }
+  },
+  "about": {
+    "our_mission": "Our Mission",
+    "our_mission_desc": "We strive to make travel easy and enjoyable for every customer. We provide the best tourism services at competitive prices, ensuring your comfort and safety every step of the way.",
+    "our_values": "Our Values",
+    "trust": "Trust",
+    "trust_desc": "We build trust through transparency and credibility",
+    "quality": "Quality",
+    "quality_desc": "We provide high-quality services on every trip",
+    "customers_first": "Customers First",
+    "customers_first_desc": "Your satisfaction is our top priority",
+    "innovation": "Innovation",
+    "innovation_desc": "We always seek the best solutions and deals",
+    "why_choose_us": "Why Choose Trust Band?",
+    "why_choose_us_desc": "Trust Band is your ideal partner that you can rely on in all your transactions",
+    "stats": {
+      "happy_clients": "Happy Clients",
+      "destinations": "Destinations",
+      "trips": "Trips",
+      "support": "Support"
+    }
   },
   "contact_form": {
     "name": "Name",
