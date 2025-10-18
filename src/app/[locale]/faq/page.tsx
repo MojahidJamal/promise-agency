@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, MessageCircle, HelpCircle } from 'lucide-react';
 import Section from '@/components/Section';
 import { cn } from '@/utils/cn';
 import content from '@/content/trustband.json';
@@ -25,58 +25,102 @@ export default function FAQPage() {
       bgColor="white"
       waveHero={true}
     >
-      <div className="max-w-3xl mx-auto">
-        {faqs.map((faq, idx) => (
-          <div
-            key={idx}
-            className="mb-4 bg-white rounded-2xl shadow-xl overflow-hidden"
-          >
-            <button
-              onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-              className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
-            >
-              <span className="font-bold text-lg pr-4">{faq.question}</span>
-              <ChevronDown
-                className={cn(
-                  'w-6 h-6 text-primary flex-shrink-0 transition-transform duration-300',
-                  openIndex === idx && 'rotate-180'
-                )}
-              />
-            </button>
+      <div className="max-w-4xl mx-auto">
+        {/* FAQ Items */}
+        <div className="space-y-4 mb-12">
+          {faqs.map((faq, idx) => (
             <div
+              key={idx}
               className={cn(
-                'overflow-hidden transition-all duration-300',
-                openIndex === idx ? 'max-h-96' : 'max-h-0'
+                'bg-white rounded-2xl overflow-hidden',
+                'transition-all duration-300',
+                openIndex === idx 
+                  ? 'shadow-xl ring-2 ring-primary' 
+                  : 'shadow-lg hover:shadow-xl'
               )}
             >
-              <div className="px-6 pb-5 text-gray-700 leading-relaxed">
-                {faq.answer}
+              <button
+                onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+                className={cn(
+                  'w-full px-6 py-5 flex items-center justify-between',
+                  'hover:bg-gray-50 transition-colors',
+                  isArabic && 'flex-row-reverse'
+                )}
+              >
+                <div className={cn(
+                  'flex items-center gap-4 flex-1',
+                  isArabic && 'flex-row-reverse'
+                )}>
+                  <div className={cn(
+                    'w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0',
+                    'transition-colors duration-300',
+                    openIndex === idx 
+                      ? 'bg-primary text-white' 
+                      : 'bg-primary/10 text-primary'
+                  )}>
+                    <HelpCircle className="w-5 h-5" />
+                  </div>
+                  <span className={cn(
+                    'font-bold text-lg text-gray-900',
+                    isArabic ? 'text-right' : 'text-left'
+                  )}>
+                    {faq.question}
+                  </span>
+                </div>
+                <ChevronDown
+                  className={cn(
+                    'w-6 h-6 text-primary flex-shrink-0 transition-transform duration-300',
+                    openIndex === idx && 'rotate-180'
+                  )}
+                />
+              </button>
+              <div
+                className={cn(
+                  'overflow-hidden transition-all duration-300',
+                  openIndex === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                )}
+              >
+                <div className={cn(
+                  'px-6 pb-6 pt-2 text-gray-700 leading-relaxed',
+                  isArabic ? 'text-right pr-20' : 'text-left pl-20'
+                )}>
+                  {faq.answer}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {/* Still Have Questions */}
-      <div className="mt-12 text-center bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-10 max-w-2xl mx-auto shadow-xl">
-        <h3 className="text-2xl font-bold mb-4">
-          {isArabic ? 'لا تزال لديك أسئلة؟' : 'Still have questions?'}
-        </h3>
-        <p className="text-gray-600 mb-6">
-          {isArabic
-            ? 'تواصل معنا عبر واتساب وسنكون سعداء بمساعدتك'
-            : "Contact us on WhatsApp and we'll be happy to help"}
-        </p>
-        <a
-          href={content.brand.whatsapp}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-8 py-3 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-        >
-          {t('common.contact_us')}
-        </a>
+        {/* Contact CTA */}
+        <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-10 text-center">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
+            <MessageCircle className="w-8 h-8 text-primary" />
+          </div>
+          <h3 className="text-2xl font-bold mb-3 text-gray-900">
+            {isArabic ? 'لم تجد إجابة لسؤالك؟' : 'Didn\'t find your answer?'}
+          </h3>
+          <p className="text-gray-600 mb-6 max-w-md mx-auto">
+            {isArabic
+              ? 'فريقنا جاهز للإجابة على جميع استفساراتك عبر واتساب'
+              : 'Our team is ready to answer all your questions via WhatsApp'}
+          </p>
+          <a
+            href={content.brand.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              'inline-flex items-center gap-2 px-8 py-4 rounded-xl',
+              'bg-primary hover:bg-primary/90 text-white font-bold',
+              'transition-all duration-300 shadow-lg',
+              'hover:shadow-xl hover:scale-105',
+              'transform active:scale-95'
+            )}
+          >
+            <MessageCircle className="w-5 h-5" />
+            <span>{t('common.contact_us')}</span>
+          </a>
+        </div>
       </div>
     </Section>
   );
 }
-
