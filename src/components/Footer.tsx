@@ -66,7 +66,7 @@ export default function Footer() {
           <div className="space-y-4 mb-6">
             <h4 className="text-base font-bold text-center font-arabic" style={{ color: '#ffffff' }}>{t('footer.contact_info')}</h4>
             <div className="space-y-3">
-              <div className={cn('flex items-center gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
+              <div className="flex items-center gap-3">
                 <div className="w-6 h-6 bg-primary/20 rounded flex items-center justify-center flex-shrink-0">
                   <Mail className="w-3 h-3 text-primary" />
                 </div>
@@ -84,7 +84,7 @@ export default function Footer() {
               </div>
               
               {content.brand.phone && (
-                <div className={cn('flex items-center gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
+                <div className="flex items-center gap-3">
                   <div className="w-6 h-6 bg-primary/20 rounded flex items-center justify-center flex-shrink-0">
                     <Phone className="w-3 h-3 text-primary" />
                   </div>
