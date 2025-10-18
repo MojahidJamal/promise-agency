@@ -91,11 +91,6 @@ export default function AnimatedCursor() {
               'w-5 h-5 rounded-full',
               isOnPrimary ? 'bg-white' : 'bg-[#0d99e4]'
             )}
-            style={{
-              boxShadow: isOnPrimary 
-                ? '0 0 12px white, 0 0 24px rgba(255, 255, 255, 0.6)'
-                : '0 0 12px #0d99e4, 0 0 24px rgba(13, 153, 228, 0.6)',
-            }}
           />
         </motion.div>
       </motion.div>
@@ -124,11 +119,6 @@ export default function AnimatedCursor() {
               'w-12 h-12 rounded-full border-2',
               isOnPrimary ? 'border-white' : 'border-[#0d99e4]'
             )}
-            style={{
-              boxShadow: isOnPrimary 
-                ? '0 0 8px rgba(255, 255, 255, 0.4)'
-                : '0 0 8px rgba(13, 153, 228, 0.4)',
-            }}
           />
         </motion.div>
       </motion.div>
