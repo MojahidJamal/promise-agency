@@ -116,7 +116,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
           <div className="space-y-6">
-            <div className="bg-white rounded-2xl p-8 shadow-xl shadow-gray-200/50 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+            <div className="bg-white rounded-2xl p-8 shadow-gray-200/50 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
               <h3 className="text-2xl font-bold mb-6 text-gray-900">
                 {t('footer.contact_info')}
               </h3>
@@ -166,7 +166,7 @@ export default function ContactPage() {
             </div>
 
             {/* Social Media */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl shadow-gray-200/50 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+            <div className="bg-white rounded-2xl p-8 shadow-gray-200/50 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
               <h3 className="text-2xl font-bold mb-6 text-gray-900">
                 {t('footer.follow_us')}
               </h3>
@@ -197,7 +197,7 @@ export default function ContactPage() {
             </div>
 
             {/* WhatsApp CTA */}
-            <div className="bg-gradient-to-br from-primary to-primary/90 text-white rounded-2xl p-8 shadow-xl shadow-primary/20 shadow-[0_-4px_20px_rgba(13,153,228,0.2)]">
+            <div className="bg-gradient-to-br from-primary to-primary/90 text-white rounded-2xl p-8  shadow-primary/20 shadow-[0_-4px_20px_rgba(13,153,228,0.2)]">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
                   <MessageCircle className="w-7 h-7" />
@@ -230,7 +230,7 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl p-8 shadow-xl shadow-gray-200/50 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+          <div className="bg-white rounded-2xl p-8  shadow-gray-200/50 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
             <h3 className="text-2xl font-bold mb-2 text-gray-900">
               {t('common.send_message')}
             </h3>
