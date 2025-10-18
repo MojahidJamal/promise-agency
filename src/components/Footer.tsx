@@ -136,7 +136,10 @@ export default function Footer() {
                     </div>
                     <a
                       href={`tel:${content.brand.phone}`}
-                      className="text-white hover:text-primary transition-colors font-arabic block text-left"
+                      className={cn(
+                        "text-white hover:text-primary transition-colors font-arabic block",
+                        isRTL ? "text-right" : "text-left"
+                      )}
                     >
                       {content.brand.phone}
                     </a>
