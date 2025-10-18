@@ -69,13 +69,14 @@ export default function HeroFlight({
       strokeDashoffset: length 
     });
 
-    // Motion along path (align keeps nose aligned)
+    // Motion along path (plane nose follows path direction perfectly)
     t.to(planeRef.current, {
       duration: (durationMs / 1000) * 0.18,
       ease: "power3.out",
       motionPath: {
         path: pathRef.current,
         align: pathRef.current,
+        autoRotate: true,
         alignOrigin: [0.5, 0.5],
         start: 0.0,
         end: 0.18
@@ -84,12 +85,26 @@ export default function HeroFlight({
     .to(planeRef.current, {
       duration: (durationMs / 1000) * 0.62,
       ease: "none",
-      motionPath: { path: pathRef.current, align: pathRef.current, alignOrigin: [0.5, 0.5], start: 0.18, end: 0.80 }
+      motionPath: { 
+        path: pathRef.current, 
+        align: pathRef.current, 
+        autoRotate: true,
+        alignOrigin: [0.5, 0.5], 
+        start: 0.18, 
+        end: 0.80 
+      }
     })
     .to(planeRef.current, {
       duration: (durationMs / 1000) * 0.20,
       ease: "power2.out",
-      motionPath: { path: pathRef.current, align: pathRef.current, alignOrigin: [0.5, 0.5], start: 0.80, end: 1.0 }
+      motionPath: { 
+        path: pathRef.current, 
+        align: pathRef.current, 
+        autoRotate: true,
+        alignOrigin: [0.5, 0.5], 
+        start: 0.80, 
+        end: 1.0 
+      }
     });
 
     // Trail appears BEHIND plane as it moves (synchronized)
