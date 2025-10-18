@@ -27,10 +27,11 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   // Ensure Arabic is default
   const finalLocale = locale || 'ar';
   const isArabic = finalLocale === 'ar';
@@ -70,11 +71,12 @@ export async function generateMetadata({
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   // Ensure Arabic is default
   const finalLocale = locale || 'ar';
   
