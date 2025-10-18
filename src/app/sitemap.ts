@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://trustband.travel';
 
-  const routes = ['', '/packages', '/services', '/about', '/contact', '/gallery', '/faq'];
+  const routes = ['', '/packages', '/services', '/about', '/contact', '/faq'];
   const locales = ['ar', 'en'];
 
   const sitemapEntries: MetadataRoute.Sitemap = [];

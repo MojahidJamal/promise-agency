@@ -19,11 +19,11 @@ export default function Navbar() {
   const isRTL = locale === 'ar';
 
   const navLinks = [
-    { href: `/${locale === 'ar' ? '' : locale}`, label: t('nav.home') },
-    { href: `/${locale}/packages`, label: t('nav.packages') },
-    { href: `/${locale}/services`, label: t('nav.services') },
+    { href: `/${locale === 'ar' ? '' : locale}`, label: t('nav.home') }, { href: `/${locale}/services`, label: t('nav.services') },
+
+
     { href: `/${locale}/about`, label: t('nav.about') },
-    { href: `/${locale}/gallery`, label: t('nav.gallery') },
+    { href: `/${locale}/packages`, label: t('nav.packages') },
     { href: `/${locale}/contact`, label: t('nav.contact') },
     { href: `/${locale}/faq`, label: t('nav.faq') },
   ];
@@ -125,53 +125,53 @@ export default function Navbar() {
               transition={{ duration: 0.3, ease: 'easeOut' }}
               className="lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-md"
             >
-            <div className="flex flex-col gap-2 p-4">
-              {navLinks.map((link) => {
-                const isActive = isActiveLink(link.href);
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
+              <div className="flex flex-col gap-2 p-4">
+                {navLinks.map((link) => {
+                  const isActive = isActiveLink(link.href);
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={cn(
+                        'px-4 py-3 rounded-lg transition-colors font-medium font-arabic relative',
+                        isActive
+                          ? 'text-primary bg-primary/10 font-semibold'
+                          : 'text-gray-700 hover:text-primary hover:bg-primary/5'
+                      )}
+                    >
+                      {link.label}
+                      {isActive && (
+                        <motion.div
+                          className={cn(
+                            'absolute top-1/2 w-1 h-6 bg-primary rounded-full -translate-y-1/2',
+                            isRTL ? 'left-2' : 'right-2'
+                          )}
+                          layoutId="mobileActiveIndicator"
+                          transition={{ duration: 0.2, ease: 'easeOut' }}
+                        />
+                      )}
+                    </Link>
+                  );
+                })}
+                <div className="flex flex-col gap-3 pt-4 border-t border-gray-200">
+                  <LanguageSwitcher />
+                  <a
+                    href={buildWhatsAppUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={cn(
-                      'px-4 py-3 rounded-lg transition-colors font-medium font-arabic relative',
-                      isActive
-                        ? 'text-primary bg-primary/10 font-semibold'
-                        : 'text-gray-700 hover:text-primary hover:bg-primary/5'
+                      'flex items-center justify-center gap-2 px-4 py-3 rounded-xl',
+                      'bg-primary hover:bg-primary/90 text-white font-medium',
+                      'transition-all duration-300 font-arabic'
                     )}
                   >
-                    {link.label}
-                    {isActive && (
-                      <motion.div
-                        className={cn(
-                          'absolute top-1/2 w-1 h-6 bg-primary rounded-full -translate-y-1/2',
-                          isRTL ? 'left-2' : 'right-2'
-                        )}
-                        layoutId="mobileActiveIndicator"
-                        transition={{ duration: 0.2, ease: 'easeOut' }}
-                      />
-                    )}
-                  </Link>
-                );
-              })}
-              <div className="flex flex-col gap-3 pt-4 border-t border-gray-200">
-                <LanguageSwitcher />
-                <a
-                  href={buildWhatsAppUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    'flex items-center justify-center gap-2 px-4 py-3 rounded-xl',
-                    'bg-primary hover:bg-primary/90 text-white font-medium',
-                    'transition-all duration-300 font-arabic'
-                  )}
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>{t('hero.cta_whatsapp')}</span>
-                </a>
+                    <MessageCircle className="w-4 h-4" />
+                    <span>{t('hero.cta_whatsapp')}</span>
+                  </a>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
           )}
         </AnimatePresence>
       </div>

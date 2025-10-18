@@ -19,7 +19,6 @@ export default function Footer() {
     { href: `/${locale}/packages`, label: t('nav.packages') },
     { href: `/${locale}/services`, label: t('nav.services') },
     { href: `/${locale}/about`, label: t('nav.about') },
-    { href: `/${locale}/gallery`, label: t('nav.gallery') },
     { href: `/${locale}/contact`, label: t('nav.contact') },
     { href: `/${locale}/faq`, label: t('nav.faq') },
   ];

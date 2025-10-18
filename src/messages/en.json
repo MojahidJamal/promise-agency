@@ -6,7 +6,6 @@
     "destinations": "Destinations",
     "about": "About",
     "contact": "Contact",
-    "gallery": "Gallery",
     "faq": "FAQ"
   },
   "hero": {
@@ -20,7 +19,6 @@
     "featured_packages": "Featured Packages",
     "testimonials": "Testimonials",
     "why_us": "Why Choose Us?",
-    "gallery_title": "Gallery",
     "faq_title": "Frequently Asked Questions"
   },
   "common": {
@@ -53,7 +51,6 @@
     "about_highlight": "At Trust Band, we are distinguished by providing services with a high level of professionalism, with full commitment to punctuality and offering highly competitive prices, which reflects the quality of our services that you will not find a match for in the market",
     "contact_title": "Contact Us",
     "contact_desc": "We're happy to answer your questions and help you book your next trip",
-    "gallery_desc": "Browse photos from our previous trips and get inspired for your next journey",
     "faq_desc": "Answers to the most common questions about our services",
     "privacy_title": "Privacy Policy",
     "privacy_desc": "We respect your privacy and are committed to protecting your personal data"
