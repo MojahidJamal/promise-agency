@@ -102,7 +102,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.5, ease: 'easeOut' }}
             >
               <Link
-                href={`/${locale}/packages`}
+                href={`/${locale}/services`}
                 className={cn(
                   'flex items-center gap-2 md:gap-3 px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl',
                   'bg-white/10 hover:bg-white/20 text-white font-bold text-base md:text-lg',
