@@ -61,7 +61,7 @@ export default function FAQPage() {
                     <HelpCircle className="w-5 h-5" />
                   </div>
                   <span className={cn(
-                    'font-bold text-lg text-gray-900',
+                    'font-bold text-lg text-gray-900 flex-1',
                     isArabic ? 'text-right' : 'text-left'
                   )}>
                     {faq.question}
