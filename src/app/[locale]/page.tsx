@@ -6,6 +6,7 @@ import ServiceCard from '@/components/ServiceCard';
 import PackageCard from '@/components/PackageCard';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
 import content from '@/content/trustband.json';
+import { cn } from '@/utils/cn';
 
 export default function HomePage() {
   const t = useTranslations();

@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Section from '@/components/Section';
 import PackageCard from '@/components/PackageCard';
 import content from '@/content/trustband.json';
+import { cn } from '@/utils/cn';
 
 export default function PackagesPage() {
   const t = useTranslations();
