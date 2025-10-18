@@ -131,9 +131,12 @@ export default function Footer() {
                     'flex-1',
                     isRTL ? 'text-right order-1' : 'order-2'
                   )}>
+                    <div className="text-xs text-gray-300 mb-1 font-arabic">
+                      {isRTL ? 'الهاتف' : 'Phone'}
+                    </div>
                     <a
                       href={`tel:${content.brand.phone}`}
-                      className="text-white hover:text-primary transition-colors font-arabic block"
+                      className="text-white hover:text-primary transition-colors font-arabic block text-left"
                     >
                       {content.brand.phone}
                     </a>

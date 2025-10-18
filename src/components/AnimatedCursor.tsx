@@ -18,16 +18,22 @@ export default function AnimatedCursor() {
   const [isMounted, setIsMounted] = useState(false);
   const [particles, setParticles] = useState<Particle[]>([]);
 
-  const springConfig = { damping: 20, stiffness: 400, mass: 0.5 };
+  const springConfig = { damping: 25, stiffness: 300, mass: 0.3 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
     setIsMounted(true);
 
+    let animationFrame: number;
     const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+      animationFrame = requestAnimationFrame(() => {
+        cursorX.set(e.clientX);
+        cursorY.set(e.clientY);
+      });
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -67,6 +73,9 @@ export default function AnimatedCursor() {
     window.addEventListener('click', handleClick);
 
     return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
       window.removeEventListener('mousemove', moveCursor);
       window.removeEventListener('mouseover', handleMouseOver);
       window.removeEventListener('click', handleClick);
@@ -114,7 +123,7 @@ export default function AnimatedCursor() {
             <div
               className={cn(
                 'w-2 h-2 rounded-full -translate-x-1/2 -translate-y-1/2',
-                isOnFooter ? 'bg-white' : 'bg-primary'
+                isOnFooter ? 'bg-white' : 'bg-black'
               )}
             />
           </motion.div>
@@ -132,11 +141,11 @@ export default function AnimatedCursor() {
         <motion.div
           className="relative -translate-x-1/2 -translate-y-1/2"
           animate={{
-            scale: isHovering ? 2.5 : 2,
-            opacity: isHovering ? 0.15 : 0.08,
+            scale: isHovering ? 2.2 : 1.8,
+            opacity: isHovering ? 0.12 : 0.06,
           }}
           transition={{
-            duration: 0.6,
+            duration: 0.3,
             ease: 'easeOut',
           }}
         >
@@ -145,7 +154,7 @@ export default function AnimatedCursor() {
               'w-16 h-16 rounded-full blur-xl',
               isOnFooter 
                 ? 'bg-white' 
-                : 'bg-gradient-to-br from-primary to-blue-500'
+                : 'bg-black'
             )}
           />
         </motion.div>
@@ -174,7 +183,7 @@ export default function AnimatedCursor() {
               'w-3 h-3 rounded-full',
               isOnFooter 
                 ? 'bg-white shadow-lg shadow-white/50' 
-                : 'bg-gradient-to-br from-primary to-blue-600 shadow-lg shadow-primary/50'
+                : 'bg-black shadow-lg shadow-black/50'
             )}
             animate={{
               rotate: isHovering ? 180 : 0,
@@ -198,12 +207,12 @@ export default function AnimatedCursor() {
         <motion.div
           className="relative -translate-x-1/2 -translate-y-1/2"
           animate={{
-            scale: isHovering ? 1.6 : 1,
-            opacity: isHovering ? 0.8 : 0.5,
-            rotate: isHovering ? 90 : 0,
+            scale: isHovering ? 1.4 : 1,
+            opacity: isHovering ? 0.6 : 0.3,
+            rotate: isHovering ? 45 : 0,
           }}
           transition={{
-            duration: 0.3,
+            duration: 0.2,
             ease: 'easeOut',
           }}
         >
@@ -212,12 +221,12 @@ export default function AnimatedCursor() {
               'w-10 h-10 rounded-full border-2',
               isOnFooter 
                 ? 'border-white' 
-                : 'border-primary'
+                : 'border-black'
             )}
             style={{
               background: isOnFooter 
                 ? 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)'
-                : 'radial-gradient(circle, rgba(13,153,228,0.1) 0%, transparent 70%)',
+                : 'radial-gradient(circle, rgba(0,0,0,0.1) 0%, transparent 70%)',
             }}
           />
         </motion.div>
@@ -248,7 +257,7 @@ export default function AnimatedCursor() {
               'w-6 h-6 rounded-full',
               isOnFooter 
                 ? 'border border-white' 
-                : 'border border-primary'
+                : 'border border-black'
             )}
           />
         </motion.div>
