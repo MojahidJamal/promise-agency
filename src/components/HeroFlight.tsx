@@ -39,7 +39,7 @@ export default function HeroFlight({
   // Rounded "loop + arc" path (stays inside hero bounds). viewBox keeps it responsive.
   const pathD =
     "M 90,250 C 40,230 40,170 95,165 C 150,160 140,220 90,210 " + // small loop
-    "C 60,200 60,170 110,150 S 300,120 460,90 S 780,70 920,60";   // long arc
+    "C 60,200 60,170 110,150 S 300,120 460,90 S 680,85 750,100";   // arc ending near top text
 
   useEffect(() => {
     if (!pathRef.current || !planeRef.current) return;
@@ -61,9 +61,13 @@ export default function HeroFlight({
     // Timeline: accelerate -> cruise -> decelerate & stop
     const t = gsap.timeline({ defaults: { ease: "none" } });
 
-    // Draw the trail in sync (strokeDashoffset trick)
+    // Draw the trail BEHIND the plane (it follows the plane)
     const length = pathRef.current.getTotalLength?.() ?? 2000;
-    gsap.set(pathRef.current, { strokeDasharray: length, strokeDashoffset: length });
+    // Start with trail hidden
+    gsap.set(pathRef.current, { 
+      strokeDasharray: `${length} ${length}`,
+      strokeDashoffset: length 
+    });
 
     // Motion along path (align keeps nose aligned)
     t.to(planeRef.current, {
@@ -88,7 +92,7 @@ export default function HeroFlight({
       motionPath: { path: pathRef.current, align: pathRef.current, alignOrigin: [0.5, 0.5], start: 0.80, end: 1.0 }
     });
 
-    // Trail reveal synced to the whole timeline
+    // Trail appears BEHIND plane as it moves (synchronized)
     t.to(pathRef.current, {
       strokeDashoffset: 0,
       duration: durationMs / 1000,
