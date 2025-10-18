@@ -1,26 +1,30 @@
 "use client";
 
 import { useEffect } from "react";
-import Lenis from "@studio-freight/lenis";
 
 export default function SmoothScroll() {
   useEffect(() => {
-    const lenis = new Lenis({ 
-      duration: 1.1, 
-      smoothWheel: true 
-    });
+    // Simple CSS-based smooth scroll
+    document.documentElement.style.scrollBehavior = 'smooth';
     
-    let raf: number;
-    const loop = (time: number) => { 
-      lenis.raf(time); 
-      raf = requestAnimationFrame(loop); 
-    };
-    
-    raf = requestAnimationFrame(loop);
+    // Add smooth scroll for all browsers
+    const style = document.createElement('style');
+    style.textContent = `
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      * {
+        scroll-behavior: smooth;
+      }
+    `;
+    document.head.appendChild(style);
     
     return () => {
-      cancelAnimationFrame(raf);
-      lenis.destroy();
+      document.documentElement.style.scrollBehavior = 'auto';
+      if (style.parentNode) {
+        style.parentNode.removeChild(style);
+      }
     };
   }, []);
 

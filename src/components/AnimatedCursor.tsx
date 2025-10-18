@@ -18,7 +18,7 @@ export default function AnimatedCursor() {
   const [isMounted, setIsMounted] = useState(false);
   const [particles, setParticles] = useState<Particle[]>([]);
 
-  const springConfig = { damping: 25, stiffness: 300, mass: 0.3 };
+  const springConfig = { damping: 30, stiffness: 200, mass: 0.2 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 

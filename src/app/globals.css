@@ -46,8 +46,24 @@
   }
 }
 
-/* Smooth scroll */
+/* Smooth scroll - simplified */
 html {
+  scroll-behavior: smooth;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+/* Improve scroll performance */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Reduce animations during scroll for better performance */
+html:not(.scrolling) * {
   scroll-behavior: smooth;
 }
 
