@@ -76,16 +76,19 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-6 font-arabic" style={{ color: '#ffffff' }}>{t('footer.quick_links')}</h4>
             <ul className="space-y-3">
               {navLinks.map((link) => (
-                <li key={link.href}>
+                <li key={link.href} className={cn('', isRTL && 'text-right')}>
                   <Link
                     href={link.href}
                     className={cn(
-                      'hover:text-primary transition-colors font-arabic flex items-center gap-2 group',
-                      isRTL ? 'flex-row-reverse' : 'flex-row'
+                      'hover:text-primary transition-colors font-arabic group block',
+                      isRTL ? 'text-right' : 'text-left'
                     )}
                     style={{ color: '#d1d5db' }}
                   >
-                    <span className="w-1 h-1 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    <span className={cn(
+                      'w-1 h-1 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity inline-block mr-2',
+                      isRTL && 'ml-2 mr-0'
+                    )}></span>
                     {link.label}
                   </Link>
                 </li>
@@ -101,7 +104,7 @@ export default function Footer() {
                 <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Mail className="w-4 h-4 text-primary" />
                 </div>
-                <div>
+                <div className={cn('', isRTL && 'text-right')}>
                   <div className="text-xs text-gray-300 mb-1 font-arabic">{t('footer.email')}</div>
                   <a
                     href={`mailto:${content.brand.email}`}
@@ -116,7 +119,7 @@ export default function Footer() {
                   <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Phone className="w-4 h-4 text-primary" />
                   </div>
-                  <div>
+                  <div className={cn('', isRTL && 'text-right')}>
                     <a
                       href={`tel:${content.brand.phone}`}
                       className="text-white hover:text-primary transition-colors font-arabic"
@@ -130,7 +133,7 @@ export default function Footer() {
                 <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-4 h-4 text-primary" />
                 </div>
-                <div>
+                <div className={cn('', isRTL && 'text-right')}>
                   <div className="text-xs text-gray-300 mb-1 font-arabic">{t('footer.address')}</div>
                   <div className="text-white font-arabic">
                     {locale === 'ar' ? content.brand.address_ar : content.brand.address_en}
@@ -147,7 +150,7 @@ export default function Footer() {
               <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Clock className="w-4 h-4 text-primary" />
               </div>
-              <div>
+              <div className={cn('', isRTL && 'text-right')}>
                 <div className="text-white font-arabic leading-relaxed">
                   {locale === 'ar'
                     ? content.brand.working_hours_ar

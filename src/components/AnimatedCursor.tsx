@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { cn } from '@/utils/cn';
 
 export default function AnimatedCursor() {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   const [isHovering, setIsHovering] = useState(false);
+  const [isOnPrimary, setIsOnPrimary] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
   const springConfig = { damping: 25, stiffness: 300, mass: 0.5 };
@@ -30,7 +32,17 @@ export default function AnimatedCursor() {
         target.closest('button') ||
         target.classList.contains('cursor-pointer');
       
+      // Check if element has primary color background
+      const hasPrimaryBackground = 
+        target.classList.contains('bg-primary') ||
+        target.closest('.bg-primary') ||
+        target.classList.contains('bg-[#0d99e4]') ||
+        target.closest('.bg-[#0d99e4]') ||
+        target.classList.contains('gradient-bg') ||
+        target.closest('.gradient-bg');
+      
       setIsHovering(!!isInteractive);
+      setIsOnPrimary(!!hasPrimaryBackground);
     };
 
     window.addEventListener('mousemove', moveCursor);
@@ -56,9 +68,9 @@ export default function AnimatedCursor() {
         }
       `}</style>
 
-      {/* Custom cursor */}
+      {/* Custom cursor - Main dot */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference"
+        className="fixed top-0 left-0 pointer-events-none z-[9999]"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
@@ -67,7 +79,7 @@ export default function AnimatedCursor() {
         <motion.div
           className="relative -translate-x-1/2 -translate-y-1/2"
           animate={{
-            scale: isHovering ? 2 : 1,
+            scale: isHovering ? 1.8 : 1,
           }}
           transition={{
             duration: 0.2,
@@ -75,15 +87,20 @@ export default function AnimatedCursor() {
           }}
         >
           <div
-            className="w-3 h-3 rounded-full bg-[#0d99e4]"
+            className={cn(
+              'w-5 h-5 rounded-full',
+              isOnPrimary ? 'bg-white' : 'bg-[#0d99e4]'
+            )}
             style={{
-              boxShadow: '0 0 8px #0d99e4, 0 0 16px rgba(13, 153, 228, 0.5)',
+              boxShadow: isOnPrimary 
+                ? '0 0 12px white, 0 0 24px rgba(255, 255, 255, 0.6)'
+                : '0 0 12px #0d99e4, 0 0 24px rgba(13, 153, 228, 0.6)',
             }}
           />
         </motion.div>
       </motion.div>
 
-      {/* Outer ring when hovering */}
+      {/* Outer ring */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9998]"
         style={{
@@ -94,8 +111,8 @@ export default function AnimatedCursor() {
         <motion.div
           className="relative -translate-x-1/2 -translate-y-1/2"
           animate={{
-            scale: isHovering ? 1.5 : 0.8,
-            opacity: isHovering ? 0.5 : 0.3,
+            scale: isHovering ? 1.4 : 1,
+            opacity: isHovering ? 0.6 : 0.4,
           }}
           transition={{
             duration: 0.3,
@@ -103,9 +120,14 @@ export default function AnimatedCursor() {
           }}
         >
           <div
-            className="w-8 h-8 rounded-full border-2 border-[#0d99e4]"
+            className={cn(
+              'w-12 h-12 rounded-full border-2',
+              isOnPrimary ? 'border-white' : 'border-[#0d99e4]'
+            )}
             style={{
-              boxShadow: '0 0 6px rgba(13, 153, 228, 0.3)',
+              boxShadow: isOnPrimary 
+                ? '0 0 8px rgba(255, 255, 255, 0.4)'
+                : '0 0 8px rgba(13, 153, 228, 0.4)',
             }}
           />
         </motion.div>
