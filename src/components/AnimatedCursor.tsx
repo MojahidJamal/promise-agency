@@ -1,18 +1,24 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
 import { cn } from '@/utils/cn';
+
+interface Particle {
+  id: number;
+  x: number;
+  y: number;
+}
 
 export default function AnimatedCursor() {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   const [isHovering, setIsHovering] = useState(false);
-  const [isOnPrimary, setIsOnPrimary] = useState(false);
   const [isOnFooter, setIsOnFooter] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [particles, setParticles] = useState<Particle[]>([]);
 
-  const springConfig = { damping: 25, stiffness: 300, mass: 0.5 };
+  const springConfig = { damping: 20, stiffness: 400, mass: 0.5 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
@@ -33,15 +39,6 @@ export default function AnimatedCursor() {
         target.closest('button') ||
         target.classList.contains('cursor-pointer');
       
-      // Check if element has primary color background
-      const hasPrimaryBackground = 
-        target.classList.contains('bg-primary') ||
-        target.closest('.bg-primary') ||
-        target.classList.contains('bg-[#0d99e4]') ||
-        target.closest('.bg-[#0d99e4]') ||
-        target.classList.contains('gradient-bg') ||
-        target.closest('.gradient-bg');
-      
       // Check if element is in footer
       const isInFooter = 
         target.closest('footer') ||
@@ -49,16 +46,30 @@ export default function AnimatedCursor() {
         target.tagName === 'FOOTER';
       
       setIsHovering(!!isInteractive);
-      setIsOnPrimary(!!hasPrimaryBackground);
       setIsOnFooter(!!isInFooter);
+    };
+
+    const handleClick = (e: MouseEvent) => {
+      const newParticles: Particle[] = [];
+      for (let i = 0; i < 6; i++) {
+        newParticles.push({
+          id: Date.now() + i,
+          x: e.clientX,
+          y: e.clientY,
+        });
+      }
+      setParticles(newParticles);
+      setTimeout(() => setParticles([]), 600);
     };
 
     window.addEventListener('mousemove', moveCursor);
     window.addEventListener('mouseover', handleMouseOver);
+    window.addEventListener('click', handleClick);
 
     return () => {
       window.removeEventListener('mousemove', moveCursor);
       window.removeEventListener('mouseover', handleMouseOver);
+      window.removeEventListener('click', handleClick);
     };
   }, [cursorX, cursorY]);
 
@@ -76,6 +87,70 @@ export default function AnimatedCursor() {
         }
       `}</style>
 
+      {/* Click Particles */}
+      <AnimatePresence>
+        {particles.map((particle, index) => (
+          <motion.div
+            key={particle.id}
+            className="fixed top-0 left-0 pointer-events-none z-[9999]"
+            initial={{
+              x: particle.x,
+              y: particle.y,
+              scale: 1,
+              opacity: 1,
+            }}
+            animate={{
+              x: particle.x + (Math.cos((index * Math.PI * 2) / 6) * 50),
+              y: particle.y + (Math.sin((index * Math.PI * 2) / 6) * 50),
+              scale: 0,
+              opacity: 0,
+            }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 0.6,
+              ease: 'easeOut',
+            }}
+          >
+            <div
+              className={cn(
+                'w-2 h-2 rounded-full -translate-x-1/2 -translate-y-1/2',
+                isOnFooter ? 'bg-white' : 'bg-primary'
+              )}
+            />
+          </motion.div>
+        ))}
+      </AnimatePresence>
+
+      {/* Trailing effect - Multiple dots */}
+      <motion.div
+        className="fixed top-0 left-0 pointer-events-none z-[9997]"
+        style={{
+          x: cursorXSpring,
+          y: cursorYSpring,
+        }}
+      >
+        <motion.div
+          className="relative -translate-x-1/2 -translate-y-1/2"
+          animate={{
+            scale: isHovering ? 2.5 : 2,
+            opacity: isHovering ? 0.15 : 0.08,
+          }}
+          transition={{
+            duration: 0.6,
+            ease: 'easeOut',
+          }}
+        >
+          <div
+            className={cn(
+              'w-16 h-16 rounded-full blur-xl',
+              isOnFooter 
+                ? 'bg-white' 
+                : 'bg-gradient-to-br from-primary to-blue-500'
+            )}
+          />
+        </motion.div>
+      </motion.div>
+
       {/* Custom cursor - Main dot */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9999]"
@@ -87,23 +162,32 @@ export default function AnimatedCursor() {
         <motion.div
           className="relative -translate-x-1/2 -translate-y-1/2"
           animate={{
-            scale: isHovering ? 1.8 : 1,
+            scale: isHovering ? 2 : 1,
           }}
           transition={{
             duration: 0.2,
             ease: 'easeOut',
           }}
         >
-          <div
+          <motion.div
             className={cn(
-              'w-5 h-5 rounded-full',
-              isOnFooter ? 'bg-white' : 'bg-black'
+              'w-3 h-3 rounded-full',
+              isOnFooter 
+                ? 'bg-white shadow-lg shadow-white/50' 
+                : 'bg-gradient-to-br from-primary to-blue-600 shadow-lg shadow-primary/50'
             )}
+            animate={{
+              rotate: isHovering ? 180 : 0,
+            }}
+            transition={{
+              duration: 0.8,
+              ease: 'easeInOut',
+            }}
           />
         </motion.div>
       </motion.div>
 
-      {/* Outer ring */}
+      {/* Outer ring with gradient */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9998]"
         style={{
@@ -114,8 +198,9 @@ export default function AnimatedCursor() {
         <motion.div
           className="relative -translate-x-1/2 -translate-y-1/2"
           animate={{
-            scale: isHovering ? 1.4 : 1,
-            opacity: isHovering ? 0.6 : 0.4,
+            scale: isHovering ? 1.6 : 1,
+            opacity: isHovering ? 0.8 : 0.5,
+            rotate: isHovering ? 90 : 0,
           }}
           transition={{
             duration: 0.3,
@@ -124,8 +209,46 @@ export default function AnimatedCursor() {
         >
           <div
             className={cn(
-              'w-12 h-12 rounded-full border-2',
-              isOnFooter ? 'border-white' : 'border-black'
+              'w-10 h-10 rounded-full border-2',
+              isOnFooter 
+                ? 'border-white' 
+                : 'border-primary'
+            )}
+            style={{
+              background: isOnFooter 
+                ? 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)'
+                : 'radial-gradient(circle, rgba(13,153,228,0.1) 0%, transparent 70%)',
+            }}
+          />
+        </motion.div>
+      </motion.div>
+
+      {/* Inner pulsing ring */}
+      <motion.div
+        className="fixed top-0 left-0 pointer-events-none z-[9998]"
+        style={{
+          x: cursorXSpring,
+          y: cursorYSpring,
+        }}
+      >
+        <motion.div
+          className="relative -translate-x-1/2 -translate-y-1/2"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.3, 0, 0.3],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+        >
+          <div
+            className={cn(
+              'w-6 h-6 rounded-full',
+              isOnFooter 
+                ? 'border border-white' 
+                : 'border border-primary'
             )}
           />
         </motion.div>
