@@ -87,10 +87,7 @@ export default function AnimatedCursor() {
           }}
         >
           <div
-            className={cn(
-              'w-5 h-5 rounded-full',
-              isOnPrimary ? 'bg-white' : 'bg-[#0d99e4]'
-            )}
+            className="w-5 h-5 rounded-full bg-black"
           />
         </motion.div>
       </motion.div>
@@ -115,10 +112,7 @@ export default function AnimatedCursor() {
           }}
         >
           <div
-            className={cn(
-              'w-12 h-12 rounded-full border-2',
-              isOnPrimary ? 'border-white' : 'border-[#0d99e4]'
-            )}
+            className="w-12 h-12 rounded-full border-2 border-black"
           />
         </motion.div>
       </motion.div>
