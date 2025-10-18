@@ -56,7 +56,10 @@ export default function PackageCard({
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
         
         {/* Price Badge */}
-        <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg">
+        <div className={cn(
+          'absolute top-4 bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg',
+          isRTL ? 'left-4' : 'right-4'
+        )}>
           <div className="text-xs text-gray-500 font-medium">{t('common.from')}</div>
           <div className="text-2xl font-bold text-primary">
             ${price}
@@ -64,7 +67,10 @@ export default function PackageCard({
         </div>
 
         {/* Rating Badge */}
-        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-full px-3 py-2 shadow-lg">
+        <div className={cn(
+          'absolute top-4 bg-white/95 backdrop-blur-sm rounded-full px-3 py-2 shadow-lg',
+          isRTL ? 'right-4' : 'left-4'
+        )}>
           <div className="flex items-center gap-1">
             <Star className="w-4 h-4 text-yellow-500 fill-current" />
             <span className="text-sm font-bold text-gray-700">5.0</span>
@@ -75,7 +81,7 @@ export default function PackageCard({
       {/* Content */}
       <div className="p-6">
         {/* Title */}
-        <div className="flex items-start gap-3 mb-4">
+        <div className={cn('flex items-start gap-3 mb-4', isRTL && 'flex-row-reverse')}>
           <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
             <MapPin className="w-4 h-4 text-primary" />
           </div>

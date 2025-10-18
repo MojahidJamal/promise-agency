@@ -33,7 +33,10 @@ export default function HomePage() {
 
       {/* Services Section */}
       <Section title={t('sections.services')} bgColor="gray">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className={cn(
+          'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6',
+          isArabic && 'lg:grid-flow-col-dense'
+        )}>
           {services.map((service) => (
             <ServiceCard
               key={service.id}
@@ -47,7 +50,10 @@ export default function HomePage() {
 
       {/* Featured Packages */}
       <Section title={t('sections.featured_packages')} bgColor="white">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className={cn(
+          'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8',
+          isArabic && 'lg:grid-flow-col-dense'
+        )}>
           {featuredPackages.map((pkg) => (
             <PackageCard
               key={pkg.slug}
@@ -69,7 +75,10 @@ export default function HomePage() {
 
       {/* Why Choose Us */}
       <Section title={t('sections.why_us')} bgColor="primary">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className={cn(
+          'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8',
+          isArabic && 'lg:grid-flow-col-dense'
+        )}>
           {[
             {
               icon: Shield,

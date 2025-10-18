@@ -2,6 +2,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Section from '@/components/Section';
 import ServiceCard from '@/components/ServiceCard';
 import content from '@/content/trustband.json';
+import { cn } from '@/utils/cn';
 
 export default function ServicesPage() {
   const t = useTranslations();
@@ -20,7 +21,10 @@ export default function ServicesPage() {
       subtitle={t('pages.services_desc')}
       bgColor="gray"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className={cn(
+        'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8',
+        isArabic && 'lg:grid-flow-col-dense'
+      )}>
         {services.map((service) => (
           <ServiceCard
             key={service.id}
