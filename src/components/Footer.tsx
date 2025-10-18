@@ -41,9 +41,73 @@ export default function Footer() {
         }} />
       </div>
 
-      <div className="container mx-auto px-4 py-16 md:py-20 relative z-10">
+      <div className="container mx-auto px-4 py-8 md:py-16 lg:py-20 relative z-10">
+        {/* Mobile: Compact Layout */}
+        <div className="block md:hidden">
+          <div className="text-center mb-8">
+            <Link href={`/${locale === 'ar' ? '' : locale}`} className="inline-block">
+              <Image
+                src="/images/logo.jpg"
+                alt="Trust Band Travel Logo"
+                width={180}
+                height={80}
+                className="h-16 w-auto object-contain rounded-xl border-2 border-gray-300/20 p-2 mx-auto"
+              />
+            </Link>
+            <p className="text-sm leading-relaxed mt-4 font-arabic" style={{ color: '#d1d5db' }}>
+              {t('footer.about_desc')}
+            </p>
+            <div className="mt-4">
+              <SocialBar />
+            </div>
+          </div>
+          
+          {/* Mobile Contact Info */}
+          <div className="space-y-4 mb-6">
+            <h4 className="text-base font-bold text-center font-arabic" style={{ color: '#ffffff' }}>{t('footer.contact_info')}</h4>
+            <div className="space-y-3">
+              <div className={cn('flex items-center gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
+                <div className="w-6 h-6 bg-primary/20 rounded flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-3 h-3 text-primary" />
+                </div>
+                <div className={cn('flex-1', isRTL ? 'text-right' : 'text-left')}>
+                  <a
+                    href={`mailto:${content.brand.email}`}
+                    className={cn(
+                      "text-white hover:text-primary transition-colors font-arabic text-sm block",
+                      isRTL ? "text-right" : "text-left"
+                    )}
+                  >
+                    {content.brand.email}
+                  </a>
+                </div>
+              </div>
+              
+              {content.brand.phone && (
+                <div className={cn('flex items-center gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
+                  <div className="w-6 h-6 bg-primary/20 rounded flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-3 h-3 text-primary" />
+                  </div>
+                  <div className={cn('flex-1', isRTL ? 'text-right' : 'text-left')}>
+                    <a
+                      href={`tel:${content.brand.phone}`}
+                      className={cn(
+                        "text-white hover:text-primary transition-colors font-arabic text-sm block",
+                        isRTL ? "text-right" : "text-left"
+                      )}
+                    >
+                      {content.brand.phone}
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop: Full Layout */}
         <div className={cn(
-          'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16',
+          'hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16',
           isRTL && 'lg:grid-flow-col-dense'
         )}>
           {/* About */}
@@ -100,20 +164,17 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-6 font-arabic" style={{ color: '#ffffff' }}>{t('footer.contact_info')}</h4>
             <ul className="space-y-4">
               <li className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
-                <div className={cn(
-                  'w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0',
-                  isRTL ? 'order-2' : 'order-1'
-                )}>
+                <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Mail className="w-4 h-4 text-primary" />
                 </div>
-                <div className={cn(
-                  'flex-1',
-                  isRTL ? 'text-right order-1' : 'order-2'
-                )}>
+                <div className={cn('flex-1', isRTL ? 'text-right' : 'text-left')}>
                   <div className="text-xs text-gray-300 mb-1 font-arabic">{t('footer.email')}</div>
                   <a
                     href={`mailto:${content.brand.email}`}
-                    className="text-white hover:text-primary transition-colors font-arabic block"
+                    className={cn(
+                      "text-white hover:text-primary transition-colors font-arabic block",
+                      isRTL ? "text-right" : "text-left"
+                    )}
                   >
                     {content.brand.email}
                   </a>
@@ -121,16 +182,10 @@ export default function Footer() {
               </li>
               {content.brand.phone && (
                 <li className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
-                  <div className={cn(
-                    'w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0',
-                    isRTL ? 'order-2' : 'order-1'
-                  )}>
+                  <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Phone className="w-4 h-4 text-primary" />
                   </div>
-                  <div className={cn(
-                    'flex-1',
-                    isRTL ? 'text-right order-1' : 'order-2'
-                  )}>
+                  <div className={cn('flex-1', isRTL ? 'text-right' : 'text-left')}>
                     <div className="text-xs text-gray-300 mb-1 font-arabic">
                       {isRTL ? 'الهاتف' : 'Phone'}
                     </div>
@@ -147,18 +202,15 @@ export default function Footer() {
                 </li>
               )}
               <li className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
-                <div className={cn(
-                  'w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0',
-                  isRTL ? 'order-2' : 'order-1'
-                )}>
+                <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-4 h-4 text-primary" />
                 </div>
-                <div className={cn(
-                  'flex-1',
-                  isRTL ? 'text-right order-1' : 'order-2'
-                )}>
+                <div className={cn('flex-1', isRTL ? 'text-right' : 'text-left')}>
                   <div className="text-xs text-gray-300 mb-1 font-arabic">{t('footer.address')}</div>
-                  <div className="text-white font-arabic">
+                  <div className={cn(
+                    "text-white font-arabic",
+                    isRTL ? "text-right" : "text-left"
+                  )}>
                     {locale === 'ar' ? content.brand.address_ar : content.brand.address_en}
                   </div>
                 </div>
@@ -170,17 +222,14 @@ export default function Footer() {
           <div className={cn('', isRTL && 'text-right')}>
             <h4 className="text-lg font-bold mb-6 font-arabic" style={{ color: '#ffffff' }}>{t('footer.working_hours')}</h4>
             <div className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
-              <div className={cn(
-                'w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0',
-                isRTL ? 'order-2' : 'order-1'
-              )}>
+              <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Clock className="w-4 h-4 text-primary" />
               </div>
-              <div className={cn(
-                'flex-1',
-                isRTL ? 'text-right order-1' : 'order-2'
-              )}>
-                <div className="text-white font-arabic leading-relaxed">
+              <div className={cn('flex-1', isRTL ? 'text-right' : 'text-left')}>
+                <div className={cn(
+                  "text-white font-arabic leading-relaxed",
+                  isRTL ? "text-right" : "text-left"
+                )}>
                   {locale === 'ar'
                     ? content.brand.working_hours_ar
                     : content.brand.working_hours_en}
@@ -191,15 +240,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700 pt-8">
+        <div className="border-t border-gray-700 pt-4 md:pt-8">
           <div className={cn(
-            'flex flex-col md:flex-row justify-between items-center gap-4',
+            'flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4',
             isRTL && 'md:flex-row-reverse'
           )}>
-            <p className="font-arabic" style={{ color: '#d1d5db' }}>
+            <p className="font-arabic text-sm md:text-base text-center md:text-left" style={{ color: '#d1d5db' }}>
               © {new Date().getFullYear()} Trust Band Travel. {t('footer.rights')}.
             </p>
-            <div className={cn('flex items-center gap-4 text-sm', isRTL ? 'flex-row-reverse' : 'flex-row')} style={{ color: '#d1d5db' }}>
+            <div className={cn('flex items-center gap-3 md:gap-4 text-xs md:text-sm', isRTL ? 'flex-row-reverse' : 'flex-row')} style={{ color: '#d1d5db' }}>
               <Link href={`/${locale}/privacy`} className="hover:text-primary transition-colors font-arabic">
                 {isRTL ? 'سياسة الخصوصية' : 'Privacy Policy'}
               </Link>
