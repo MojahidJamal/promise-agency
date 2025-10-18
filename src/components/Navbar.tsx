@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Menu, X, MessageCircle, Plane } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/utils/cn';
@@ -13,6 +14,7 @@ import { buildWhatsAppUrl } from '@/utils/whatsapp';
 export default function Navbar() {
   const t = useTranslations();
   const locale = useLocale();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const isRTL = locale === 'ar';
 
@@ -25,6 +27,15 @@ export default function Navbar() {
     { href: `/${locale}/contact`, label: t('nav.contact') },
     { href: `/${locale}/faq`, label: t('nav.faq') },
   ];
+
+  // Function to check if a link is active
+  const isActiveLink = (href: string) => {
+    if (href === `/${locale === 'ar' ? '' : locale}`) {
+      // For home page, check if pathname is exactly the locale or root
+      return pathname === `/${locale}` || pathname === '/' || pathname === `/${locale}/`;
+    }
+    return pathname === href || pathname.startsWith(href + '/');
+  };
 
   return (
     <motion.nav
@@ -58,19 +69,31 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200',
-                  'text-gray-700 hover:text-primary hover:bg-primary/5',
-                  'font-arabic'
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = isActiveLink(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative',
+                    'font-arabic',
+                    isActive
+                      ? 'text-primary bg-primary/10 font-semibold'
+                      : 'text-gray-700 hover:text-primary hover:bg-primary/5'
+                  )}
+                >
+                  {link.label}
+                  {isActive && (
+                    <motion.div
+                      className="absolute bottom-0 left-1/2 w-1 h-1 bg-primary rounded-full -translate-x-1/2"
+                      layoutId="activeIndicator"
+                      transition={{ duration: 0.2, ease: 'easeOut' }}
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
           {/* CTA & Language Switcher */}
@@ -113,19 +136,34 @@ export default function Navbar() {
               className="lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-md"
             >
             <div className="flex flex-col gap-2 p-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={cn(
-                    'px-4 py-3 rounded-lg text-gray-700 hover:text-primary hover:bg-primary/5',
-                    'transition-colors font-medium font-arabic'
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = isActiveLink(link.href);
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      'px-4 py-3 rounded-lg transition-colors font-medium font-arabic relative',
+                      isActive
+                        ? 'text-primary bg-primary/10 font-semibold'
+                        : 'text-gray-700 hover:text-primary hover:bg-primary/5'
+                    )}
+                  >
+                    {link.label}
+                    {isActive && (
+                      <motion.div
+                        className={cn(
+                          'absolute top-1/2 w-1 h-6 bg-primary rounded-full -translate-y-1/2',
+                          isRTL ? 'left-2' : 'right-2'
+                        )}
+                        layoutId="mobileActiveIndicator"
+                        transition={{ duration: 0.2, ease: 'easeOut' }}
+                      />
+                    )}
+                  </Link>
+                );
+              })}
               <div className="flex flex-col gap-3 pt-4 border-t border-gray-200">
                 <LanguageSwitcher />
                 <a
