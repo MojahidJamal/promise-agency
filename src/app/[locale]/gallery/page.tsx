@@ -23,7 +23,8 @@ export default function GalleryPage() {
     <Section
       title={t('sections.gallery_title')}
       subtitle={t('pages.gallery_desc')}
-      bgColor="gray"
+      bgColor="white"
+      waveHero={true}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {images.map((image, idx) => (
@@ -48,7 +49,7 @@ export default function GalleryPage() {
       </div>
 
       {/* Coming Soon Note */}
-      <div className="mt-12 text-center bg-white rounded-2xl p-8 shadow-lg">
+      <div className="mt-12 text-center bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-100">
         <p className="text-gray-600 text-lg">
           {isArabic
             ? 'المزيد من الصور قريباً! تابعونا على وسائل التواصل الاجتماعي لمشاهدة آخر الرحلات.'

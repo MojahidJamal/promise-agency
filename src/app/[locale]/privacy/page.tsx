@@ -10,9 +10,10 @@ export default function PrivacyPage() {
     <Section
       title={t('pages.privacy_title')}
       subtitle={t('pages.privacy_desc')}
-      bgColor="gray"
+      bgColor="white"
+      waveHero={true}
     >
-      <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+      <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-xl border-2 border-gray-100">
         <div className="prose prose-lg max-w-none">
           {isArabic ? (
             <>

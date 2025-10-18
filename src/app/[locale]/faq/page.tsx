@@ -22,13 +22,14 @@ export default function FAQPage() {
     <Section
       title={t('sections.faq_title')}
       subtitle={t('pages.faq_desc')}
-      bgColor="gray"
+      bgColor="white"
+      waveHero={true}
     >
       <div className="max-w-3xl mx-auto">
         {faqs.map((faq, idx) => (
           <div
             key={idx}
-            className="mb-4 bg-white rounded-2xl shadow-lg overflow-hidden"
+            className="mb-4 bg-white rounded-2xl shadow-xl border-2 border-gray-100 overflow-hidden"
           >
             <button
               onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
@@ -57,7 +58,7 @@ export default function FAQPage() {
       </div>
 
       {/* Still Have Questions */}
-      <div className="mt-12 text-center bg-primary/5 rounded-2xl p-8 max-w-2xl mx-auto">
+      <div className="mt-12 text-center bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-10 max-w-2xl mx-auto shadow-xl border-2 border-primary/20">
         <h3 className="text-2xl font-bold mb-4">
           {isArabic ? 'لا تزال لديك أسئلة؟' : 'Still have questions?'}
         </h3>

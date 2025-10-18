@@ -19,7 +19,8 @@ export default function ServicesPage() {
     <Section
       title={t('pages.services_title')}
       subtitle={t('pages.services_desc')}
-      bgColor="gray"
+      bgColor="white"
+      waveHero={true}
     >
       <div className={cn(
         'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8',

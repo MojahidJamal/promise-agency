@@ -35,11 +35,12 @@ export default function PackagesPage() {
       <Section
         title={t('pages.packages_title')}
         subtitle={t('pages.packages_desc')}
-        bgColor="gray"
+        bgColor="white"
+        waveHero={true}
       >
         {/* Filter */}
         <div className="flex justify-center mb-16">
-          <div className="inline-flex gap-2 bg-white p-2 rounded-2xl shadow-trust border border-gray-100">
+          <div className="inline-flex gap-2 bg-white p-2 rounded-2xl shadow-xl border-2 border-gray-100">
             {[
               { value: 'all', label: isArabic ? 'الكل' : 'All' },
               { value: 'low', label: isArabic ? 'أقل من 800$' : 'Under $800' },
@@ -81,7 +82,7 @@ export default function PackagesPage() {
 
         {filteredPackages.length === 0 && (
           <div className="text-center py-16">
-            <div className="bg-white rounded-3xl p-12 shadow-trust border border-gray-100 max-w-md mx-auto">
+            <div className="bg-white rounded-3xl p-12 shadow-xl border-2 border-gray-100 max-w-md mx-auto">
               <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
