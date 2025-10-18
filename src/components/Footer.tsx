@@ -101,14 +101,20 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-6 font-arabic" style={{ color: '#ffffff' }}>{t('footer.contact_info')}</h4>
             <ul className="space-y-4">
               <li className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
-                <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className={cn(
+                  'w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0',
+                  isRTL ? 'order-2' : 'order-1'
+                )}>
                   <Mail className="w-4 h-4 text-primary" />
                 </div>
-                <div className={cn('', isRTL && 'text-right')}>
+                <div className={cn(
+                  'flex-1',
+                  isRTL ? 'text-right order-1' : 'order-2'
+                )}>
                   <div className="text-xs text-gray-300 mb-1 font-arabic">{t('footer.email')}</div>
                   <a
                     href={`mailto:${content.brand.email}`}
-                    className="text-white hover:text-primary transition-colors font-arabic"
+                    className="text-white hover:text-primary transition-colors font-arabic block"
                   >
                     {content.brand.email}
                   </a>
@@ -116,13 +122,19 @@ export default function Footer() {
               </li>
               {content.brand.phone && (
                 <li className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
-                  <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className={cn(
+                    'w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0',
+                    isRTL ? 'order-2' : 'order-1'
+                  )}>
                     <Phone className="w-4 h-4 text-primary" />
                   </div>
-                  <div className={cn('', isRTL && 'text-right')}>
+                  <div className={cn(
+                    'flex-1',
+                    isRTL ? 'text-right order-1' : 'order-2'
+                  )}>
                     <a
                       href={`tel:${content.brand.phone}`}
-                      className="text-white hover:text-primary transition-colors font-arabic"
+                      className="text-white hover:text-primary transition-colors font-arabic block"
                     >
                       {content.brand.phone}
                     </a>
@@ -130,10 +142,16 @@ export default function Footer() {
                 </li>
               )}
               <li className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
-                <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className={cn(
+                  'w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0',
+                  isRTL ? 'order-2' : 'order-1'
+                )}>
                   <MapPin className="w-4 h-4 text-primary" />
                 </div>
-                <div className={cn('', isRTL && 'text-right')}>
+                <div className={cn(
+                  'flex-1',
+                  isRTL ? 'text-right order-1' : 'order-2'
+                )}>
                   <div className="text-xs text-gray-300 mb-1 font-arabic">{t('footer.address')}</div>
                   <div className="text-white font-arabic">
                     {locale === 'ar' ? content.brand.address_ar : content.brand.address_en}
@@ -147,10 +165,16 @@ export default function Footer() {
           <div className={cn('', isRTL && 'text-right')}>
             <h4 className="text-lg font-bold mb-6 font-arabic" style={{ color: '#ffffff' }}>{t('footer.working_hours')}</h4>
             <div className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
-              <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className={cn(
+                'w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0',
+                isRTL ? 'order-2' : 'order-1'
+              )}>
                 <Clock className="w-4 h-4 text-primary" />
               </div>
-              <div className={cn('', isRTL && 'text-right')}>
+              <div className={cn(
+                'flex-1',
+                isRTL ? 'text-right order-1' : 'order-2'
+              )}>
                 <div className="text-white font-arabic leading-relaxed">
                   {locale === 'ar'
                     ? content.brand.working_hours_ar
@@ -185,4 +209,3 @@ export default function Footer() {
     </motion.footer>
   );
 }
-
