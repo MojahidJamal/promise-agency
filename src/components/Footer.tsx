@@ -2,7 +2,8 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
-import { MapPin, Clock, Mail, Phone, Plane } from 'lucide-react';
+import Image from 'next/image';
+import { MapPin, Clock, Mail, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { cn } from '@/utils/cn';
 import content from '@/content/trustband.json';
@@ -48,18 +49,16 @@ export default function Footer() {
         )}>
           {/* About */}
           <div className="lg:col-span-1">
-            <div className={cn('flex items-center gap-3 mb-6', isRTL ? 'flex-row-reverse' : 'flex-row')}>
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center">
-                <Plane className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold font-arabic">
-                  Trust Band <span className="text-primary">Travel</span>
-                </h3>
-                <div className="text-xs text-gray-300 font-arabic">
-                  {isRTL ? 'ترست باند للسفر' : 'Trust Band Travel'}
-                </div>
-              </div>
+            <div className="mb-6">
+              <Link href={`/${locale === 'ar' ? '' : locale}`} className="inline-block">
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Trust Band Travel Logo"
+                  width={220}
+                  height={100}
+                  className="h-20 md:h-24 lg:h-28 w-auto object-contain rounded-xl border-2 border-gray-300/20 p-2"
+                />
+              </Link>
             </div>
             <p className="leading-relaxed mb-6 font-arabic" style={{ color: '#d1d5db' }}>
               {t('footer.about_desc')}

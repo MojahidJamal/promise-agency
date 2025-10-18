@@ -49,6 +49,11 @@ export async function generateMetadata({
     keywords: isArabic
       ? 'وكالة سفر, حجوزات طيران, فنادق, باقات سياحية, تأشيرات, عمرة'
       : 'travel agency, flight bookings, hotels, tour packages, visas, umrah',
+    icons: {
+      icon: '/images/logo.jpg',
+      shortcut: '/images/logo.jpg',
+      apple: '/images/logo.jpg',
+    },
     openGraph: {
       title: isArabic
         ? 'Trust Band Travel - رحلات تثق بها'
