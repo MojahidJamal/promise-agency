@@ -1,5 +1,5 @@
 import { useTranslations, useLocale } from 'next-intl';
-import { Shield, MessageCircle, DollarSign, Target } from 'lucide-react';
+import { Shield, MessageCircle, DollarSign, Target, Users, Compass, Globe, Headphones } from 'lucide-react';
 import Hero from '@/components/Hero';
 import Section from '@/components/Section';
 import ServiceCard from '@/components/ServiceCard';
@@ -59,8 +59,77 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Statistics Section */}
+      <Section title={isArabic ? 'أرقامنا تتحدث' : 'Our Numbers Speak'} bgColor="white">
+        <div className="mb-8 text-center max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 font-arabic leading-relaxed">
+            {isArabic 
+              ? 'أرقام تتحدث عن نجاحنا وثقة عملائنا'
+              : 'Numbers that speak to our success and client trust'
+            }
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            { 
+              number: '500+', 
+              label: t('about.stats.happy_clients'), 
+              icon: Users
+            },
+            { 
+              number: '50+', 
+              label: t('about.stats.destinations'), 
+              icon: Compass
+            },
+            { 
+              number: '1000+', 
+              label: t('about.stats.trips'), 
+              icon: Globe
+            },
+            { 
+              number: '24/7', 
+              label: t('about.stats.support'), 
+              icon: Headphones
+            },
+          ].map((stat, idx) => {
+            const Icon = stat.icon;
+            return (
+              <div key={idx} className="group">
+                <div className="relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden hover:-translate-y-3">
+                  {/* Gradient Background on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Decorative Corner Accent */}
+                  <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-colors duration-500"></div>
+                  
+                  <div className="relative z-10 text-center">
+                    {/* Icon */}
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-2xl mb-4 shadow-2xl shadow-primary/30 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+                    
+                    {/* Number */}
+                    <div className="text-4xl md:text-5xl font-extrabold text-primary mb-3 group-hover:scale-110 transition-transform duration-500">
+                      {stat.number}
+                    </div>
+                    
+                    {/* Label */}
+                    <div className="text-lg font-bold text-gray-700 group-hover:text-gray-900 transition-colors duration-300 font-arabic">
+                      {stat.label}
+                    </div>
+                    
+                    {/* Decorative Line */}
+                    <div className="w-16 h-1.5 bg-primary rounded-full mx-auto mt-4 group-hover:w-24 transition-all duration-500"></div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </Section>
+
       {/* Featured Packages */}
-      <Section title={t('sections.featured_packages')} bgColor="white">
+      <Section title={t('sections.featured_packages')} bgColor="gray">
         <div className={cn(
           'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8',
           isArabic && 'lg:grid-flow-col-dense'
