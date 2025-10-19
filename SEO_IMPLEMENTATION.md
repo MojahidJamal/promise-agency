@@ -158,7 +158,7 @@ Comprehensive sitemap including:
 ### Recommended Next Steps
 
 1. **Google Search Console**
-   - Submit sitemap: `https://trust-band-travel.vercel.app/sitemap.xml`
+   - Submit sitemap: `https://www.trustbandtravel.com/sitemap.xml`
    - Monitor crawl errors
    - Track search performance
 

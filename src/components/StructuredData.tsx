@@ -17,7 +17,7 @@ export default function StructuredData({
 }: StructuredDataProps) {
   const locale = useLocale();
   const isArabic = locale === 'ar';
-  const baseUrl = 'https://trust-band-travel.vercel.app';
+  const baseUrl = 'https://www.trustbandtravel.com';
 
   const organizationSchema = {
     '@context': 'https://schema.org',
