@@ -10,8 +10,8 @@ export async function generateMetadata({
 
   return {
     title: isArabic
-      ? 'الأسئلة الشائعة - Trust Band Travel | إجابات لجميع استفساراتك'
-      : 'Frequently Asked Questions - Trust Band Travel | Answers to All Your Inquiries',
+      ? 'الأسئلة الشائعة - Promise Agency | إجابات لجميع استفساراتك'
+      : 'Frequently Asked Questions - Promise Agency | Answers to All Your Inquiries',
     description: isArabic
       ? 'إجابات شاملة على الأسئلة الأكثر شيوعاً حول خدماتنا السياحية: كيفية الحجز، إجراءات التأشيرات، طرق الدفع، سياسة الإلغاء، أوقات السفر المناسبة، المستندات المطلوبة، والمزيد. احصل على جميع المعلومات التي تحتاجها قبل حجز رحلتك.'
       : 'Comprehensive answers to the most frequently asked questions about our tourism services: how to book, visa procedures, payment methods, cancellation policy, suitable travel times, required documents, and more. Get all the information you need before booking your trip.',
@@ -56,8 +56,8 @@ export async function generateMetadata({
         ].join(', '),
     openGraph: {
       title: isArabic
-        ? 'الأسئلة الشائعة - Trust Band Travel'
-        : 'Frequently Asked Questions - Trust Band Travel',
+        ? 'الأسئلة الشائعة - Promise Agency'
+        : 'Frequently Asked Questions - Promise Agency',
       description: isArabic
         ? 'إجابات شاملة على جميع استفساراتك حول خدماتنا السياحية'
         : 'Comprehensive answers to all your inquiries about our tourism services',

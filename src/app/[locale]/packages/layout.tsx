@@ -10,8 +10,8 @@ export async function generateMetadata({
 
   return {
     title: isArabic
-      ? 'باقاتنا السياحية - Trust Band Travel | عروض سفر مميزة وباقات متنوعة'
-      : 'Our Tour Packages - Trust Band Travel | Special Travel Deals & Varied Packages',
+      ? 'باقاتنا السياحية - Promise Agency | عروض سفر مميزة وباقات متنوعة'
+      : 'Our Tour Packages - Promise Agency | Special Travel Deals & Varied Packages',
     description: isArabic
       ? 'تصفح أفضل باقاتنا السياحية المتنوعة: رحلات إلى دبي، إسطنبول، القاهرة، وأكثر. باقات شاملة تشمل الطيران، الإقامة، المواصلات، والجولات السياحية. أسعار تنافسية تبدأ من 600 دولار. احجز باقتك المثالية الآن!'
       : 'Browse our best diverse tour packages: trips to Dubai, Istanbul, Cairo, and more. Comprehensive packages including flights, accommodation, transportation, and tours. Competitive prices starting from $600. Book your perfect package now!',
@@ -60,8 +60,8 @@ export async function generateMetadata({
         ].join(', '),
     openGraph: {
       title: isArabic
-        ? 'باقاتنا السياحية - Trust Band Travel | عروض سفر مميزة'
-        : 'Our Tour Packages - Trust Band Travel | Special Travel Deals',
+        ? 'باقاتنا السياحية - Promise Agency | عروض سفر مميزة'
+        : 'Our Tour Packages - Promise Agency | Special Travel Deals',
       description: isArabic
         ? 'باقات سياحية متنوعة لأشهر الوجهات العالمية بأسعار تنافسية'
         : 'Diverse tour packages to famous global destinations at competitive prices',

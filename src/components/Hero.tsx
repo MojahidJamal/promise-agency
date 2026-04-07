@@ -56,9 +56,9 @@ export default function Hero() {
               className="inline-flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 md:px-6 md:py-3 mb-6 md:mb-8"
             >
               <div className="w-7 h-7 md:w-8 md:h-8 bg-white rounded-full flex items-center justify-center">
-                <span className="text-primary font-bold text-xs md:text-sm">TB</span>
+                <span className="text-primary font-bold text-xs md:text-sm">PA</span>
               </div>
-              <span className="font-bold text-base md:text-lg">Trust Band Travel</span>
+              <span className="font-bold text-base md:text-lg">Promise Agency</span>
             </motion.div>
           </div>
 

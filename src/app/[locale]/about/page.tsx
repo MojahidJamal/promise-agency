@@ -33,14 +33,14 @@ export async function generateMetadata({
 
   return {
     title: isArabic
-      ? 'من نحن - Trust Band Travel | وكالة سفر موثوقة منذ سنوات'
-      : 'About Us - Trust Band Travel | Trusted Travel Agency for Years',
+      ? 'من نحن - Promise Agency | وكالة سفر موثوقة منذ سنوات'
+      : 'About Us - Promise Agency | Trusted Travel Agency for Years',
     description: isArabic
-      ? 'تعرف على Trust Band Travel - وكالة سفر رائدة في مصر مع فرق متخصصة في حجز الطيران، التأشيرات، الفنادق، والباقات السياحية. نقدم خدمات احترافية بأسعار تنافسية مع دعم على مدار الساعة. أكثر من 500 عميل سعيد و1000 رحلة ناجحة.'
-      : 'Learn about Trust Band Travel - a leading travel agency in Egypt with specialized teams in flight booking, visas, hotels, and tour packages. We provide professional services at competitive prices with 24/7 support. More than 500 happy clients and 1000 successful trips.',
+      ? 'تعرف على Promise Agency - وكالة سفر رائدة في مصر مع فرق متخصصة في حجز الطيران، التأشيرات، الفنادق، والباقات السياحية. نقدم خدمات احترافية بأسعار تنافسية مع دعم على مدار الساعة. أكثر من 500 عميل سعيد و1000 رحلة ناجحة.'
+      : 'Learn about Promise Agency - a leading travel agency in Egypt with specialized teams in flight booking, visas, hotels, and tour packages. We provide professional services at competitive prices with 24/7 support. More than 500 happy clients and 1000 successful trips.',
     keywords: isArabic
       ? [
-          'عن Trust Band',
+          'عن Promise Agency',
           'وكالة سفر موثوقة',
           'فريق خدمة العملاء',
           'حجز تذاكر طيران',
@@ -60,7 +60,7 @@ export async function generateMetadata({
           'جودة الخدمة'
         ].join(', ')
       : [
-          'about Trust Band',
+          'about Promise Agency',
           'trusted travel agency',
           'customer service team',
           'flight ticket booking',
@@ -81,8 +81,8 @@ export async function generateMetadata({
         ].join(', '),
     openGraph: {
       title: isArabic
-        ? 'من نحن - Trust Band Travel | وكالة سفر موثوقة'
-        : 'About Us - Trust Band Travel | Trusted Travel Agency',
+        ? 'من نحن - Promise Agency | وكالة سفر موثوقة'
+        : 'About Us - Promise Agency | Trusted Travel Agency',
       description: isArabic
         ? 'وكالة سفر رائدة مع فرق متخصصة وخدمات احترافية بأسعار تنافسية'
         : 'Leading travel agency with specialized teams and professional services at competitive prices',

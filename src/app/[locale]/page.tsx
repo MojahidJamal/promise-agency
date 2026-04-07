@@ -19,8 +19,8 @@ export async function generateMetadata({
 
   return {
     title: isArabic
-      ? 'Trust Band Travel - رحلات تثق بها | وكالة سفر وسياحة في مصر'
-      : 'Trust Band Travel - Trips You Trust | Travel Agency in Egypt',
+      ? 'Promise Agency - رحلات تثق بها | وكالة سفر وسياحة في مصر'
+      : 'Promise Agency - Trips You Trust | Travel Agency in Egypt',
     description: isArabic
       ? 'وكالة سفر موثوقة في مصر تقدم أفضل باقات سياحية، حجوزات طيران، فنادق فاخرة، تأشيرات، عمرة، وخدمات سياحية متكاملة. أسعار تنافسية ودعم على مدار الساعة. احجز رحلتك الآن!'
       : 'Trusted travel agency in Egypt offering the best tour packages, flight bookings, luxury hotels, visas, Umrah, and comprehensive tourism services. Competitive prices and 24/7 support. Book your trip now!',
@@ -41,8 +41,8 @@ export async function generateMetadata({
           'عروض سفر',
           'رحلات خارجية',
           'سياحة دولية',
-          'Trust Band',
-          'ترست باند',
+          'Promise Agency',
+          'برومس أجنسي',
           'موافقات أمنية',
           'خدمات سياحية',
           'دعم على مدار الساعة'
@@ -63,15 +63,15 @@ export async function generateMetadata({
           'travel deals',
           'international trips',
           'international tourism',
-          'Trust Band Travel',
+          'Promise Agency',
           'security approvals',
           'tourism services',
           '24/7 support'
         ].join(', '),
     openGraph: {
       title: isArabic
-        ? 'Trust Band Travel - رحلات تثق بها | وكالة سفر وسياحة'
-        : 'Trust Band Travel - Trips You Trust | Travel Agency',
+        ? 'Promise Agency - رحلات تثق بها | وكالة سفر وسياحة'
+        : 'Promise Agency - Trips You Trust | Travel Agency',
       description: isArabic
         ? 'أفضل وكالة سفر في مصر - باقات سياحية، حجوزات طيران وفنادق، تأشيرات، عمرة'
         : 'Best travel agency in Egypt - Tour packages, flight & hotel bookings, visas, Umrah',

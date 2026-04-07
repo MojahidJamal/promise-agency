@@ -48,7 +48,7 @@ export default function Footer() {
             <Link href={`/${locale === 'ar' ? '' : locale}`} className="inline-block">
               <Image
                 src="/images/logo.jpg"
-                alt="Trust Band Travel Logo"
+                alt="Promise Agency Logo"
                 width={180}
                 height={80}
                 className="h-16 w-auto object-contain rounded-xl border-2 border-gray-300/20 p-2 mx-auto"
@@ -66,22 +66,24 @@ export default function Footer() {
           <div className="space-y-4 mb-6">
             <h4 className="text-base font-bold text-center font-arabic" style={{ color: '#ffffff' }}>{t('footer.contact_info')}</h4>
             <div className="space-y-3">
-              <div className={cn('flex items-center gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
-                <div className="w-6 h-6 bg-primary/20 rounded flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-3 h-3 text-primary" />
+              {content.brand.email && (
+                <div className={cn('flex items-center gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
+                  <div className="w-6 h-6 bg-primary/20 rounded flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-3 h-3 text-primary" />
+                  </div>
+                  <div className={cn('flex-1', isRTL ? 'text-right' : 'text-left')}>
+                    <a
+                      href={`mailto:${content.brand.email}`}
+                      className={cn(
+                        "text-white hover:text-primary transition-colors font-arabic text-sm block",
+                        isRTL ? "text-right" : "text-left"
+                      )}
+                    >
+                      {content.brand.email}
+                    </a>
+                  </div>
                 </div>
-                <div className={cn('flex-1', isRTL ? 'text-right' : 'text-left')}>
-                  <a
-                    href={`mailto:${content.brand.email}`}
-                    className={cn(
-                      "text-white hover:text-primary transition-colors font-arabic text-sm block",
-                      isRTL ? "text-right" : "text-left"
-                    )}
-                  >
-                    {content.brand.email}
-                  </a>
-                </div>
-              </div>
+              )}
               
               {content.brand.phone && (
                 <div className={cn('flex items-center gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
@@ -116,7 +118,7 @@ export default function Footer() {
               <Link href={`/${locale === 'ar' ? '' : locale}`} className="inline-block">
                 <Image
                   src="/images/logo.jpg"
-                  alt="Trust Band Travel Logo"
+                  alt="Promise Agency Logo"
                   width={220}
                   height={100}
                   className="h-20 md:h-24 lg:h-28 w-auto object-contain rounded-xl border-2 border-gray-300/20 p-2"
@@ -163,29 +165,31 @@ export default function Footer() {
           <div className={cn('', isRTL && 'text-right')}>
             <h4 className="text-lg font-bold mb-6 font-arabic" style={{ color: '#ffffff' }}>{t('footer.contact_info')}</h4>
             <ul className="space-y-4">
-              <li className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
-                <div className={cn(
-                  'w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0',
-                  isRTL ? 'order-2' : 'order-1'
-                )}>
-                  <Mail className="w-4 h-4 text-primary" />
-                </div>
-                <div className={cn(
-                  'flex-1',
-                  isRTL ? 'text-right order-1' : 'text-left order-2'
-                )}>
-                  <div className="text-xs text-gray-300 mb-1 font-arabic">{t('footer.email')}</div>
-                  <a
-                    href={`mailto:${content.brand.email}`}
-                    className={cn(
-                      "text-white hover:text-primary transition-colors font-arabic block",
-                      isRTL ? "text-right" : "text-left"
-                    )}
-                  >
-                    {content.brand.email}
-                  </a>
-                </div>
-              </li>
+              {content.brand.email && (
+                <li className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
+                  <div className={cn(
+                    'w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0',
+                    isRTL ? 'order-2' : 'order-1'
+                  )}>
+                    <Mail className="w-4 h-4 text-primary" />
+                  </div>
+                  <div className={cn(
+                    'flex-1',
+                    isRTL ? 'text-right order-1' : 'text-left order-2'
+                  )}>
+                    <div className="text-xs text-gray-300 mb-1 font-arabic">{t('footer.email')}</div>
+                    <a
+                      href={`mailto:${content.brand.email}`}
+                      className={cn(
+                        "text-white hover:text-primary transition-colors font-arabic block",
+                        isRTL ? "text-right" : "text-left"
+                      )}
+                    >
+                      {content.brand.email}
+                    </a>
+                  </div>
+                </li>
+              )}
               {content.brand.phone && (
                 <li className={cn('flex items-start gap-3', isRTL ? 'flex-row-reverse' : 'flex-row')}>
                   <div className={cn(
@@ -270,7 +274,7 @@ export default function Footer() {
             isRTL && 'md:flex-row-reverse'
           )}>
             <p className="font-arabic text-sm md:text-base text-center md:text-left" style={{ color: '#d1d5db' }}>
-              © {new Date().getFullYear()} Trust Band Travel. {t('footer.rights')}.
+              © {new Date().getFullYear()} Promise Agency. {t('footer.rights')}.
             </p>
             <div className={cn('flex items-center gap-3 md:gap-4 text-xs md:text-sm', isRTL ? 'flex-row-reverse' : 'flex-row')} style={{ color: '#d1d5db' }}>
               <Link href={`/${locale}/privacy`} className="hover:text-primary transition-colors font-arabic">

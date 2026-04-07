@@ -43,63 +43,42 @@ export async function generateMetadata({
   return {
     title: {
       default: isArabic
-        ? 'Trust Band Travel - رحلات تثق بها | وكالة سفر وسياحة'
-        : 'Trust Band Travel - Trips You Trust | Travel & Tourism Agency',
+        ? 'Promise Agency - وعدنا.. خدمة تثق بها | وكالة خدمات'
+        : 'Promise Agency - Service You Can Trust | Agency',
       template: isArabic
-        ? '%s | Trust Band Travel'
-        : '%s | Trust Band Travel',
+        ? '%s | Promise Agency'
+        : '%s | Promise Agency',
     },
     description: isArabic
-      ? 'وكالة سفر موثوقة في مصر تقدم أفضل العروض والخدمات السياحية: حجوزات طيران، فنادق فاخرة، باقات سياحية متنوعة، استخراج تأشيرات، عمرة، موافقات أمنية، ودعم على مدار الساعة. أسعار تنافسية وخدمة احترافية.'
-      : 'Trusted travel agency in Egypt offering the best deals and tourism services: flight bookings, luxury hotels, diverse tour packages, visa processing, Umrah, security approvals, and 24/7 support. Competitive prices and professional service.',
+      ? 'وكالة خدمات موثوقة في القاهرة، مصر تقدم موافقات أمنية، تأشيرات، زيارات عائلية للسعودية، رخص قيادة دولية، ودعم على مدار الساعة. خدمة سريعة واحترافية.'
+      : 'Trusted agency in Cairo, Egypt offering security clearances, visas, family visits to Saudi Arabia, international driving licenses, and 24/7 support. Fast and professional service.',
     keywords: isArabic
       ? [
-          'وكالة سفر',
-          'سياحة مصر',
-          'Trust Band',
-          'ترست باند',
-          'حجوزات طيران',
-          'فنادق',
-          'باقات سياحية',
-          'تأشيرات',
-          'عمرة',
+          'Promise Agency',
+          'برومس أجنسي',
           'موافقات أمنية',
-          'رحلات سياحية',
-          'تذاكر طيران',
-          'حجز فنادق',
-          'سفر وسياحة',
-          'وكالة سياحة',
-          'عروض سفر',
-          'رحلات دولية',
-          'سياحة دينية',
-          'سياحة ترفيهية',
+          'تأشيرات',
+          'زيارة عائلية السعودية',
+          'رخصة قيادة دولية',
+          'تأشيرة خروج وعودة',
+          'خدمات الهجرة',
+          'القاهرة مصر',
           'دعم 24/7'
         ].join(', ')
       : [
-          'travel agency',
-          'Egypt tourism',
-          'Trust Band',
-          'Trust Band Travel',
-          'flight bookings',
-          'hotels',
-          'tour packages',
+          'Promise Agency',
+          'security clearance',
           'visas',
-          'Umrah',
-          'security approvals',
-          'tourist trips',
-          'airline tickets',
-          'hotel booking',
-          'travel and tourism',
-          'tourism agency',
-          'travel deals',
-          'international trips',
-          'religious tourism',
-          'leisure tourism',
+          'family visit Saudi Arabia',
+          'international driving license',
+          'exit return visa',
+          'migration services',
+          'Cairo Egypt',
           '24/7 support'
         ].join(', '),
-    authors: [{ name: 'Trust Band Travel' }],
-    creator: 'Trust Band Travel',
-    publisher: 'Trust Band Travel',
+    authors: [{ name: 'Promise Agency' }],
+    creator: 'Promise Agency',
+    publisher: 'Promise Agency',
     formatDetection: {
       email: false,
       address: false,
@@ -112,23 +91,23 @@ export async function generateMetadata({
     },
     openGraph: {
       title: isArabic
-        ? 'Trust Band Travel - رحلات تثق بها | وكالة سفر وسياحة'
-        : 'Trust Band Travel - Trips You Trust | Travel & Tourism Agency',
+        ? 'Promise Agency - وعدنا.. خدمة تثق بها | وكالة خدمات'
+        : 'Promise Agency - Service You Can Trust | Agency',
       description: isArabic
-        ? 'أفضل العروض والخدمات السياحية في مصر - باقات سياحية، حجوزات طيران وفنادق، تأشيرات، عمرة'
-        : 'Best deals and tourism services in Egypt - Tour packages, flight & hotel bookings, visas, Umrah',
+        ? 'وكالة خدمات موثوقة في القاهرة، مصر - موافقات أمنية، تأشيرات، زيارات عائلية، رخص قيادة دولية'
+        : 'Trusted agency in Cairo, Egypt - Security clearances, visas, family visits, international driving licenses',
       type: 'website',
       locale: isArabic ? 'ar_SA' : 'en_US',
-      siteName: 'Trust Band Travel',
+      siteName: 'Promise Agency',
     },
     twitter: {
       card: 'summary_large_image',
       title: isArabic
-        ? 'Trust Band Travel - رحلات تثق بها'
-        : 'Trust Band Travel - Trips You Trust',
+        ? 'Promise Agency - وعدنا.. خدمة تثق بها'
+        : 'Promise Agency - Service You Can Trust',
       description: isArabic
-        ? 'وكالة سفر موثوقة تقدم أفضل العروض والخدمات السياحية'
-        : 'Trusted travel agency offering the best deals and tourism services',
+        ? 'وكالة خدمات موثوقة في القاهرة، مصر'
+        : 'Trusted agency in Cairo, Egypt',
     },
     robots: {
       index: true,

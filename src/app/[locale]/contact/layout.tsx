@@ -10,17 +10,17 @@ export async function generateMetadata({
 
   return {
     title: isArabic
-      ? 'تواصل معنا - Trust Band Travel | خدمة عملاء 24/7 واتصال فوري'
-      : 'Contact Us - Trust Band Travel | 24/7 Customer Service & Instant Connection',
+      ? 'تواصل معنا - Promise Agency | خدمة عملاء 24/7 واتصال فوري'
+      : 'Contact Us - Promise Agency | 24/7 Customer Service & Instant Connection',
     description: isArabic
-      ? 'تواصل مع Trust Band Travel عبر الهاتف، واتساب، أو البريد الإلكتروني. فريق خدمة العملاء متاح على مدار الساعة للرد على استفساراتك ومساعدتك في حجز رحلتك. نحن في القاهرة، مصر ونخدم العملاء في جميع أنحاء العالم.'
-      : 'Contact Trust Band Travel via phone, WhatsApp, or email. Customer service team available 24/7 to answer your inquiries and help you book your trip. We are in Cairo, Egypt and serve clients worldwide.',
+      ? 'تواصل مع Promise Agency عبر الهاتف، واتساب، أو البريد الإلكتروني. فريق خدمة العملاء متاح على مدار الساعة للرد على استفساراتك ومساعدتك في حجز رحلتك. نحن في القاهرة، مصر ونخدم العملاء في جميع أنحاء العالم.'
+      : 'Contact Promise Agency via phone, WhatsApp, or email. Customer service team available 24/7 to answer your inquiries and help you book your trip. We are in Cairo, Egypt and serve clients worldwide.',
     keywords: isArabic
       ? [
           'تواصل معنا',
           'خدمة العملاء',
-          'رقم هاتف Trust Band',
-          'واتساب Trust Band',
+          'رقم هاتف Promise Agency',
+          'واتساب Promise Agency',
           'بريد إلكتروني',
           'عنوان المكتب',
           'القاهرة مصر',
@@ -38,8 +38,8 @@ export async function generateMetadata({
       : [
           'contact us',
           'customer service',
-          'Trust Band phone number',
-          'Trust Band WhatsApp',
+          'Promise Agency phone number',
+          'Promise Agency WhatsApp',
           'email address',
           'office address',
           'Cairo Egypt',
@@ -56,8 +56,8 @@ export async function generateMetadata({
         ].join(', '),
     openGraph: {
       title: isArabic
-        ? 'تواصل معنا - Trust Band Travel | خدمة عملاء 24/7'
-        : 'Contact Us - Trust Band Travel | 24/7 Customer Service',
+        ? 'تواصل معنا - Promise Agency | خدمة عملاء 24/7'
+        : 'Contact Us - Promise Agency | 24/7 Customer Service',
       description: isArabic
         ? 'فريقنا متاح على مدار الساعة للرد على استفساراتك ومساعدتك'
         : 'Our team is available 24/7 to answer your inquiries and help you',

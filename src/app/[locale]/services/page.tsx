@@ -15,8 +15,8 @@ export async function generateMetadata({
 
   return {
     title: isArabic
-      ? 'خدماتنا - Trust Band Travel | خدمات سفر وسياحة شاملة'
-      : 'Our Services - Trust Band Travel | Comprehensive Travel & Tourism Services',
+      ? 'خدماتنا - Promise Agency | خدمات سفر وسياحة شاملة'
+      : 'Our Services - Promise Agency | Comprehensive Travel & Tourism Services',
     description: isArabic
       ? 'نقدم خدمات سياحية شاملة: حجز تذاكر الطيران بأفضل الأسعار، حجز فنادق فاخرة، استخراج التأشيرات لجميع الدول، باقات العمرة، تنظيم رحلات سياحية مخصصة، موافقات أمنية، وخدمات النقل. فريق محترف متاح على مدار الساعة لخدمتك.'
       : 'We provide comprehensive tourism services: flight ticket booking at the best prices, luxury hotel reservations, visa processing for all countries, Umrah packages, customized tour organization, security approvals, and transportation services. Professional team available 24/7 to serve you.',
@@ -63,8 +63,8 @@ export async function generateMetadata({
         ].join(', '),
     openGraph: {
       title: isArabic
-        ? 'خدماتنا - Trust Band Travel | خدمات سفر وسياحة شاملة'
-        : 'Our Services - Trust Band Travel | Comprehensive Travel Services',
+        ? 'خدماتنا - Promise Agency | خدمات سفر وسياحة شاملة'
+        : 'Our Services - Promise Agency | Comprehensive Travel Services',
       description: isArabic
         ? 'خدمات سياحية متكاملة: طيران، فنادق، تأشيرات، عمرة، رحلات مخصصة'
         : 'Comprehensive tourism services: flights, hotels, visas, Umrah, customized trips',
@@ -96,8 +96,8 @@ export default function ServicesPage() {
       <div className="mb-12 text-center max-w-4xl mx-auto">
         <p className="text-lg text-gray-600 font-arabic leading-relaxed">
           {isArabic 
-            ? 'في ترست باند، نقدم خدمات شاملة ومتكاملة مصممة خصيصاً لتسهيل كل إجراءاتك وتوفير الوقت والجهد عليك'
-            : 'At Trust Band, we provide comprehensive services designed specifically to facilitate all your procedures and save your time and effort'
+            ? 'في برومس أجنسي، نقدم خدمات شاملة ومتكاملة مصممة خصيصاً لتسهيل كل إجراءاتك وتوفير الوقت والجهد عليك'
+            : 'At Promise Agency, we provide comprehensive services designed specifically to facilitate all your procedures and save your time and effort'
           }
         </p>
       </div>

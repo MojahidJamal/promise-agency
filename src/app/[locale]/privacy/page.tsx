@@ -12,11 +12,11 @@ export async function generateMetadata({
 
   return {
     title: isArabic
-      ? 'سياسة الخصوصية - Trust Band Travel | حماية بياناتك وخصوصيتك'
-      : 'Privacy Policy - Trust Band Travel | Protecting Your Data & Privacy',
+      ? 'سياسة الخصوصية - Promise Agency | حماية بياناتك وخصوصيتك'
+      : 'Privacy Policy - Promise Agency | Protecting Your Data & Privacy',
     description: isArabic
-      ? 'سياسة الخصوصية الخاصة بـ Trust Band Travel. نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. تعرف على كيفية جمع واستخدام وحماية معلوماتك عند استخدام خدماتنا السياحية.'
-      : 'Privacy Policy for Trust Band Travel. We respect your privacy and are committed to protecting your personal data. Learn how we collect, use, and protect your information when using our tourism services.',
+      ? 'سياسة الخصوصية الخاصة بـ Promise Agency. نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. تعرف على كيفية جمع واستخدام وحماية معلوماتك عند استخدام خدماتنا السياحية.'
+      : 'Privacy Policy for Promise Agency. We respect your privacy and are committed to protecting your personal data. Learn how we collect, use, and protect your information when using our tourism services.',
     keywords: isArabic
       ? [
           'سياسة الخصوصية',
@@ -26,7 +26,7 @@ export async function generateMetadata({
           'سرية البيانات',
           'حقوق العملاء',
           'حماية المعلومات الشخصية',
-          'Trust Band خصوصية',
+          'Promise Agency خصوصية',
           'سياسة الاستخدام',
           'أمان الحجوزات'
         ].join(', ')
@@ -38,14 +38,14 @@ export async function generateMetadata({
           'data confidentiality',
           'customer rights',
           'personal information protection',
-          'Trust Band privacy',
+          'Promise Agency privacy',
           'terms of use',
           'booking security'
         ].join(', '),
     openGraph: {
       title: isArabic
-        ? 'سياسة الخصوصية - Trust Band Travel'
-        : 'Privacy Policy - Trust Band Travel',
+        ? 'سياسة الخصوصية - Promise Agency'
+        : 'Privacy Policy - Promise Agency',
       description: isArabic
         ? 'نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية'
         : 'We respect your privacy and are committed to protecting your personal data',
@@ -73,7 +73,7 @@ export default function PrivacyPage() {
             <>
               <h2>سياسة الخصوصية</h2>
               <p className="text-gray-700 leading-relaxed mb-6">
-                في Trust Band Travel، نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. توضح
+                في Promise Agency، نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. توضح
                 سياسة الخصوصية هذه كيفية جمع واستخدام وحماية معلوماتك.
               </p>
 
@@ -104,7 +104,7 @@ export default function PrivacyPage() {
             <>
               <h2>Privacy Policy</h2>
               <p className="text-gray-700 leading-relaxed mb-6">
-                At Trust Band Travel, we respect your privacy and are committed to
+                At Promise Agency, we respect your privacy and are committed to
                 protecting your personal data. This privacy policy explains how we
                 collect, use, and protect your information.
               </p>

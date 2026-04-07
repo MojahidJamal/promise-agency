@@ -1,17 +1,17 @@
 {
   "brand": {
-    "name": "Trust Band Travel",
+    "name": "Promise Agency",
     "primaryColor": "#0d99e4",
-    "tagline_ar": "رحلات تثق بها ذكريات لا تُنسى",
-    "tagline_en": "Trips you trust Memories you'll never forget",
-    "phone": "00249916162563",
-    "email": "trustbandcompany@gmail.com",
-    "whatsapp": "https://wa.me/249916162563",
-    "instagram": "https://www.instagram.com/trust.band_travel/",
-    "facebook": "https://www.facebook.com/676041272267639",
-    "tiktok": "https://www.tiktok.com/@trust_band_agency",
-    "address_ar": "القاهرة، الجيزة، مصر، 11511",
-    "address_en": "Cairo, Giza, Egypt, 11511",
+    "tagline_ar": "وعدنا.. خدمة تثق بها",
+    "tagline_en": "Our promise.. service you can trust",
+    "phone": "+201558746076",
+    "email": "meaadpromise@gmail.com",
+    "whatsapp": "https://wa.me/201558746076",
+    "instagram": "https://www.instagram.com/_promise.agency_?igsh=MXVzZWJhcWtyaHp6Nw==",
+    "facebook": "https://www.facebook.com/share/1CU7fBXZP4/?mibextid=LQQJ4d",
+    "tiktok": "https://www.tiktok.com/@_promise.agency_?_r=1&_t=ZS-95KIME7eH3c",
+    "address_ar": "القاهرة، مصر",
+    "address_en": "Cairo, Egypt",
     "working_hours_ar": "يومياً 9 صباحاً - 9 مساءً",
     "working_hours_en": "Daily 9 AM – 9 PM"
   },
@@ -141,4 +141,3 @@
     }
   ]
 }
-

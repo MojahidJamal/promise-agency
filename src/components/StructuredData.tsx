@@ -17,27 +17,25 @@ export default function StructuredData({
 }: StructuredDataProps) {
   const locale = useLocale();
   const isArabic = locale === 'ar';
-  const baseUrl = 'https://www.trustbandtravel.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'TravelAgency',
-    name: 'Trust Band Travel',
-    alternateName: isArabic ? 'ترست باند للسفر والسياحة' : 'Trust Band Travel Agency',
+    name: 'Promise Agency',
+    alternateName: isArabic ? 'برومس أجنسي' : 'Promise Agency',
     url: baseUrl,
     logo: `${baseUrl}/images/logo.jpg`,
     image: `${baseUrl}/images/logo.jpg`,
     description: isArabic
-      ? 'وكالة سفر موثوقة في مصر تقدم أفضل باقات سياحية، حجوزات طيران، فنادق فاخرة، تأشيرات، عمرة، وخدمات سياحية متكاملة'
-      : 'Trusted travel agency in Egypt offering the best tour packages, flight bookings, luxury hotels, visas, Umrah, and comprehensive tourism services',
-    telephone: '+249916162563',
-    email: 'trustbandcompany@gmail.com',
+      ? 'وكالة خدمات موثوقة في مصر تقدم موافقات أمنية، تأشيرات، زيارات عائلية، ورخص قيادة دولية'
+      : 'Trusted agency in Egypt offering security clearances, visas, family visits, and international driving licenses',
+    telephone: '+201558746076',
+    email: 'meaadpromise@gmail.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: isArabic ? 'الجيزة' : 'Giza',
       addressLocality: isArabic ? 'القاهرة' : 'Cairo',
       addressCountry: isArabic ? 'مصر' : 'Egypt',
-      postalCode: '11511',
     },
     geo: {
       '@type': 'GeoCoordinates',
@@ -59,9 +57,8 @@ export default function StructuredData({
       closes: '21:00',
     },
     sameAs: [
-      'https://www.instagram.com/trust.band_travel/',
-      'https://www.facebook.com/676041272267639',
-      'https://www.tiktok.com/@trust_band_agency',
+      'https://www.instagram.com/_promise.agency_?igsh=MXVzZWJhcWtyaHp6Nw==',
+      'https://www.facebook.com/share/1CU7fBXZP4/?mibextid=LQQJ4d',
     ],
     priceRange: '$$',
     currenciesAccepted: 'USD, EGP',
@@ -75,13 +72,13 @@ export default function StructuredData({
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Trust Band Travel',
+    name: 'Promise Agency',
     url: baseUrl,
     description: pageDescription || organizationSchema.description,
     inLanguage: isArabic ? 'ar' : 'en',
     publisher: {
       '@type': 'Organization',
-      name: 'Trust Band Travel',
+      name: 'Promise Agency',
       logo: {
         '@type': 'ImageObject',
         url: `${baseUrl}/images/logo.jpg`,

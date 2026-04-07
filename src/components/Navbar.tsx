@@ -56,7 +56,7 @@ export default function Navbar() {
           <Link href={`/${locale === 'ar' ? '' : locale}`}>
             <Image
               src="/images/logo.jpg"
-              alt="Trust Band Travel Logo"
+              alt="Promise Agency Logo"
               width={200}
               height={100}
               className="h-14 md:h-16 lg:h-18 w-auto object-contain rounded-xl border-2 border-gray-200/50 p-2"

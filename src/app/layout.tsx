@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Trust Band Travel',
-  description: 'Trips you trust. Memories you\'ll never forget.',
+  title: 'Promise Agency',
+  description: 'Our promise.. service you can trust.',
   icons: {
     icon: '/images/logo.jpg',
     shortcut: '/images/logo.jpg',

@@ -70,12 +70,12 @@ export default function ContactPage() {
       value: content.brand.phone,
       href: `tel:${content.brand.phone}`,
     },
-    {
+    ...(content.brand.email ? [{
       icon: Mail,
       label: t('footer.email'),
       value: content.brand.email,
       href: `mailto:${content.brand.email}`,
-    },
+    }] : []),
     {
       icon: MapPin,
       label: t('footer.address'),
@@ -101,11 +101,11 @@ export default function ContactPage() {
       label: 'Facebook',
       href: content.brand.facebook,
     },
-    {
+    ...(content.brand.tiktok ? [{
       icon: Video,
       label: 'TikTok',
       href: content.brand.tiktok,
-    },
+    }] : []),
   ];
 
   return (
