@@ -96,7 +96,7 @@ export default function ServicesPage() {
       <div className="mb-12 text-center max-w-4xl mx-auto">
         <p className="text-lg text-gray-600 font-arabic leading-relaxed">
           {isArabic 
-            ? 'في برومس أجنسي، نقدم خدمات شاملة ومتكاملة مصممة خصيصاً لتسهيل كل إجراءاتك وتوفير الوقت والجهد عليك'
+            ? 'في وكالة برومس، نقدم خدمات شاملة ومتكاملة مصممة خصيصاً لتسهيل كل إجراءاتك وتوفير الوقت والجهد عليك'
             : 'At Promise Agency, we provide comprehensive services designed specifically to facilitate all your procedures and save your time and effort'
           }
         </p>

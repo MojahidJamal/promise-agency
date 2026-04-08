@@ -55,7 +55,7 @@ export async function generateMetadata({
     keywords: isArabic
       ? [
           'Promise Agency',
-          'برومس أجنسي',
+          'وكالة برومس',
           'موافقات أمنية',
           'تأشيرات',
           'زيارة عائلية السعودية',

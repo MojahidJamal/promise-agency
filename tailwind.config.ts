@@ -27,23 +27,23 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#0d99e4',
-          50: '#e6f7ff',
-          100: '#b3e5ff',
-          200: '#80d4ff',
-          300: '#4dc2ff',
-          400: '#26b0ff',
-          500: '#0d99e4',
-          600: '#0a7ab8',
-          700: '#085b8b',
-          800: '#053d5e',
-          900: '#031e31',
+          DEFAULT: '#D4A520',
+          50: '#FDF8E8',
+          100: '#F9EDC4',
+          200: '#F3DC8E',
+          300: '#EBC95A',
+          400: '#DFB830',
+          500: '#D4A520',
+          600: '#B8900E',
+          700: '#8C6D0A',
+          800: '#604B07',
+          900: '#3A2D04',
         },
-        trust: {
-          blue: '#0d99e4',
-          'blue-dark': '#0a7ab8',
-          'blue-light': '#e6f7ff',
-          gold: '#ffd700',
+        promise: {
+          gold: '#D4A520',
+          'gold-dark': '#B8900E',
+          'gold-light': '#FDF8E8',
+          black: '#1A1A1A',
           white: '#ffffff',
           gray: '#6b7280',
           'gray-light': '#f3f4f6',
@@ -57,8 +57,8 @@ const config: Config = {
         primary: ['var(--font-tajawal)', 'var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'trust': '0 4px 20px rgba(13, 153, 228, 0.1)',
-        'trust-lg': '0 8px 30px rgba(13, 153, 228, 0.15)',
+        'trust': '0 4px 20px rgba(212, 165, 32, 0.1)',
+        'trust-lg': '0 8px 30px rgba(212, 165, 32, 0.15)',
       },
     },
   },
@@ -66,4 +66,3 @@ const config: Config = {
 };
 
 export default config;
-

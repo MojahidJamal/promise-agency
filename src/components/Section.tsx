@@ -37,7 +37,7 @@ export default function Section({
     return (
       <>
         {/* Wave Hero Header */}
-        <div className="relative bg-gradient-to-br from-[#0d99e4] via-[#0a7ab8] to-[#085a8c] overflow-hidden">
+        <div className="relative bg-gradient-to-br from-[#D4A520] via-[#B8900E] to-[#8C6D0A] overflow-hidden">
           {/* Animated Background Shapes */}
           <div className="absolute inset-0">
             <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float"></div>

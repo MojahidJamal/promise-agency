@@ -23,7 +23,7 @@ export default function StructuredData({
     '@context': 'https://schema.org',
     '@type': 'TravelAgency',
     name: 'Promise Agency',
-    alternateName: isArabic ? 'برومس أجنسي' : 'Promise Agency',
+    alternateName: isArabic ? 'وكالة برومس' : 'Promise Agency',
     url: baseUrl,
     logo: `${baseUrl}/images/logo.jpg`,
     image: `${baseUrl}/images/logo.jpg`,

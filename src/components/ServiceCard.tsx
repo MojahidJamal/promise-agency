@@ -62,19 +62,19 @@ export default function ServiceCard({
       onClick={handleWhatsAppClick}
     >
       {/* Top Accent Bar */}
-      <div className="absolute top-0 left-0 right-0 h-2 bg-[#0d99e4] rounded-t-3xl"></div>
+      <div className="absolute top-0 left-0 right-0 h-2 bg-[#D4A520] rounded-t-3xl"></div>
       
       {/* Icon Section */}
       <div className="flex items-center gap-4 mb-6">
         <div className="flex-shrink-0">
-          <div className="w-20 h-20 rounded-2xl bg-[#0d99e4] flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+          <div className="w-20 h-20 rounded-2xl bg-[#D4A520] flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
             <Icon className="w-10 h-10 text-white" strokeWidth={2} />
           </div>
         </div>
         
         {/* Title */}
         <div className="flex-1">
-          <h3 className="text-2xl font-bold text-gray-900 leading-tight group-hover:text-[#0d99e4] transition-colors duration-300">
+          <h3 className="text-2xl font-bold text-gray-900 leading-tight group-hover:text-[#D4A520] transition-colors duration-300">
             {title}
           </h3>
         </div>
@@ -83,9 +83,9 @@ export default function ServiceCard({
       {/* Highlight Badge */}
       {highlight && (
         <div className="mb-6">
-          <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#0d99e4]/10 rounded-full border-2 border-[#0d99e4]/30">
-            <div className="w-3 h-3 rounded-full bg-[#0d99e4] animate-pulse"></div>
-            <span className="text-sm font-bold text-[#0d99e4]">
+          <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#D4A520]/10 rounded-full border-2 border-[#D4A520]/30">
+            <div className="w-3 h-3 rounded-full bg-[#D4A520] animate-pulse"></div>
+            <span className="text-sm font-bold text-[#D4A520]">
               {highlight}
             </span>
           </div>
@@ -99,7 +99,7 @@ export default function ServiceCard({
       
       {/* WhatsApp CTA */}
       <div className="mt-auto">
-        <div className="flex items-center justify-between p-4 rounded-2xl bg-[#0d99e4] group-hover:bg-[#0a7ab8] transition-all duration-300 shadow-lg">
+        <div className="flex items-center justify-between p-4 rounded-2xl bg-[#D4A520] group-hover:bg-[#B8900E] transition-all duration-300 shadow-lg">
           <span className="text-base font-bold text-white">
             {isRTL ? 'استفسر عبر واتساب' : 'Inquire on WhatsApp'}
           </span>
@@ -116,7 +116,7 @@ export default function ServiceCard({
       </div>
 
       {/* Corner Decoration */}
-      <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#0d99e4]/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#D4A520]/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
     </motion.div>
   );
 }

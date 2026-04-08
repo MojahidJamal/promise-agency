@@ -11,7 +11,7 @@ type Props = {
 };
 
 export default function HeroFlight({
-  trailColor = "#0d99e4",
+  trailColor = "#D4A520",
   planeSize = 36,
   durationMs = 4800,
   className
