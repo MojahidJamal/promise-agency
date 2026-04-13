@@ -118,7 +118,10 @@ export default function HeroFlight({
   }, [durationMs, trailColor]);
 
   // RTL: mirror the whole layer if <html dir="rtl">
-  const isRTL = typeof document !== "undefined" && document.documentElement?.dir === "rtl";
+  const [isRTL, setIsRTL] = useState(false);
+  useEffect(() => {
+    setIsRTL(document.documentElement?.dir === "rtl");
+  }, []);
 
   return (
     <div
