@@ -17,40 +17,44 @@
   },
   "services": [
     {
-      "id": "exit-return-visa",
-      "title_ar": "تأشيرة الخروج والعودة",
-      "title_en": "Exit & Return Visa",
-      "desc_ar": "رجعتك لمصر علينا.. سافر وارجع بدون موافقة أو تأشيرة. خدمة سهلة ومضمونة تخليك تسافر وانت مرتاح",
-      "desc_en": "Your return to Egypt is on us. Travel and come back without approval or visa. Easy and guaranteed service for peace of mind",
-      "highlight_ar": "اطمّن.. رجعتك لمصر علينا",
-      "highlight_en": "Rest assured.. your return to Egypt is on us"
+      "id": "visas",
+      "title_ar": "تأشيرات",
+      "title_en": "Visas",
+      "desc_ar": "نوفر خدمات التأشيرات لعدة دول: مصر (حلفا، بورتسودان)، الإمارات والشارقة، البحرين، مرور السعودية، يوغندا، وأثيوبيا. إجراءات سريعة وموثوقة",
+      "desc_en": "We provide visa services for multiple countries: Egypt (Halfa, Port Sudan), UAE & Sharjah, Bahrain, Saudi transit, Uganda, and Ethiopia. Fast and reliable processing",
+      "highlight_ar": "تأشيرات لعدة دول",
+      "highlight_en": "Visas for multiple countries",
+      "image": "/images/service-visas.jpg"
     },
     {
-      "id": "family-visit-saudi",
-      "title_ar": "الزيارة العائلية للسعودية",
-      "title_en": "Family Visit to Saudi Arabia",
-      "desc_ar": "مشتاق لأهلك؟ عايز تشوف أمك، أبوك، أو عيالك؟ مع خدمة تخليص إجراءات الزيارة العائلية، حنساعدك تجيب أحبابك وتعيش معاهم لحظات ما بتتنسى",
-      "desc_en": "Missing your family? Want to see your parents or children? With our family visit service, we'll help you bring your loved ones for unforgettable moments",
-      "highlight_ar": "ما تخلي الشوق يطول",
-      "highlight_en": "Don't let longing last"
+      "id": "study-services",
+      "title_ar": "خدمات الدراسة في مصر",
+      "title_en": "Study Services in Egypt",
+      "desc_ar": "نقدم خدمات التقديم للدراسة في مصر: تقديم للبكالوريوس، الماستر، الدكتوراه، والإمتياز. نساعدك في كل الإجراءات من البداية للنهاية",
+      "desc_en": "We provide study application services in Egypt: Bachelor's, Master's, PhD, and Franchise programs. We help you with all procedures from start to finish",
+      "highlight_ar": "ادرس في مصر مع برومس",
+      "highlight_en": "Study in Egypt with Promise",
+      "image": "/images/service-study.jpg"
     },
     {
-      "id": "security-clearance",
+      "id": "security-approval",
       "title_ar": "الموافقة الأمنية",
-      "title_en": "Security Clearance",
-      "desc_ar": "لو كنت في السودان أو أي مكان في العالم، وخططك جاهزة للسفر لمصر، خلي الإجراءات علينا وسهلها على نفسك. بنوفر لك كل الموافقات الأمنية (سريعة - بطيئة)",
-      "desc_en": "If you're in Sudan or anywhere in the world, planning to travel to Egypt, leave the procedures to us. We provide all security clearances (fast - regular)",
-      "highlight_ar": "خلي الإجراءات علينا",
-      "highlight_en": "Leave the procedures to us"
+      "title_en": "Security Approval",
+      "desc_ar": "نوفر خدمة الموافقة الأمنية للدخول إلى مصر عن طريق المعبر أو عن طريق الطيران من كل وجهات العالم. إجراءات سريعة وموثوقة",
+      "desc_en": "We provide security approval services for entering Egypt via border crossing or flights from all worldwide destinations. Fast and reliable processing",
+      "highlight_ar": "دخول مصر بدون عوائق",
+      "highlight_en": "Enter Egypt hassle-free",
+      "image": "/images/service-security-license.png"
     },
     {
       "id": "international-license",
-      "title_ar": "الرخصة الدولية",
+      "title_ar": "الرخصة الدولية لقيادة السيارة",
       "title_en": "International Driving License",
-      "desc_ar": "احصل على رخصة القيادة الدولية لقيادة آمنة في أي مكان بالعالم. خدمة سريعة وموثوقة",
-      "desc_en": "Get your international driving license for safe driving anywhere in the world. Fast and reliable service",
+      "desc_ar": "احصل على الرخصة الدولية لقيادة السيارة. خدمة سريعة وموثوقة تتيح لك القيادة بأمان في معظم دول العالم",
+      "desc_en": "Get your international driving license. Fast and reliable service that allows you to drive safely in most countries worldwide",
       "highlight_ar": "قيادة آمنة في أي مكان",
-      "highlight_en": "Safe driving anywhere"
+      "highlight_en": "Safe driving anywhere",
+      "image": "/images/service-license.png"
     }
   ],
   "packages": [
@@ -60,10 +64,21 @@
       "title_en": "Istanbul 5D/4N",
       "price_from": 899,
       "currency": "USD",
-      "highlights_ar": ["فندق 4 نجوم", "جولة البوسفور", "نقل المطار"],
-      "highlights_en": ["4★ hotel", "Bosphorus tour", "Airport transfers"],
+      "highlights_ar": [
+        "فندق 4 نجوم",
+        "جولة البوسفور",
+        "نقل المطار"
+      ],
+      "highlights_en": [
+        "4★ hotel",
+        "Bosphorus tour",
+        "Airport transfers"
+      ],
       "whatsapp_cta": true,
-      "gallery": ["/images/istanbul1.jpg", "/images/istanbul2.jpg"]
+      "gallery": [
+        "/images/istanbul1.jpg",
+        "/images/istanbul2.jpg"
+      ]
     },
     {
       "slug": "dubai-3n4d",
@@ -71,10 +86,21 @@
       "title_en": "Dubai 4D/3N",
       "price_from": 1299,
       "currency": "USD",
-      "highlights_ar": ["فندق 5 نجوم", "جولة المدينة", "سفاري صحراوية"],
-      "highlights_en": ["5★ hotel", "City tour", "Desert safari"],
+      "highlights_ar": [
+        "فندق 5 نجوم",
+        "جولة المدينة",
+        "سفاري صحراوية"
+      ],
+      "highlights_en": [
+        "5★ hotel",
+        "City tour",
+        "Desert safari"
+      ],
       "whatsapp_cta": true,
-      "gallery": ["/images/dubai1.jpg", "/images/dubai2.jpg"]
+      "gallery": [
+        "/images/dubai1.jpg",
+        "/images/dubai2.jpg"
+      ]
     },
     {
       "slug": "cairo-5n6d",
@@ -82,10 +108,21 @@
       "title_en": "Cairo 6D/5N",
       "price_from": 699,
       "currency": "USD",
-      "highlights_ar": ["فندق 4 نجوم", "الأهرامات", "جولة النيل"],
-      "highlights_en": ["4★ hotel", "Pyramids tour", "Nile cruise"],
+      "highlights_ar": [
+        "فندق 4 نجوم",
+        "الأهرامات",
+        "جولة النيل"
+      ],
+      "highlights_en": [
+        "4★ hotel",
+        "Pyramids tour",
+        "Nile cruise"
+      ],
       "whatsapp_cta": true,
-      "gallery": ["/images/cairo1.jpg", "/images/cairo2.jpg"]
+      "gallery": [
+        "/images/cairo1.jpg",
+        "/images/cairo2.jpg"
+      ]
     }
   ],
   "testimonials": [
@@ -110,34 +147,34 @@
   ],
   "faq": [
     {
-      "q_ar": "هل أحتاج لموافقة أو تأشيرة جديدة عند رجوعي لمصر؟",
-      "a_ar": "لا، بخدمه الخروج والعودة، بنضمن ليك ترجع لمصر بكل سهولة بدون ما تحتاج لأي موافقات أو تأشيرات جديدة.",
-      "q_en": "Do I need a new approval or visa when returning to Egypt?",
-      "a_en": "No, with the exit and re-entry service, we guarantee you return to Egypt with ease without needing any new approvals or visas."
+      "q_ar": "ما هي الدول التي توفرون لها تأشيرات؟",
+      "a_ar": "نوفر تأشيرات لعدة دول منها: مصر (حلفا، بورتسودان)، الإمارات والشارقة، البحرين، مرور السعودية، يوغندا، وأثيوبيا.",
+      "q_en": "What countries do you provide visas for?",
+      "a_en": "We provide visas for multiple countries including: Egypt (Halfa, Port Sudan), UAE & Sharjah, Bahrain, Saudi transit, Uganda, and Ethiopia."
     },
     {
-      "q_ar": "كيف أقدر أقدم على زيارة عائلية للسعودية؟",
-      "a_ar": "نحن بنوفر لك خدمة تخليص كل الإجراءات خطوة بخطوة، من التقديم وحتى استلام الموافقة.",
-      "q_en": "How can I apply for a family visit to Saudi Arabia?",
-      "a_en": "We provide you with a service to complete all procedures step-by-step, from application to receiving approval."
+      "q_ar": "هل تقطعون تذاكر طيران لجميع الجنسيات؟",
+      "a_ar": "نعم، نقطع تذاكر طيران لجميع الجنسيات وإلى جميع الوجهات في العالم بأفضل الأسعار.",
+      "q_en": "Do you book flight tickets for all nationalities?",
+      "a_en": "Yes, we book flight tickets for all nationalities to all destinations worldwide at the best prices."
     },
     {
-      "q_ar": "أنا مقيم في السودان، هل أحتاج لموافقة أمنية للسفر لمصر؟",
-      "a_ar": "نعم، وده بالضبط دورنا! نحن بنوفر ليك كل أنواع الموافقات الأمنية (السريعة أو البطيئة) حسب احتياجك.",
-      "q_en": "I am a resident in Sudan, do I need a security approval to travel to Egypt?",
-      "a_en": "Yes, and that's exactly our role! We provide you with all types of security approvals (fast or slow) according to your needs."
+      "q_ar": "ما هي خدمات الدراسة التي تقدمونها في مصر؟",
+      "a_ar": "نقدم خدمات التقديم للبكالوريوس، الماستر، الدكتوراه، والإمتياز في الجامعات المصرية. نساعدك في كل الإجراءات من البداية للنهاية.",
+      "q_en": "What study services do you offer in Egypt?",
+      "a_en": "We offer application services for Bachelor's, Master's, PhD, and Franchise programs in Egyptian universities. We help with all procedures from start to finish."
     },
     {
-      "q_ar": "كيف أقدر أطلع رخصة قيادة دولية؟",
-      "a_ar": "ببساطة، قدم من خلالنا واحصل على رخصة قيادة معترف بيها في أي مكان بالعالم.",
-      "q_en": "How can I get an international driving license?",
-      "a_en": "Simply, apply through us and get a recognized driving license anywhere in the world."
+      "q_ar": "كيف أقدر أتواصل معكم؟",
+      "a_ar": "تقدر تتواصل معنا عبر واتساب على الرقم +201558746076 أو عبر صفحاتنا على إنستغرام وفيسبوك.",
+      "q_en": "How can I contact you?",
+      "a_en": "You can reach us via WhatsApp at +201558746076 or through our Instagram and Facebook pages."
     },
     {
-      "q_ar": "هل الرخصة صالحة في كل الدول؟",
-      "a_ar": "نعم، الرخصة الدولية تتيح ليك القيادة بأمان في معظم دول العالم.",
-      "q_en": "Is the license valid in all countries?",
-      "a_en": "Yes, the international license allows you to drive safely in most countries of the world."
+      "q_ar": "كم تستغرق إجراءات التأشيرة؟",
+      "a_ar": "المدة تختلف حسب نوع التأشيرة والدولة. تواصل معنا للحصول على تفاصيل دقيقة حسب حالتك.",
+      "q_en": "How long does the visa process take?",
+      "a_en": "The duration varies depending on the visa type and country. Contact us for precise details based on your case."
     }
   ]
 }

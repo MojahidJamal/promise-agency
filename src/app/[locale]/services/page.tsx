@@ -79,11 +79,12 @@ export default function ServicesPage() {
   const locale = useLocale();
   const isArabic = locale === 'ar';
 
-  const services = content.services.map((service) => ({
+  const services = content.services.map((service: any) => ({
     id: service.id,
     title: isArabic ? service.title_ar : service.title_en,
     description: isArabic ? service.desc_ar : service.desc_en,
     highlight: isArabic ? service.highlight_ar : service.highlight_en,
+    image: service.image,
   }));
 
   return (
@@ -109,6 +110,7 @@ export default function ServicesPage() {
             title={service.title}
             description={service.description}
             highlight={service.highlight}
+            image={service.image}
           />
         ))}
       </div>
